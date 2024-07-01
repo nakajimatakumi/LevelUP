@@ -1,0 +1,17 @@
+.pageLink {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  text-decoration: none;
+  font-size: 24px;
+  color: #555555;
+  height: 40px;
+  width: 200px;
+  border-radius: 10px;
+  margin: 10px 0px;
+  padding: 0px 5px;
+}
+
+.pageLink:hover {
+  background-color: #0000001a;
+}
