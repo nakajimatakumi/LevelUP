@@ -8,7 +8,7 @@
 }
 
 .titleWrapper {
-  margin: 30px 20px;
+  margin: 30px 30px;
 }
 
 .centerPageLinkWrapper {
@@ -20,5 +20,5 @@
 .bottomPageLinkWrapper {
   position: fixed;
   bottom: 50px;
-  left: 130px;
+  left: 120px;
 }
