@@ -1,0 +1,31 @@
+.NavLink {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  text-decoration: none;
+  font-size: 24px;
+  color: #555555;
+  height: 40px;
+  width: inherit;
+  border-radius: 10px;
+  margin: 10px 0px;
+  padding: 0px 5px;
+}
+
+.NavLink:hover {
+  background-color: #0000001a;
+}
+
+.NavLinkList {
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  text-decoration: none;
+  font-size: 24px;
+  color: #555555;
+  height: 40px;
+  width: inherit;
+  border-radius: 10px;
+  margin: 10px 0px;
+  padding: 0px 5px;
+}

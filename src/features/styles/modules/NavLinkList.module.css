@@ -1,0 +1,71 @@
+.root {
+  height: 44px;
+  width: inherit;
+}
+
+.Item {
+  width: inherit;
+}
+
+.Trigger {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  height: 40px;
+  width: inherit;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 10px;
+  padding: 0;
+}
+
+.Trigger:hover {
+  background-color: #0000001a;
+}
+
+.NavLink {
+  text-decoration: none;
+  font-size: 20px;
+  color: #555555;
+  border-radius: 8px;
+  width: 160px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  margin: 0 -10px;
+  padding: 3px 10px;
+}
+
+.NavLink:hover {
+  background-color: #0000001a;
+}
+
+.chevron {
+  padding: 0px 5px;
+}
+
+.Trigger[data-state="open"] > .chevron {
+  transform: rotate(180deg);
+}
+
+.Content {
+  padding: 0;
+}
+
+.menu {
+  list-style: none;
+  margin: 3px 5px;
+  position: relative;
+}
+
+.menu::before {
+  content: "";
+  border-left: 3px solid #c2c2c2;
+  position: absolute;
+  left: 15px;
+  top: 3%;
+  bottom: 2%;
+  width: 2px;
+  background-color: #c2c2c2;
+  border-radius: 30px;
+}

@@ -11,14 +11,22 @@
   margin: 30px 30px;
 }
 
+.topPageLinkWrapper {
+  position: fixed;
+  top: 14%;
+  left: 40px;
+  width: auto;
+}
+
 .centerPageLinkWrapper {
   position: fixed;
-  top: 30%;
+  top: 32%;
   left: 55px;
+  width: 210px;
 }
 
 .bottomPageLinkWrapper {
   position: fixed;
-  bottom: 50px;
-  left: 120px;
+  top: 88%;
+  left: 130px;
 }
