@@ -3,16 +3,13 @@
   width: inherit;
 }
 
-.Item {
-  width: inherit;
-}
-
 .Trigger {
+  font-family: inherit;
   border: none;
   outline: none;
   background-color: transparent;
   height: 40px;
-  width: inherit;
+  width: 100%;
   display: inline-flex;
   align-items: center;
   border-radius: 10px;

@@ -1,27 +1,36 @@
 import Title from "../elements/Title";
-import NavLink from "../elements/NavLink";
-import { pages } from "@/constants/pageLink";
+import { page } from "@/types/page";
 import styles from "@/features/styles/layouts/Sidebar.module.css";
 import NavLinkList from "../modules/NavLinkList";
 
-export default function Sidebar() {
+type props = {
+  topLink: page;
+  centerLinks: page[];
+  bottomLink: page;
+  userId: string;
+};
+
+export default function Sidebar({
+  topLink,
+  centerLinks,
+  bottomLink,
+  userId,
+}: props) {
   return (
     <div className={styles.sidebarWrapper}>
       <div className={styles.titleWrapper}>
         <Title />
       </div>
       <div className={styles.topPageLinkWrapper}>
-        <NavLinkList page={pages.profile} userId="userId" />
+        <NavLinkList page={topLink} userId={userId} />
       </div>
       <nav className={styles.centerPageLinkWrapper}>
-        <NavLink page={pages.myExp} userId="userId" />
-        <NavLink page={pages.allExp} userId="userId" />
-        <NavLink page={pages.bookmark} userId="userId" />
-        <NavLink page={pages.notification} userId="userId" />
-        <NavLinkList page={pages.setting} userId="userId" />
+        {centerLinks.map((link) => (
+          <NavLinkList page={link} userId={userId} key={link.PATH} />
+        ))}
       </nav>
       <div className={styles.bottomPageLinkWrapper}>
-        <NavLink page={pages.post} userId="userId" />
+        <NavLinkList page={bottomLink} userId={userId} />
       </div>
     </div>
   );

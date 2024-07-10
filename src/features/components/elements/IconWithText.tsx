@@ -1,23 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import styles from "@/features/styles/elements/NavLink.module.css";
+import styles from "@/features/styles/elements/IconWithText.module.css";
 import { page } from "@/types/page";
-import { Kosugi_Maru } from "next/font/google";
-
-const kosugiMaru = Kosugi_Maru({
-  subsets: ["latin"],
-  weight: ["400"],
-});
 
 type props = {
   page: page;
   userId: string;
-  isOpen?: boolean;
 };
 
-export default function NavLink({ page, userId }: props) {
+export default function IconWithText({ page, userId }: props) {
   return (
-    <div className={kosugiMaru.className}>
+    <div>
       {page.isLink ? (
         <div>
           <Link href={`/${userId}${page.PATH}`} className={styles.NavLink}>

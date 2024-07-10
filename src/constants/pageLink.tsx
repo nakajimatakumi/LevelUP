@@ -1,5 +1,5 @@
 export const pages = {
-  profile: {
+  PROFILE: {
     PATH: "/profile",
     ICON_PATH: "/profile/userIcon.svg",
     PAGE_NAME: "ユーザー名１",
@@ -9,31 +9,31 @@ export const pages = {
       { PAGE_NAME: "ログアウト", PATH: "/profile" },
     ],
   },
-  myExp: {
+  MY_EXP: {
     PATH: "/myExp",
     ICON_PATH: "/icon/home.svg",
     PAGE_NAME: "じぶんの経験",
     isLink: true,
   },
-  allExp: {
+  ALL_EXP: {
     PATH: "/allExp",
     ICON_PATH: "/icon/view.svg",
     PAGE_NAME: "みんなの経験",
     isLink: true,
   },
-  bookmark: {
+  BOOKMARK: {
     PATH: "/bookmark",
     ICON_PATH: "/icon/bookmark.svg",
     PAGE_NAME: "ブックマーク",
     isLink: true,
   },
-  notification: {
+  NOTIFICATION: {
     PATH: "/notification",
     ICON_PATH: "/icon/notification.svg",
     PAGE_NAME: "通知",
     isLink: true,
   },
-  setting: {
+  SETTING: {
     PATH: "/setting",
     ICON_PATH: "/icon/setting.svg",
     PAGE_NAME: "設定",
@@ -46,7 +46,7 @@ export const pages = {
       { PAGE_NAME: "お問い合わせ", PATH: "/setting" },
     ],
   },
-  post: {
+  POST: {
     PATH: "/post",
     ICON_PATH: "/icon/edit.svg",
     PAGE_NAME: "記録する",
