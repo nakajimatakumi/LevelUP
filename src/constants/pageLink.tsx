@@ -1,3 +1,6 @@
+/**
+ * ページ
+ */
 export const pages = {
   PROFILE: {
     PATH: "/profile",

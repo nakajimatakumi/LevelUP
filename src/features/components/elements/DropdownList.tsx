@@ -1,5 +1,8 @@
 import * as Select from "@radix-ui/react-select";
 
+/**
+ * ドロップダウンリストコンポーネント
+ */
 export default function DropdownList() {
   return (
     <div>

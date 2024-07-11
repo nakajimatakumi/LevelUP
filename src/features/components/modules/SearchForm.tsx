@@ -2,6 +2,9 @@ import * as Form from "@radix-ui/react-form";
 import Button from "../elements/Button";
 import styles from "../../styles/modules/SearchForm.module.css";
 
+/**
+ * 検索フォームコンポーネント
+ */
 export default function SearchForm() {
   return (
     <Form.Root className={styles.root}>

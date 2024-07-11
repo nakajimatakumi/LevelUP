@@ -15,6 +15,10 @@ export const metadata: Metadata = {
   description: "Level UP",
 };
 
+/**
+ * レイアウトコンポーネント
+ * @param children ページ
+ */
 export default function RootLayout({
   children,
 }: Readonly<{

@@ -8,6 +8,11 @@ type props = {
   userId: string;
 };
 
+/**
+ * アイコンとテキストコンポーネント
+ * @param page ページ情報
+ * @param userId ユーザーID
+ */
 export default function IconWithText({ page, userId }: props) {
   return (
     <div>

@@ -10,6 +10,13 @@ type props = {
   userId: string;
 };
 
+/**
+ * サイドバーコンポーネント
+ * @param topLink 上部のリンク
+ * @param centerLinks 中央のリンク
+ * @param bottomLink 下部のリンク
+ * @param userId ユーザーID
+ */
 export default function Sidebar({
   topLink,
   centerLinks,

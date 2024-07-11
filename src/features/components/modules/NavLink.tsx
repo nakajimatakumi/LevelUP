@@ -10,6 +10,11 @@ export type props = {
   userId: string;
 };
 
+/**
+ * ナビゲーションリンクコンポーネント
+ * @param page ページ情報
+ * @param userId ユーザーID
+ */
 export default function NavLink({ page, userId }: props) {
   if (page.linkList) {
     return (
