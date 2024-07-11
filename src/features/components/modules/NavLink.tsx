@@ -1,5 +1,5 @@
 import * as Accordion from "@radix-ui/react-accordion";
-import styles from "../../styles/modules/NavLinkList.module.css";
+import styles from "../../styles/modules/NavLink.module.css";
 import { page } from "@/types/page";
 import IconWithText from "../elements/IconWithText";
 import Link from "next/link";
@@ -10,7 +10,7 @@ export type props = {
   userId: string;
 };
 
-export default function NavLinkList({ page, userId }: props) {
+export default function NavLink({ page, userId }: props) {
   if (page.linkList) {
     return (
       <Accordion.Root type="single" collapsible className={styles.root}>
