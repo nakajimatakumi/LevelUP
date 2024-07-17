@@ -2,8 +2,7 @@ import type { Metadata } from "next";
 import { Kosugi_Maru } from "next/font/google";
 import styles from "../styles/global.module.css";
 import Sidebar from "@/features/components/layouts/Sidebar";
-import { pages } from "@/constants/pageLink";
-import SearchForm from "@/features/components/modules/SearchForm";
+import { PAGES } from "@/constants/pageLinks";
 
 const kosugiMaru = Kosugi_Maru({
   weight: "400",
@@ -29,21 +28,18 @@ export default function RootLayout({
       <body className={styles.body}>
         <div className={styles.sidebar}>
           <Sidebar
-            topLink={pages.PROFILE}
+            topLink={PAGES.PROFILE}
             centerLinks={[
-              pages.MY_EXP,
-              pages.ALL_EXP,
-              pages.BOOKMARK,
-              pages.NOTIFICATION,
-              pages.SETTING,
+              PAGES.MY_EXP,
+              PAGES.ALL_EXP,
+              PAGES.BOOKMARK,
+              PAGES.NOTIFICATION,
+              PAGES.SETTING,
             ]}
-            bottomLink={pages.POST}
+            bottomLink={PAGES.POST}
             userId="userId"
           />
           {children}
-        </div>
-        <div className={styles.searchForm}>
-          <SearchForm />
         </div>
       </body>
     </html>

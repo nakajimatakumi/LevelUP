@@ -5,22 +5,23 @@ import IconWithText from "../elements/IconWithText";
 import Link from "next/link";
 import Image from "next/image";
 
-export type props = {
-  page: page;
-  userId: string;
-};
-
 /**
  * ナビゲーションリンクコンポーネント
  * @param page ページ情報
  * @param userId ユーザーID
  */
+
+type props = {
+  page: page;
+  userId: string;
+};
+
 export default function NavLink({ page, userId }: props) {
   if (page.linkList) {
     return (
       <Accordion.Root type="single" collapsible className={styles.root}>
         <Accordion.Item value="item-1">
-          <Accordion.Trigger className={styles.Trigger}>
+          <Accordion.Trigger className={styles.trigger}>
             <IconWithText page={page} userId={userId} />
             <Image
               src="/icon/chevron.svg"
@@ -30,12 +31,12 @@ export default function NavLink({ page, userId }: props) {
               className={styles.chevron}
             />
           </Accordion.Trigger>
-          <Accordion.Content className={styles.Content}>
+          <Accordion.Content className={styles.content}>
             <ul className={styles.menu}>
               {page.linkList?.map((link) => (
                 <Link
                   href={link.PATH}
-                  className={styles.NavLink}
+                  className={styles.navLink}
                   key={link.PATH}
                 >
                   <li>{link.PAGE_NAME}</li>

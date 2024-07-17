@@ -10,10 +10,3 @@
   top: 0;
   left: 0;
 }
-
-.searchForm {
-  position: absolute;
-  top: 20px;
-  right: 80px;
-  display: inline-block;
-}

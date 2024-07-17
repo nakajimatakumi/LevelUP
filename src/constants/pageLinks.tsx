@@ -1,7 +1,7 @@
 /**
  * ページ
  */
-export const pages = {
+export const PAGES = {
   PROFILE: {
     PATH: "/profile",
     ICON_PATH: "/profile/userIcon.svg",

@@ -1,4 +1,4 @@
-import DropdownList from "@/features/components/elements/DropdownList";
+import SearchConditionList from "@/features/components/modules/SearchConditionList";
 
 /**
  * テストページ
@@ -6,7 +6,7 @@ import DropdownList from "@/features/components/elements/DropdownList";
 export default function TestPage() {
   return (
     <div>
-      <DropdownList />
+      <SearchConditionList />
     </div>
   );
 }

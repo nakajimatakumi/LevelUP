@@ -3,13 +3,6 @@ import { page } from "@/types/page";
 import styles from "@/features/styles/layouts/Sidebar.module.css";
 import NavLink from "../modules/NavLink";
 
-type props = {
-  topLink: page;
-  centerLinks: page[];
-  bottomLink: page;
-  userId: string;
-};
-
 /**
  * サイドバーコンポーネント
  * @param topLink 上部のリンク
@@ -17,6 +10,14 @@ type props = {
  * @param bottomLink 下部のリンク
  * @param userId ユーザーID
  */
+
+type props = {
+  topLink: page;
+  centerLinks: page[];
+  bottomLink: page;
+  userId: string;
+};
+
 export default function Sidebar({
   topLink,
   centerLinks,

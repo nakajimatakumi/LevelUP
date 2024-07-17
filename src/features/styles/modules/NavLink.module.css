@@ -3,7 +3,7 @@
   width: inherit;
 }
 
-.Trigger {
+.trigger {
   font-family: inherit;
   border: none;
   outline: none;
@@ -16,11 +16,11 @@
   padding: 0;
 }
 
-.Trigger:hover {
+.trigger:hover {
   background-color: #0000001a;
 }
 
-.NavLink {
+.navLink {
   text-decoration: none;
   font-size: 20px;
   color: #555555;
@@ -33,7 +33,7 @@
   padding: 3px 10px;
 }
 
-.NavLink:hover {
+.navLink:hover {
   background-color: #0000001a;
 }
 
@@ -41,7 +41,7 @@
   padding: 0px 5px;
 }
 
-.Trigger[data-state="open"] > .chevron {
+.trigger[data-state="open"] > .chevron {
   transform: rotate(180deg);
 }
 
