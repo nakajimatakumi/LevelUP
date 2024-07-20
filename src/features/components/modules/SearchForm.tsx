@@ -3,10 +3,10 @@
 import * as Form from "@radix-ui/react-form";
 import Button from "../elements/Button";
 import styles from "../../styles/modules/SearchForm.module.css";
-import SearchConditionList from "./SearchConditionList";
+import SearchConditionList from "@/features/components/elements/SearchConditionList";
 import { searchConditions } from "@/types/searchConditions";
 import { LABEL } from "@/constants/buttonLabel";
-import { useSearch } from "@/hooks/useSearch";
+import useSearch from "@/hooks/useSearch";
 import Image from "next/image";
 
 type Props = {

@@ -1,10 +1,11 @@
 /**
  * 検索フック
+ * @returns 検索ハンドラ
  */
-export const useSearch = () => {
+export default function useSearch() {
   const handleSearch = () => {
-    console.log("DEBUG LOG: search");
+    console.log("DEBUG LOG: Search");
     alert("検索");
   };
   return { handleSearch };
-};
+}

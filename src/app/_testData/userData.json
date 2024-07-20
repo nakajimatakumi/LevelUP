@@ -1,0 +1,11 @@
+{
+  "username": "テストユーザー１",
+  "password": "password",
+  "email": "test@email.com",
+  "birthday": "1990-01-01",
+  "jobName": "システムエンジニア",
+  "jobColor": "#C0D6D8",
+  "jobCategory": "employee",
+  "description": "テストユーザー１の説明文です。\n職業はエンジニアです。\n趣味はサッカーです。",
+  "iconSet": "iconSet1"
+}
