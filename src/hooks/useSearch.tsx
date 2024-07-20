@@ -1,6 +1,10 @@
+/**
+ * 検索フック
+ */
 export const useSearch = () => {
-  const eventHandler = () => {
-    console.log("search");
+  const handleSearch = () => {
+    console.log("DEBUG LOG: search");
+    alert("検索");
   };
-  return { eventHandler };
+  return { handleSearch };
 };

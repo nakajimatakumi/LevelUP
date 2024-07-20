@@ -3,18 +3,17 @@ import Link from "next/link";
 import styles from "@/features/styles/elements/IconWithText.module.css";
 import { page } from "@/types/page";
 
+type Props = {
+  page: page;
+  userId: string;
+};
+
 /**
  * アイコンとテキストコンポーネント
  * @param page ページ情報
  * @param userId ユーザーID
  */
-
-type props = {
-  page: page;
-  userId: string;
-};
-
-export default function IconWithText({ page, userId }: props) {
+export default function IconWithText({ page, userId }: Props) {
   return (
     <div>
       {page.isLink ? (

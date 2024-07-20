@@ -1,22 +1,31 @@
 import DropdownList from "@/features/components/elements/DropdownList";
-import { category, job, sort } from "@/app/_testData/searchConditions.json";
 import styles from "@/features/styles/modules/SearchConditionList.module.css";
+import { searchConditions } from "@/types/searchConditions";
+
+type Props = {
+  searchConditions: searchConditions;
+};
 
 /**
  * 検索条件ドロップダウンリストコンポーネント
+ * @param searchConditions 検索条件リスト
  */
-export default function SearchConditionList() {
+export default function SearchConditionList({ searchConditions }: Props) {
   return (
     <div className={styles.root}>
       <DropdownList
-        listItems={category.listItems}
-        title={category.name}
+        listItems={searchConditions.category.listItems}
+        name={searchConditions.category.name}
         isGroup={true}
       />
-      <DropdownList listItems={job.listItems} title={job.name} isGroup={true} />
       <DropdownList
-        listItems={sort.listItems}
-        title={sort.name}
+        listItems={searchConditions.job.listItems}
+        name={searchConditions.job.name}
+        isGroup={true}
+      />
+      <DropdownList
+        listItems={searchConditions.sort.listItems}
+        name={searchConditions.sort.name}
         isGroup={true}
       />
     </div>

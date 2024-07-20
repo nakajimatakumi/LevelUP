@@ -2,20 +2,21 @@ import React from "react";
 import * as Select from "@radix-ui/react-select";
 import styles from "@/features/styles/elements/DropdownList.module.css";
 import Image from "next/image";
-import { listItem } from "@/types/searchConditions";
+import { listItems } from "@/types/searchConditions";
+
+type Props = {
+  listItems: listItems[];
+  name: string;
+  isGroup: boolean;
+};
 
 /**
  * ドロップダウンリストコンポーネント
  * @param listItems リストアイテム
+ * @param name タイトル
+ * @param isGroup グループ化するかどうか
  */
-
-type Props = {
-  listItems: listItem[];
-  title: string;
-  isGroup: boolean;
-};
-
-export default function DropdownList({ listItems, title, isGroup }: Props) {
+export default function DropdownList({ listItems, name, isGroup }: Props) {
   return (
     <div className={styles.root}>
       <Select.Root>
@@ -23,7 +24,7 @@ export default function DropdownList({ listItems, title, isGroup }: Props) {
           className={styles.trigger}
           data-group={isGroup ? "group" : "normal"}
         >
-          <Select.Value className={styles.value} placeholder={title} />
+          <Select.Value className={styles.value} placeholder={name} />
           <Select.Icon className={styles.icon} asChild={true}>
             <Image
               src="/icon/chevron.svg"

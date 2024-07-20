@@ -5,18 +5,17 @@ import IconWithText from "../elements/IconWithText";
 import Link from "next/link";
 import Image from "next/image";
 
+type Props = {
+  page: page;
+  userId: string;
+};
+
 /**
  * ナビゲーションリンクコンポーネント
  * @param page ページ情報
  * @param userId ユーザーID
  */
-
-type props = {
-  page: page;
-  userId: string;
-};
-
-export default function NavLink({ page, userId }: props) {
+export default function NavLink({ page, userId }: Props) {
   if (page.linkList) {
     return (
       <Accordion.Root type="single" collapsible className={styles.root}>

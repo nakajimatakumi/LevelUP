@@ -10,6 +10,7 @@
   display: inline-flex;
   align-items: center;
   padding: 0 13px;
+  cursor: pointer;
 }
 
 .trigger[data-group="normal"] {
@@ -24,6 +25,10 @@
 
 .trigger[data-state="open"] > .chevron {
   transform: rotate(180deg);
+}
+
+.trigger:hover {
+  background-color: #0000001a;
 }
 
 .chevron {
@@ -45,6 +50,7 @@
   font-size: 16px;
   padding: 4px 2px;
   outline: none;
+  cursor: pointer;
 }
 
 .item:hover {
