@@ -1,4 +1,4 @@
-import JobBadge from "@/features/components/elements/JobBadge";
+import UserInfoCard from "@/features/components/modules/UserInfoCard";
 import styles from "@/styles/TestPage.module.css";
 
 /**
@@ -7,11 +7,7 @@ import styles from "@/styles/TestPage.module.css";
 export default function TestPage() {
   return (
     <div className={styles.container}>
-      <JobBadge
-        jobName="システムエンジニア"
-        jobCategory="employee"
-        jobColor="#D8CCC0"
-      />
+      <UserInfoCard />
     </div>
   );
 }

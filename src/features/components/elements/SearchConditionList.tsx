@@ -1,5 +1,5 @@
 import DropdownList from "@/features/components/elements/DropdownList";
-import styles from "@/features/styles/modules/SearchConditionList.module.css";
+import styles from "@/features/styles/elements/SearchConditionList.module.css";
 import { searchConditions } from "@/types/searchConditions";
 
 type Props = {

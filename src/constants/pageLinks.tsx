@@ -55,4 +55,11 @@ export const PAGES = {
     PAGE_NAME: "記録する",
     isLink: true,
   },
+
+  POSTED_TIME: {
+    PATH: "",
+    ICON_PATH: "/icon/clock.svg",
+    PAGE_NAME: "投稿時間",
+    isLink: false,
+  },
 };
