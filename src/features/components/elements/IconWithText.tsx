@@ -14,31 +14,40 @@ type Props = {
  * @param userId ユーザーID
  */
 export default function IconWithText({ page, userId }: Props) {
+  // デフォルト以外のスタイルを適用する場合のクラス名
+
+  // 共通の部品
+  const contents: React.ReactNode = (
+    <>
+      <Image
+        src={page.ICON_PATH}
+        alt={page.PAGE_NAME}
+        width={35}
+        height={35}
+        className={styles.icon}
+        data-type={page.type}
+      />
+      <p className={styles.pageName}>{page.PAGE_NAME}</p>
+    </>
+  );
+
   return (
-    <div>
+    <>
       {page.isLink ? (
         <div>
-          <Link href={`/${userId}${page.PATH}`} className={styles.navLink}>
-            <Image
-              src={page.ICON_PATH}
-              alt={page.PAGE_NAME}
-              width={35}
-              height={35}
-            />
-            <p className={styles.pageName}>{page.PAGE_NAME}</p>
+          <Link
+            href={`/${userId}${page.PATH}`}
+            className={styles.link}
+            data-type={page.type}
+          >
+            {contents}
           </Link>
         </div>
       ) : (
-        <div className={styles.navLinkList}>
-          <Image
-            src={page.ICON_PATH}
-            alt={page.PAGE_NAME}
-            width={35}
-            height={35}
-          />
-          <p className={styles.pageName}>{page.PAGE_NAME}</p>
+        <div className={styles.notLink} data-type={page.type}>
+          {contents}
         </div>
       )}
-    </div>
+    </>
   );
 }

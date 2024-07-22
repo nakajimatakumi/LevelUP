@@ -61,5 +61,6 @@ export const PAGES = {
     ICON_PATH: "/icon/clock.svg",
     PAGE_NAME: "投稿時間",
     isLink: false,
+    type: "postedTime",
   },
 };

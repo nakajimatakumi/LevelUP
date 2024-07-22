@@ -9,6 +9,9 @@ type Props = {
 
 /**
  * 職業バッジ
+ * @param jobName 職業名
+ * @param jobCategory 職業カテゴリ
+ * @param jobColor バッジの色
  */
 export default function JobBadge({ jobName, jobCategory, jobColor }: Props) {
   const color = useConvertColor(jobColor);

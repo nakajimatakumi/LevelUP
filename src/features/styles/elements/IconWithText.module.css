@@ -1,31 +1,46 @@
-.navLink {
+.link,
+.notLink {
   display: flex;
   align-items: center;
-  column-gap: 10px;
-  text-decoration: none;
-  font-size: 24px;
-  color: #555555;
-  height: 40px;
   width: inherit;
+  text-decoration: none;
   border-radius: 10px;
   margin: 10px 0px;
   padding: 0px 5px;
+  height: 40px;
+  color: #555555;
+  font-size: 24px;
+  column-gap: 10px;
 }
 
-.navLink:hover {
+.link:hover {
   background-color: #0000001a;
 }
 
-.navLinkList {
-  display: flex;
-  align-items: center;
-  column-gap: 10px;
-  text-decoration: none;
-  font-size: 24px;
-  color: #555555;
-  height: 40px;
-  width: inherit;
-  border-radius: 10px;
-  margin: 10px 0px;
-  padding: 0px 5px;
+/* ユーザー情報カード */
+.link[data-type="userInfoCard"],
+.notLink[data-type="userInfoCard"] {
+  height: 35px;
+  font-size: 22px;
+  column-gap: 8px;
+}
+
+.icon[data-type="userInfoCard"] {
+  width: 32px;
+  height: 32px;
+}
+
+/* 投稿日時 */
+
+.link[data-type="postedTime"],
+.notLink[data-type="postedTime"] {
+  height: 30px;
+  font-size: 18px;
+  color: #8b8b8b;
+  column-gap: 5px;
+}
+
+.icon[data-type="postedTime"] {
+  width: 22px;
+  height: 20px;
 }

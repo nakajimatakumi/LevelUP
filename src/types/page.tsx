@@ -1,9 +1,10 @@
 export type page = {
-  PATH: string;
+  PATH?: string;
   ICON_PATH: string;
   PAGE_NAME: string;
   isLink: boolean;
   linkList?: linkList[];
+  type?: string;
 };
 
 export type linkList = {

@@ -5,14 +5,13 @@ import CategoryBadge from "../elements/CategoryBadge";
 import { PAGES } from "@/constants/pageLinks";
 
 const user1 = {
-  PATH: "/testPage",
   ICON_PATH: "/profile/userIcon.svg",
-  PAGE_NAME: "User1",
+  PAGE_NAME: "ユーザー名１",
   isLink: false,
+  type: "userInfoCard",
 };
 
-const postedTime = "2024.01.01 12:00";
-
+const postedTime: string = "2024.01.01 12:00";
 PAGES.POSTED_TIME.PAGE_NAME = postedTime;
 
 /**

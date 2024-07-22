@@ -6,6 +6,7 @@ type Props = {
 
 /**
  * カテゴリーバッジ
+ * @param categoryName カテゴリ名
  */
 export default function CategoryBadge({ categoryName }: Props) {
   return (
