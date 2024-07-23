@@ -1,17 +1,17 @@
 import styles from "@/features/styles/elements/CategoryBadge.module.css";
 
 type Props = {
-  categoryName: string;
+  postCategory: string;
 };
 
 /**
  * カテゴリーバッジ
- * @param categoryName カテゴリ名
+ * @param postCategory 投稿カテゴリ
  */
-export default function CategoryBadge({ categoryName }: Props) {
+export default function CategoryBadge({ postCategory }: Props) {
   return (
     <div className={styles.categoryBadge}>
-      <p>{categoryName}</p>
+      <p>{postCategory}</p>
     </div>
   );
 }

@@ -1,10 +1,10 @@
-export type page = {
+export type content = {
   PATH?: string;
   ICON_PATH: string;
   PAGE_NAME: string;
   isLink: boolean;
   linkList?: linkList[];
-  type?: string;
+  TYPE?: string;
 };
 
 export type linkList = {

@@ -1,11 +1,14 @@
 {
-  "username": "テストユーザー１",
-  "password": "password",
-  "email": "test@email.com",
-  "birthday": "1990-01-01",
-  "jobName": "システムエンジニア",
-  "jobColor": "#C0D6D8",
-  "jobCategory": "employee",
-  "description": "テストユーザー１の説明文です。\n職業はエンジニアです。\n趣味はサッカーです。",
-  "iconSet": "iconSet1"
+  "userInfo": {
+    "userId": "user1",
+    "userName": "テストユーザー１",
+    "userIcon": "/profile/userIcon.svg",
+    "description": "私の名前はテストユーザーです。\n私の趣味は図書館に行って歴史書を読むことです。\n去年からシステムエンジニアになりました。\n最近はよく夜に映画を見に行っています。\n好きな食べ物は三色団子です。\nめんだこをたこ焼きにして食べるのが夢です。\nぺんぎんはおいしいです。",
+    "jobInfo": {
+      "jobName": "システムエンジニア",
+      "jobColor": "#C0D6D8",
+      "jobCategory": "employee"
+    }
+  },
+  "postInfo": null
 }

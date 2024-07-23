@@ -1,12 +1,12 @@
 import Title from "../elements/Title";
-import { page } from "@/types/page";
+import { content } from "@/types/content";
 import styles from "@/features/styles/layouts/Sidebar.module.css";
 import NavLink from "../modules/NavLink";
 
 type Props = {
-  topLink: page;
-  centerLinks: page[];
-  bottomLink: page;
+  topLink: content;
+  centerLinks: content[];
+  bottomLink: content;
   userId: string;
 };
 
@@ -29,15 +29,15 @@ export default function Sidebar({
         <Title />
       </div>
       <div className={styles.topPageLinkWrapper}>
-        <NavLink page={topLink} userId={userId} />
+        <NavLink content={topLink} userId={userId} />
       </div>
       <nav className={styles.centerPageLinkWrapper}>
         {centerLinks.map((link) => (
-          <NavLink page={link} userId={userId} key={link.PATH} />
+          <NavLink content={link} userId={userId} key={link.PATH} />
         ))}
       </nav>
       <div className={styles.bottomPageLinkWrapper}>
-        <NavLink page={bottomLink} userId={userId} />
+        <NavLink content={bottomLink} userId={userId} />
       </div>
     </div>
   );

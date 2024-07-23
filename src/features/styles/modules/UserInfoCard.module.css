@@ -27,8 +27,17 @@
 
 .description {
   position: absolute;
-  top: 60px;
-  left: 30px;
+  top: 61px;
+  left: 40px;
+  height: 150px;
+  width: 420px;
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.descriptionText {
+  margin: 0;
+  line-height: 1.6;
 }
 
 .postCategory {

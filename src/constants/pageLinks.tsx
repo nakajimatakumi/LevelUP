@@ -1,3 +1,11 @@
+/*
+ * テキストタイプ
+ */
+export const TEXT_TYPE = {
+  POSTED_TIME: "postedTime",
+  USER_INFO_CARD: "userInfoCard",
+};
+
 /**
  * ページ
  */
@@ -5,7 +13,7 @@ export const PAGES = {
   PROFILE: {
     PATH: "/profile",
     ICON_PATH: "/profile/userIcon.svg",
-    PAGE_NAME: "ユーザー名１",
+    PAGE_NAME: "ユーザー名",
     isLink: false,
     linkList: [
       { PAGE_NAME: "プロフィール設定", PATH: "/profile" },
@@ -61,6 +69,6 @@ export const PAGES = {
     ICON_PATH: "/icon/clock.svg",
     PAGE_NAME: "投稿時間",
     isLink: false,
-    type: "postedTime",
+    TYPE: TEXT_TYPE.POSTED_TIME,
   },
 };

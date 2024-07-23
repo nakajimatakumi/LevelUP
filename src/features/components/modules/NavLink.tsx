@@ -1,12 +1,12 @@
 import * as Accordion from "@radix-ui/react-accordion";
 import styles from "../../styles/modules/NavLink.module.css";
-import { page } from "@/types/page";
+import { content } from "@/types/content";
 import IconWithText from "../elements/IconWithText";
 import Link from "next/link";
 import Image from "next/image";
 
 type Props = {
-  page: page;
+  content: content;
   userId: string;
 };
 
@@ -15,13 +15,13 @@ type Props = {
  * @param page ページ情報
  * @param userId ユーザーID
  */
-export default function NavLink({ page, userId }: Props) {
-  if (page.linkList) {
+export default function NavLink({ content, userId }: Props) {
+  if (content.linkList) {
     return (
       <Accordion.Root type="single" collapsible className={styles.root}>
         <Accordion.Item value="item-1">
           <Accordion.Trigger className={styles.trigger}>
-            <IconWithText page={page} userId={userId} />
+            <IconWithText content={content} userId={userId} />
             <Image
               src="/icon/chevron.svg"
               alt="chevron"
@@ -32,7 +32,7 @@ export default function NavLink({ page, userId }: Props) {
           </Accordion.Trigger>
           <Accordion.Content className={styles.content}>
             <ul className={styles.menu}>
-              {page.linkList?.map((link) => (
+              {content.linkList?.map((link) => (
                 <Link
                   href={link.PATH}
                   className={styles.navLink}
@@ -47,6 +47,6 @@ export default function NavLink({ page, userId }: Props) {
       </Accordion.Root>
     );
   } else {
-    return <IconWithText page={page} userId={userId} />;
+    return <IconWithText content={content} userId={userId} />;
   }
 }
