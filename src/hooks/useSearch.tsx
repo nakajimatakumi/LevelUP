@@ -3,9 +3,9 @@
  * @returns 検索ハンドラ
  */
 export default function useSearch() {
-  const handleSearch = () => {
+  const handleSearch = async () => {
+    "use server";
     console.log("DEBUG LOG: Search");
-    alert("検索");
   };
   return { handleSearch };
 }

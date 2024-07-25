@@ -1,0 +1,21 @@
+.button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 124px;
+  height: 44px;
+
+  background-color: #cecdcb;
+  border: none;
+  border-radius: 10px;
+
+  font-family: inherit;
+  color: #555555;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #bebebe;
+}

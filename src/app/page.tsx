@@ -1,30 +1,25 @@
-import SearchForm from "@/features/components/modules/SearchForm";
+import SearchForm from "@/components/modules/SearchForm";
 import styles from "@/styles/app/Home.module.css";
-import useInit from "@/hooks/useInit";
-import UserInfoCard from "@/features/components/modules/UserInfoCard";
+import UserInfoCard from "@/components/modules/UserInfoCard";
+import FeaturedPosts from "@/components/modules/FeaturedPosts";
 
 /**
  * トップページ
  */
 export default function TopPage() {
-  /**
-   * 初期表示データ取得処理
-   * @return {searchConditions} 検索条件
-   * @return {userData} ユーザー情報
-   */
-  const { getInitData } = useInit();
-  const { searchConditions, userData } = getInitData();
-
+  const postInfo = null;
   return (
     <div className={styles.container}>
-      <div className={styles.searchForm}>
-        <SearchForm searchConditions={searchConditions} />
-      </div>
-      <div className={styles.userInfoCard}>
-        <UserInfoCard
-          userInfo={userData.userInfo}
-          postInfo={userData.postInfo}
-        />
+      <div className={styles.rightSideContent}>
+        <div className={styles.searchForm}>
+          <SearchForm />
+        </div>
+        <div className={styles.userInfoCard}>
+          <UserInfoCard postInfo={postInfo} />
+        </div>
+        <div className={styles.featuredPosts}>
+          <FeaturedPosts />
+        </div>
       </div>
     </div>
   );

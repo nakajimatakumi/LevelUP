@@ -3,13 +3,15 @@ import userData from "@/app/_testData/userData.json";
 
 /**
  * 初期化フック
- * @return {searchConditions} 検索条件
- * @return {userData} ユーザー情報
+ * @return {getInitData} 初期化データ取得関数
  */
 export default function useInit() {
   const getInitData = () => {
     console.log("DEBUG LOG: Init");
-    return { searchConditions, userData };
+    const initData = { searchConditions, userData };
+    return initData;
   };
-  return { getInitData };
+
+  const initData = getInitData();
+  return { getInitData, initData };
 }

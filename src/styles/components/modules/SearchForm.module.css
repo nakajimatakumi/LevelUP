@@ -1,0 +1,43 @@
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.searchArea {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.searchIcon {
+  position: absolute;
+  left: 15px;
+}
+
+.input {
+  width: 495px;
+  height: 52px;
+  padding: 0 140px 0 50px;
+
+  background-color: #eeeeee;
+  border: 2px solid #69696985;
+  border-radius: 15px;
+  outline: none;
+  box-sizing: border-box;
+
+  font-family: inherit;
+  font-size: 20px;
+  color: inherit;
+}
+
+.button {
+  position: absolute;
+  right: 10px;
+  z-index: 1;
+}
+
+.searchConditionList {
+  margin-top: 6px;
+  margin-left: 5px;
+}

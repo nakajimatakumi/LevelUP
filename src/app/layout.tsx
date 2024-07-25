@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { Kosugi_Maru } from "next/font/google";
 import styles from "../styles/global.module.css";
-import Sidebar from "@/features/components/layouts/Sidebar";
-import { PAGES } from "@/constants/pageLinks";
+import Sidebar from "@/components/layouts/Sidebar";
+import { PAGES } from "@/constants/PageLinksConst";
 
 const kosugiMaru = Kosugi_Maru({
   weight: "400",
@@ -37,10 +37,9 @@ export default function RootLayout({
               PAGES.SETTING,
             ]}
             bottomLink={PAGES.POST}
-            userId="userId"
           />
-          {children}
         </div>
+        {children}
       </body>
     </html>
   );

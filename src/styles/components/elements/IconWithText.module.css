@@ -1,0 +1,50 @@
+.link,
+.notLink {
+  display: flex;
+  align-items: center;
+
+  width: 220px;
+  height: 40px;
+  margin: 10px 0;
+  padding: 0 5px;
+
+  border-radius: 10px;
+  text-decoration: none;
+
+  color: #555555;
+  font-size: 24px;
+  column-gap: 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+}
+
+.link:hover {
+  background-color: #0000001a;
+}
+
+.link[data-type="userInfoCard"],
+.notLink[data-type="userInfoCard"] {
+  height: 35px;
+  font-size: 22px;
+  column-gap: 8px;
+}
+
+.icon[data-type="userInfoCard"] {
+  width: 32px;
+  height: 32px;
+}
+
+.link[data-type="postedTime"],
+.notLink[data-type="postedTime"] {
+  height: 30px;
+  font-size: 18px;
+  color: #8b8b8b;
+  column-gap: 5px;
+}
+
+.icon[data-type="postedTime"] {
+  width: 22px;
+  height: 20px;
+}

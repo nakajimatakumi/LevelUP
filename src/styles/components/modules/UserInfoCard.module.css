@@ -1,0 +1,52 @@
+.card {
+  position: relative;
+
+  width: 471px;
+  height: 250px;
+  padding: 10px;
+
+  border: 2px solid #69696985;
+  border-radius: 10px;
+  box-shadow: 0 7px 7px -6px rgba(0, 0, 0, 0.5);
+}
+
+.userName {
+  position: absolute;
+  top: 5px;
+  left: 20px;
+}
+
+.jobBadge {
+  position: absolute;
+  top: 16px;
+  right: 12px;
+}
+
+.description {
+  position: absolute;
+  top: 61px;
+  left: 40px;
+
+  width: 420px;
+  height: 150px;
+
+  overflow: hidden;
+  word-break: break-word;
+}
+
+.descriptionText {
+  margin: 0;
+  line-height: 1.6;
+}
+
+.postCategory {
+  position: absolute;
+  bottom: 9px;
+  left: 20px;
+}
+
+.postTime {
+  position: absolute;
+  bottom: -2px;
+  right: 25px;
+}
