@@ -30,13 +30,17 @@
   width: 420px;
   height: 150px;
 
-  overflow: hidden;
-  word-break: break-word;
-}
-
-.descriptionText {
   margin: 0;
   line-height: 1.6;
+
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+
+  white-space: pre-wrap;
+  overflow: hidden;
+  word-break: break-word;
+  text-overflow: ellipsis;
 }
 
 .postCategory {

@@ -72,3 +72,7 @@ export const PAGES = {
     TYPE: TEXT_TYPE.POSTED_TIME,
   },
 };
+
+export const COMPONENT_LABEL = {
+  FEATURED_POSTS: "注目の経験",
+};
