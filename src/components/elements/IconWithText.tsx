@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import styles from "@/styles/components/elements/IconWithText.module.css";
 import { contentType } from "@/types/ContentType";
+import UserIcon from "./UserIcon";
 
 type Props = {
   content: contentType;
@@ -13,21 +14,17 @@ type Props = {
  * @param userId ユーザーID
  */
 export default function IconWithText({ content }: Props) {
-  // デフォルト以外のスタイルを適用する場合のクラス名
-
-  // 共通の部品
-  const contents: React.ReactNode = (
-    <>
-      <Image
-        src={content.ICON_PATH}
-        alt={content.PAGE_NAME}
-        width={35}
-        height={35}
-        className={styles.icon}
-        data-type={content.TYPE}
-      />
-      <p className={styles.pageName}>{content.PAGE_NAME}</p>
-    </>
+  const image = content.userIconInfo ? (
+    <UserIcon userIconInfo={content.userIconInfo} />
+  ) : (
+    <Image
+      src={content.iconPath}
+      alt={content.pageName}
+      width={35}
+      height={35}
+      className={styles.icon}
+      data-type={content.type}
+    />
   );
 
   return (
@@ -35,16 +32,18 @@ export default function IconWithText({ content }: Props) {
       {content.isLink ? (
         <div>
           <Link
-            href={content.PATH ?? "/"}
+            href={content.path ?? "/"}
             className={styles.link}
-            data-type={content.TYPE}
+            data-type={content.type}
           >
-            {contents}
+            {image}
+            <p className={styles.pageName}>{content.pageName}</p>
           </Link>
         </div>
       ) : (
-        <div className={styles.notLink} data-type={content.TYPE}>
-          {contents}
+        <div className={styles.notLink} data-type={content.type}>
+          {image}
+          <p className={styles.pageName}>{content.pageName}</p>
         </div>
       )}
     </>

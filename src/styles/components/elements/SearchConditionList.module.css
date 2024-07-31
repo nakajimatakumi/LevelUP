@@ -6,8 +6,9 @@
 
   width: 481px;
   height: 36px;
-  gap: 10px;
+  gap: 5px;
 
   border: 2px solid #bbbbbb;
   border-radius: 12px;
+  z-index: 1;
 }

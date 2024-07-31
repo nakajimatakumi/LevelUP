@@ -3,6 +3,7 @@ import * as Select from "@radix-ui/react-select";
 import styles from "@/styles/components/elements/DropdownList.module.css";
 import Image from "next/image";
 import { listItemsType } from "@/types/SearchConditionType";
+import { ICON_PATH } from "@/constants/IconPathConst";
 
 type Props = {
   listItems: listItemsType[];
@@ -27,7 +28,7 @@ export default function DropdownList({ listItems, name, isGroup }: Props) {
           <Select.Value className={styles.value} placeholder={name} />
           <Select.Icon className={styles.icon} asChild={true}>
             <Image
-              src="/icon/chevron.svg"
+              src={ICON_PATH.CHEVRON}
               alt="chevron"
               width={14}
               height={14}

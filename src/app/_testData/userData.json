@@ -8,6 +8,11 @@
       "jobName": "システムエンジニア",
       "jobColor": "#C0D6D8",
       "jobCategory": "employee"
+    },
+    "userIconInfo": {
+      "facePath": "/profile/face/suspicious_face.svg",
+      "hairPath": "/profile/hair/flat_hair_black.svg",
+      "iconColor": "#DDC4C4"
     }
   },
   "postInfo": null,

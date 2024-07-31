@@ -27,17 +27,7 @@ export default function RootLayout({
     <html lang="en" className={kosugiMaru.className}>
       <body className={styles.body}>
         <div className={styles.sidebar}>
-          <Sidebar
-            topLink={PAGES.PROFILE}
-            centerLinks={[
-              PAGES.MY_EXP,
-              PAGES.ALL_EXP,
-              PAGES.BOOKMARK,
-              PAGES.NOTIFICATION,
-              PAGES.SETTING,
-            ]}
-            bottomLink={PAGES.POST}
-          />
+          <Sidebar />
         </div>
         {children}
       </body>

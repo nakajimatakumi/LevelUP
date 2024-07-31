@@ -1,13 +1,29 @@
+/**
+ * IconWithTextコンポーネントのコンテンツタイプ
+ */
 export type contentType = {
-  PATH?: string;
-  ICON_PATH: string;
-  PAGE_NAME: string;
+  path?: string;
+  iconPath: string;
+  userIconInfo?: userIconInfoType;
+  pageName: string;
   isLink: boolean;
   linkList?: linkListType[];
-  TYPE?: string;
+  type?: string;
 };
 
+/**
+ * ドロップダウンリストのリストタイプ
+ */
 export type linkListType = {
-  PAGE_NAME: string;
-  PATH: string;
+  pageName: string;
+  path: string;
+};
+
+/**
+ * ユーザーアイコンパスタイプ
+ */
+export type userIconInfoType = {
+  facePath: string;
+  hairPath: string;
+  iconColor: string;
 };

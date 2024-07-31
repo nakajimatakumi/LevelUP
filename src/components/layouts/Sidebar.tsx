@@ -1,13 +1,9 @@
 import Title from "../elements/Title";
-import { contentType } from "@/types/ContentType";
+import { contentType, userIconInfoType } from "@/types/ContentType";
 import styles from "@/styles/components/layouts/Sidebar.module.css";
 import NavLink from "../modules/NavLink";
-
-type Props = {
-  topLink: contentType;
-  centerLinks: contentType[];
-  bottomLink: contentType;
-};
+import useInit from "@/hooks/useInit";
+import { PAGES } from "@/constants/PageLinksConst";
 
 /**
  * サイドバーコンポーネント
@@ -15,7 +11,19 @@ type Props = {
  * @param centerLinks 中央のリンク
  * @param bottomLink 下部のリンク
  */
-export default function Sidebar({ topLink, centerLinks, bottomLink }: Props) {
+export default function Sidebar() {
+  const { initData } = useInit();
+  const userIconInfo: userIconInfoType =
+    initData.userData.userInfo.userIconInfo;
+  const profilePage = { ...PAGES.PROFILE, userIconInfo };
+  const centerLinks = [
+    PAGES.MY_EXP,
+    PAGES.ALL_EXP,
+    PAGES.BOOKMARK,
+    PAGES.NOTIFICATION,
+    PAGES.SETTING,
+  ];
+
   return (
     <div className={styles.sidebarWrapper}>
       <div className={styles.sidebarContent}>
@@ -23,15 +31,15 @@ export default function Sidebar({ topLink, centerLinks, bottomLink }: Props) {
           <Title />
         </div>
         <div className={styles.topPageLinkWrapper}>
-          <NavLink content={topLink} />
+          <NavLink content={profilePage} />
         </div>
         <nav className={styles.centerPageLinkWrapper}>
           {centerLinks.map((link) => (
-            <NavLink content={link} key={link.PATH} />
+            <NavLink content={link} key={link.path} />
           ))}
         </nav>
         <div className={styles.bottomPageLinkWrapper}>
-          <NavLink content={bottomLink} />
+          <NavLink content={PAGES.POST} />
         </div>
       </div>
     </div>

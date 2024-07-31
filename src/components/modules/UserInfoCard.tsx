@@ -2,7 +2,7 @@ import styles from "@/styles/components/modules/UserInfoCard.module.css";
 import JobBadge from "../elements/JobBadge";
 import IconWithText from "../elements/IconWithText";
 import CategoryBadge from "../elements/CategoryBadge";
-import { PAGES, TEXT_TYPE } from "@/constants/PageLinksConst";
+import { PAGES, TEXT_CATEGORY } from "@/constants/PageLinksConst";
 import { jobInfoType, postInfoType } from "@/types/PostInfoType";
 import { contentType } from "@/types/ContentType";
 import useInit from "@/hooks/useInit";
@@ -22,10 +22,10 @@ export default function UserInfoCard({ postInfo }: Props) {
 
   // ユーザー情報を設定（投稿情報がある場合はそちらを優先）
   const userContent: contentType = {
-    ICON_PATH: postInfo?.userInfo.userIcon ?? userInfo.userIcon,
-    PAGE_NAME: postInfo?.userInfo.userName ?? userInfo.userName,
+    iconPath: postInfo?.userInfo.userIcon ?? userInfo.userIcon,
+    pageName: postInfo?.userInfo.userName ?? userInfo.userName,
     isLink: false,
-    TYPE: TEXT_TYPE.USER_INFO_CARD,
+    type: TEXT_CATEGORY.USER_INFO_CARD,
   };
 
   // 職業情報を設定（投稿情報がある場合はそちらを優先）
@@ -34,8 +34,16 @@ export default function UserInfoCard({ postInfo }: Props) {
 
   // 投稿時間を更新（投稿情報がある場合のみ）
   if (postInfo) {
-    PAGES.POSTED_TIME.PAGE_NAME = postInfo.postedTime;
+    PAGES.POSTED_TIME.pageName = postInfo.postedTime;
   }
+
+  // PAGES.POSTED_TIME を contentType に変換
+  const postedTimeContent: contentType = {
+    iconPath: PAGES.POSTED_TIME.iconPath,
+    pageName: PAGES.POSTED_TIME.pageName,
+    isLink: PAGES.POSTED_TIME.isLink,
+    type: PAGES.POSTED_TIME.TYPE,
+  };
 
   return (
     <div className={styles.card}>
@@ -52,7 +60,7 @@ export default function UserInfoCard({ postInfo }: Props) {
             <CategoryBadge postCategory={postInfo.postCategory} />
           </div>
           <div className={styles.postTime}>
-            <IconWithText content={PAGES.POSTED_TIME} />
+            <IconWithText content={postedTimeContent} />
           </div>
         </>
       )}
