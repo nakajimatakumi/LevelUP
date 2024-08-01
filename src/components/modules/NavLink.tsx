@@ -12,13 +12,13 @@ type Props = {
 
 /**
  * ナビゲーションリンクコンポーネント
- * @param content ページ情報
+ * @param content リンク情報
  */
 export default function NavLink({ content }: Props) {
   return content.linkList ? (
     <Accordion.Root type="single" collapsible className={styles.root}>
       <Accordion.Item value="item-1">
-        <Accordion.Trigger className={styles.trigger}>
+        <Accordion.Trigger className={styles.trigger} data-type={content.type}>
           <IconWithText content={content} />
           <Image
             src={ICON_PATH.CHEVRON}
@@ -28,7 +28,7 @@ export default function NavLink({ content }: Props) {
             className={styles.chevron}
           />
         </Accordion.Trigger>
-        <Accordion.Content className={styles.content}>
+        <Accordion.Content className={styles.content} data-type={content.type}>
           <ul className={styles.menu}>
             {content.linkList?.map((link, index) => (
               <Link href={link.path} className={styles.navLink} key={index}>

@@ -10,4 +10,9 @@ export const ICON_PATH = {
   MANAGE: "/icon/manage.svg",
   VIEW: "/icon/view.svg",
   NOTIFICATION: "/icon/notification.svg",
+  EXPERIENCE: "/icon/experience.svg",
+  REFLECTION: "/icon/reflection.svg",
+  INTROSPECTION: "/icon/introspection.svg",
+  IMPROVEMENT: "/icon/improvement.svg",
+  LESSON: "/icon/lesson.svg",
 };

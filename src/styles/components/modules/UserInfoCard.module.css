@@ -7,13 +7,13 @@
 
   border: 2px solid #69696985;
   border-radius: 10px;
-  box-shadow: 0 7px 7px -6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.5);
 }
 
 .userName {
   position: absolute;
-  top: 5px;
-  left: 20px;
+  top: 2px;
+  left: 12px;
 }
 
 .jobBadge {
@@ -24,19 +24,21 @@
 
 .description {
   position: absolute;
-  top: 61px;
+  top: 65px;
   left: 40px;
 
   width: 420px;
   height: 150px;
 
   margin: 0;
-  line-height: 1.6;
+  line-height: 1.4;
 
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 6;
 
+  font-size: 18px;
+  line-clamp: 6;
   white-space: pre-wrap;
   overflow: hidden;
   word-break: break-word;

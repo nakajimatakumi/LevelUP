@@ -5,7 +5,7 @@ import { userInfoType } from "./UserInfoType";
 export type InitDataType = {
   userData: {
     userInfo: userInfoType;
-    postInfo: postInfoType | null;
+    postInfoList: postInfoType[];
   };
   searchConditions: searchConditionsType;
 };

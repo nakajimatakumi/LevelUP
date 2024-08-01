@@ -4,8 +4,8 @@
   align-items: center;
 
   width: 220px;
-  height: 40px;
-  margin: 10px 0;
+  height: 46px;
+  margin: 7px 0;
   padding: 0 5px;
 
   border-radius: 10px;
@@ -24,18 +24,38 @@
   background-color: #0000001a;
 }
 
+.pageName {
+  max-width: 160px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+}
+
+/**
+ * 呼び出し元タイプ
+ */
+/* USER_INFO_CARD */
 .link[data-type="userInfoCard"],
 .notLink[data-type="userInfoCard"] {
-  height: 35px;
-  font-size: 22px;
+  width: 250px;
+  height: 46px;
+  font-size: 20px;
   column-gap: 8px;
 }
 
-.icon[data-type="userInfoCard"] {
-  width: 32px;
-  height: 32px;
+.link[data-type="userInfoCard"] > *:first-child,
+.notLink[data-type="userInfoCard"] > *:first-child {
+  width: 40px;
+  height: 40px;
 }
 
+.link[data-type="userInfoCard"] > *:last-child,
+.notLink[data-type="userInfoCard"] > *:last-child {
+  max-width: 195px;
+}
+
+/* POSTED_TIME */
 .link[data-type="postedTime"],
 .notLink[data-type="postedTime"] {
   height: 30px;
@@ -44,7 +64,57 @@
   column-gap: 5px;
 }
 
-.icon[data-type="postedTime"] {
-  width: 22px;
+.link[data-type="postedTime"] > *:first-child,
+.notLink[data-type="postedTime"] > *:first-child {
+  width: 30px;
   height: 20px;
+}
+
+/**
+ * コンポーネントサイズ
+ */
+/* LARGE */
+.link[data-type="large"],
+.notLink[data-type="large"] {
+  width: auto;
+  max-width: 250px;
+  height: 46px;
+  font-size: 21px;
+}
+
+.link[data-type="large"] > *:first-child,
+.notLink[data-type="large"] > *:first-child {
+  width: 46px;
+  height: 46px;
+}
+
+.link[data-type="large"] > *:last-child,
+.notLink[data-type="large"] > *:last-child {
+  max-width: 194px;
+}
+
+/* MEDIUM */
+.link[data-type="medium"],
+.notLink[data-type="medium"] {
+  width: auto;
+  max-width: 280px;
+  height: 46px;
+  font-size: 20px;
+}
+
+.link[data-type="medium"] > *:first-child,
+.notLink[data-type="medium"] > *:first-child {
+  width: 45px;
+  height: 45px;
+}
+
+.link[data-type="medium"] > *:last-child,
+.notLink[data-type="medium"] > *:last-child {
+  max-width: 250px;
+}
+
+/* FIT */
+.link[data-type="fit"],
+.notLink[data-type="fit"] {
+  width: auto;
 }

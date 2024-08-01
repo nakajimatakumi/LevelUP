@@ -11,14 +11,13 @@ type Props = {
 /**
  * アイコンとテキストコンポーネント
  * @param content 表示内容
- * @param userId ユーザーID
  */
 export default function IconWithText({ content }: Props) {
   const image = content.userIconInfo ? (
     <UserIcon userIconInfo={content.userIconInfo} />
   ) : (
     <Image
-      src={content.iconPath}
+      src={content.iconPath ?? ""}
       alt={content.pageName}
       width={35}
       height={35}
@@ -30,7 +29,7 @@ export default function IconWithText({ content }: Props) {
   return (
     <>
       {content.isLink ? (
-        <div>
+        <div className={styles.root}>
           <Link
             href={content.path ?? "/"}
             className={styles.link}

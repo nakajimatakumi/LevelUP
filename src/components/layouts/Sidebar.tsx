@@ -1,21 +1,23 @@
 import Title from "../elements/Title";
-import { contentType, userIconInfoType } from "@/types/ContentType";
+import { userIconInfoType } from "@/types/UserInfoType";
 import styles from "@/styles/components/layouts/Sidebar.module.css";
 import NavLink from "../modules/NavLink";
 import useInit from "@/hooks/useInit";
-import { PAGES } from "@/constants/PageLinksConst";
+import { COMPONENT_SIZE, PAGES } from "@/constants/PageLinksConst";
 
 /**
  * サイドバーコンポーネント
- * @param topLink 上部のリンク
- * @param centerLinks 中央のリンク
- * @param bottomLink 下部のリンク
  */
 export default function Sidebar() {
   const { initData } = useInit();
   const userIconInfo: userIconInfoType =
     initData.userData.userInfo.userIconInfo;
-  const profilePage = { ...PAGES.PROFILE, userIconInfo };
+  const profilePage = {
+    ...PAGES.PROFILE,
+    userIconInfo,
+    pageName: initData.userData.userInfo.userName,
+    type: COMPONENT_SIZE.LARGE,
+  };
   const centerLinks = [
     PAGES.MY_EXP,
     PAGES.ALL_EXP,

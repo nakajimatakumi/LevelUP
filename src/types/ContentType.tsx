@@ -1,9 +1,11 @@
+import { userIconInfoType } from "./UserInfoType";
+
 /**
  * IconWithTextコンポーネントのコンテンツタイプ
  */
 export type contentType = {
   path?: string;
-  iconPath: string;
+  iconPath?: string;
   userIconInfo?: userIconInfoType;
   pageName: string;
   isLink: boolean;
@@ -17,13 +19,4 @@ export type contentType = {
 export type linkListType = {
   pageName: string;
   path: string;
-};
-
-/**
- * ユーザーアイコンパスタイプ
- */
-export type userIconInfoType = {
-  facePath: string;
-  hairPath: string;
-  iconColor: string;
 };

@@ -1,7 +1,7 @@
 import styles from "../../styles/components/elements/FeaturedPost.module.css";
 
 type Post = {
-  id: number;
+  postId: string;
   description: string;
 };
 

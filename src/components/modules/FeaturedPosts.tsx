@@ -22,7 +22,7 @@ export default function FeaturedPosts() {
       <ol className={styles.list}>
         {featuredPosts.map((post, index) => (
           <>
-            <FeaturedPost key={post.id} post={post} index={index} />
+            <FeaturedPost key={index} post={post} index={index} />
             {index < 4 && <Separator.Root className={styles.separator} />}
           </>
         ))}

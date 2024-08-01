@@ -1,8 +1,9 @@
 .trigger {
-  height: 40px;
+  height: 46px;
   padding: 0;
   display: flex;
   align-items: center;
+  position: relative;
 
   background-color: transparent;
   border: none;
@@ -13,8 +14,28 @@
   cursor: pointer;
 }
 
+.chevron {
+  position: absolute;
+  right: 0;
+  padding: 0 10px;
+}
+
+.trigger[data-type="large"] {
+  display: flex;
+  align-items: center;
+}
+
+.trigger[data-type="large"] > .chevron {
+  position: static;
+  margin-left: auto;
+}
+
 .trigger:hover {
   background-color: #0000001a;
+}
+
+.trigger[data-state="open"] > .chevron {
+  transform: rotate(180deg);
 }
 
 .navLink {
@@ -36,15 +57,6 @@
   background-color: #0000001a;
 }
 
-.chevron {
-  margin-left: -30px;
-  padding: 0 6px;
-}
-
-.trigger[data-state="open"] > .chevron {
-  transform: rotate(180deg);
-}
-
 .menu {
   position: relative;
   margin: 3px 5px;
@@ -63,4 +75,8 @@
   background-color: #c2c2c2;
   border-left: 3px solid #c2c2c2;
   border-radius: 30px;
+}
+
+.content[data-type="large"] > .menu {
+  margin: 8px 10px;
 }

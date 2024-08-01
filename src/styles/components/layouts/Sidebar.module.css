@@ -22,7 +22,7 @@
 .topPageLinkWrapper {
   position: absolute;
   top: 150px;
-  left: 40px;
+  left: 30px;
 }
 
 .centerPageLinkWrapper {
@@ -36,5 +36,5 @@
 .bottomPageLinkWrapper {
   position: absolute;
   top: 800px;
-  left: 100px;
+  left: 130px;
 }

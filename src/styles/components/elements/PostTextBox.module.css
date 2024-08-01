@@ -1,0 +1,91 @@
+/* 共通ボックススタイル */
+.experienceContent,
+.reflection,
+.lessonContents {
+  border: 2px solid #69696985;
+  border-radius: 10px;
+  box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  width: fit-content;
+  line-height: 1.4;
+}
+
+.experience {
+  position: relative;
+}
+
+.flowLineWrapper {
+  position: absolute;
+  top: 0;
+  left: -55px;
+}
+
+/* 経験 */
+.experienceContent {
+  padding: 15px 18px;
+}
+
+/* 内省 */
+.reflection {
+  padding: 15px 15px 15px 30px;
+}
+
+.reflectionContainer,
+.improvementContainer {
+  position: relative;
+}
+
+.reflectionContainer > *:first-child,
+.improvementContainer > *:first-child {
+  position: absolute;
+  top: -4px;
+  left: -20px;
+}
+
+.positiveContent,
+.negativeContent,
+.improvementContent {
+  margin: 0 0 0 20px;
+  padding: 0;
+}
+
+.positiveContent li::marker,
+.negativeContent li::marker,
+.improvementContent li::marker {
+  color: #555555;
+}
+
+.positiveContent {
+  color: #8d7777;
+}
+
+.negativeContent {
+  color: #77898d;
+}
+
+/* セパレータ */
+.separator {
+  left: 0;
+  width: calc(100% + 45px);
+  border-top: 2px dashed #69696955;
+  margin: 15px -15px 15px -30px;
+  border-image: repeating-linear-gradient(
+      to right,
+      #69696955 0,
+      #69696955 10px,
+      transparent 10px,
+      transparent 20px
+    )
+    1;
+}
+
+/* 教訓 */
+.lessonContents {
+  padding: 15px 15px 15px 35px;
+}
+
+.lessonContent {
+  margin: 0;
+  padding: 2px 0;
+  white-space: pre-wrap;
+}

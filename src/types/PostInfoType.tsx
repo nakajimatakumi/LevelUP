@@ -1,16 +1,19 @@
-import { userInfoType } from "./UserInfoType";
+import { userInfoType, jobInfoType, userIconInfoType } from "./UserInfoType";
 
+/**
+ * 投稿情報タイプ
+ */
 export type postInfoType = {
-  postedUserId: string;
-  userInfo: userInfoType;
-  jobInfo: jobInfoType;
-  description: string;
+  postId: string;
   postedTime: string;
-  postCategory: string;
+  category: string;
+  experience: string;
+  reflections: reflectionsType;
+  improvementsList: string[];
+  lessonsList: string[];
 };
 
-export type jobInfoType = {
-  jobName: string;
-  jobCategory: string;
-  jobColor: string;
+type reflectionsType = {
+  positiveList: string[];
+  negativeList: string[];
 };

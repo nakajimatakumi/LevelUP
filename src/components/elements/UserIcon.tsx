@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "@/styles/components/elements/UserIcon.module.css";
-import { userIconInfoType } from "@/types/ContentType";
+import { userIconInfoType } from "@/types/UserInfoType";
 
 type Props = {
   userIconInfo: userIconInfoType;

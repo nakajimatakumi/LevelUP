@@ -8,6 +8,13 @@ export const TEXT_CATEGORY = {
   USER_INFO_CARD: "userInfoCard",
 };
 
+export const COMPONENT_SIZE = {
+  LARGE: "large",
+  MEDIUM: "medium",
+  SMALL: "small",
+  FIT: "fit",
+};
+
 /**
  * ページ
  */
@@ -64,6 +71,7 @@ export const PAGES = {
     iconPath: ICON_PATH.EDIT,
     pageName: "記録する",
     isLink: true,
+    type: COMPONENT_SIZE.FIT,
   },
 
   POSTED_TIME: {
