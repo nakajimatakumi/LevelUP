@@ -1,7 +1,17 @@
+.trigger {
+  border: none;
+  outline: none;
+
+  all: inherit;
+  cursor: pointer;
+  margin-bottom: 15px;
+}
+
 .experience {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 15px;
+  margin-left: -12px;
 }
 .reflectionWrapper {
   display: grid;
@@ -34,6 +44,7 @@
 /* 内省 */
 .reflection {
   padding: 15px 15px 15px 30px;
+  margin-bottom: 15px;
 }
 
 .reflectionContainer,

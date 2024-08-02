@@ -4,6 +4,9 @@ import IconWithText from "../elements/IconWithText";
 import { userInfoType } from "@/types/UserInfoType";
 import { COMPONENT_SIZE } from "@/constants/PageLinksConst";
 import PostTextBox from "../elements/PostTextBox";
+import Image from "next/image";
+import { ICON_PATH } from "@/constants/IconPathConst";
+import * as Accordion from "@radix-ui/react-accordion";
 
 type Props = {
   postInfo: postInfoType;
@@ -20,13 +23,26 @@ export default function Post({ postInfo, userInfo }: Props) {
   };
   return (
     <div className={styles.root}>
-      <div className={styles.userInfo}>
-        <IconWithText content={userContent} />
-      </div>
-      <div className={styles.buttons}></div>
-      <div className={styles.textboxContainer}>
-        <PostTextBox postInfo={postInfo} />
-      </div>
+      <Accordion.Root type="single" collapsible className={styles.root}>
+        <Accordion.Item value="item-1">
+          <div className={styles.userInfo}>
+            <IconWithText content={userContent} />
+            <Accordion.Trigger className={styles.trigger}>
+              <Image
+                src={ICON_PATH.CHEVRON}
+                alt="chevron"
+                width={18}
+                height={18}
+                className={styles.chevron}
+              />
+            </Accordion.Trigger>
+          </div>
+          <div className={styles.buttons}></div>
+          <div className={styles.textboxContainer}>
+            <PostTextBox postInfo={postInfo} />
+          </div>
+        </Accordion.Item>
+      </Accordion.Root>
     </div>
   );
 }

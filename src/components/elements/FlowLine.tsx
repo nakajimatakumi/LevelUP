@@ -17,7 +17,7 @@ export default function FlowLine({ iconPath }: Props) {
       <Separator.Root
         className={
           iconPath === ICON_PATH.EXPERIENCE
-            ? styles.expFirstLine
+            ? styles.startFirstLine
             : styles.firstLine
         }
       />
@@ -31,7 +31,7 @@ export default function FlowLine({ iconPath }: Props) {
       <Separator.Root
         className={
           iconPath === ICON_PATH.LESSON
-            ? styles.lessonSecondLine
+            ? styles.endSecondLine
             : styles.secondLine
         }
       />
