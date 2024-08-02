@@ -1,3 +1,19 @@
+.experience {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+}
+.reflectionWrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+}
+.lesson {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+}
+
 /* 共通ボックススタイル */
 .experienceContent,
 .reflection,
@@ -8,16 +24,6 @@
   margin: 0;
   width: fit-content;
   line-height: 1.4;
-}
-
-.experience {
-  position: relative;
-}
-
-.flowLineWrapper {
-  position: absolute;
-  top: 0;
-  left: -55px;
 }
 
 /* 経験 */

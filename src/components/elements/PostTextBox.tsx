@@ -17,52 +17,54 @@ export default function PostTextBox({ postInfo }: Props) {
   return (
     <>
       <div className={styles.experience}>
-        <div className={styles.flowLineWrapper}>
-          <FlowLine iconPath={ICON_PATH.EXPERIENCE} />
-        </div>
+        <FlowLine iconPath={ICON_PATH.EXPERIENCE} />
         <p className={styles.experienceContent}>{postInfo.experience}</p>
       </div>
-      <div className={styles.reflection}>
-        <div className={styles.reflectionContainer}>
-          <Image
-            src="/icon/introspection.svg"
-            alt="introspection"
-            width={25}
-            height={25}
-          />
-          <ul className={styles.positiveContent}>
-            {postInfo.reflections.positiveList.map((positive, index) => (
-              <li key={index} className={styles.positiveContent}>
-                {positive}
-              </li>
-            ))}
-          </ul>
-          <ul className={styles.negativeContent}>
-            {postInfo.reflections.negativeList.map((negative, index) => (
-              <li key={index} className={styles.negativeContent}>
-                {negative}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <Separator className={styles.separator} />
-        <div className={styles.improvementContainer}>
-          <Image
-            src="/icon/improvement.svg"
-            alt="improvement"
-            width={25}
-            height={25}
-          />
-          <ul className={styles.improvementContent}>
-            {postInfo.improvementsList.map((improvement, index) => (
-              <li key={index} className={styles.improvementContent}>
-                {improvement}
-              </li>
-            ))}
-          </ul>
+      <div className={styles.reflectionWrapper}>
+        <FlowLine iconPath={ICON_PATH.REFLECTION} />
+        <div className={styles.reflection}>
+          <div className={styles.reflectionContainer}>
+            <Image
+              src={ICON_PATH.INTROSPECTION}
+              alt="introspection"
+              width={25}
+              height={25}
+            />
+            <ul className={styles.positiveContent}>
+              {postInfo.reflections.positiveList.map((positive, index) => (
+                <li key={index} className={styles.positiveContent}>
+                  {positive}
+                </li>
+              ))}
+            </ul>
+            <ul className={styles.negativeContent}>
+              {postInfo.reflections.negativeList.map((negative, index) => (
+                <li key={index} className={styles.negativeContent}>
+                  {negative}
+                </li>
+              ))}
+            </ul>
+          </div>
+          <Separator className={styles.separator} />
+          <div className={styles.improvementContainer}>
+            <Image
+              src={ICON_PATH.IMPROVEMENT}
+              alt="improvement"
+              width={25}
+              height={25}
+            />
+            <ul className={styles.improvementContent}>
+              {postInfo.improvementsList.map((improvement, index) => (
+                <li key={index} className={styles.improvementContent}>
+                  {improvement}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </div>
       <div className={styles.lesson}>
+        <FlowLine iconPath={ICON_PATH.LESSON} />
         <ul className={styles.lessonContents}>
           {postInfo.lessonsList.map((lesson, index) => (
             <li key={index} className={styles.lessonContent}>
