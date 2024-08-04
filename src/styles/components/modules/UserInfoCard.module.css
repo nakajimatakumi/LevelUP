@@ -53,6 +53,6 @@
 
 .postTime {
   position: absolute;
-  bottom: -2px;
-  right: 25px;
+  bottom: 1px;
+  right: 10px;
 }

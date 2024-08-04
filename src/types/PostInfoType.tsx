@@ -1,4 +1,16 @@
-import { userInfoType, jobInfoType, userIconInfoType } from "./UserInfoType";
+import { contentType } from "./ContentType";
+import { jobInfoType } from "./UserInfoType";
+
+/**
+ * 表示用投稿情報タイプ
+ */
+export type dispPostType = {
+  userInfo: contentType;
+  jobInfo: jobInfoType;
+  description: string;
+  category?: string;
+  postedTime?: contentType;
+};
 
 /**
  * 投稿情報タイプ

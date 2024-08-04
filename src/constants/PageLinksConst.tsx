@@ -79,7 +79,7 @@ export const PAGES = {
     iconPath: ICON_PATH.CLOCK,
     pageName: "投稿時間",
     isLink: false,
-    TYPE: TEXT_CATEGORY.POSTED_TIME,
+    type: TEXT_CATEGORY.POSTED_TIME,
   },
 };
 

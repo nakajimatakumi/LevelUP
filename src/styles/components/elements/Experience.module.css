@@ -1,0 +1,16 @@
+.experience {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+  margin-left: -12px;
+}
+
+.experienceContent {
+  border: 2px solid #69696985;
+  border-radius: 10px;
+  box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.5);
+  margin: 0;
+  width: fit-content;
+  line-height: 1.4;
+  padding: 15px 18px;
+}

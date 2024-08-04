@@ -1,0 +1,44 @@
+/* レイアウト */
+.reflectionWrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 15px;
+}
+
+/* メインコンテナ */
+.reflection {
+  border: 2px solid #69696985;
+  border-radius: 10px;
+  box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.5);
+  padding: 15px 15px 15px 30px;
+  margin: 0 0 15px 0;
+  width: fit-content;
+  line-height: 1.4;
+}
+
+.container {
+  position: relative;
+}
+
+/* アイコン位置調整 */
+.container > *:first-child {
+  position: absolute;
+  top: -4px;
+  left: -20px;
+}
+
+/* セパレータ */
+.separator {
+  left: 0;
+  width: calc(100% + 45px);
+  margin: 15px -15px 15px -30px;
+  border-top: 2px dashed #69696955;
+  border-image: repeating-linear-gradient(
+      to right,
+      #69696955 0,
+      #69696955 10px,
+      transparent 10px,
+      transparent 20px
+    )
+    1;
+}

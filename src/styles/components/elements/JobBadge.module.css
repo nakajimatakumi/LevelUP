@@ -23,8 +23,8 @@
 }
 
 .jobIcons {
-  width: 25px;
-  height: 25px;
+  width: 22px;
+  height: 22px;
 
   -webkit-mask-image: var(--jobIconPath);
   -webkit-mask-size: contain;

@@ -19,14 +19,14 @@ export default function FeaturedPosts() {
       <div className={styles.title}>
         <p>{COMPONENT_LABEL.FEATURED_POSTS}</p>
       </div>
-      <ol className={styles.list}>
+      <ul className={styles.list}>
         {featuredPosts.map((post, index) => (
           <>
-            <FeaturedPost key={index} post={post} index={index} />
+            <FeaturedPost post={post} index={index} />
             {index < 4 && <Separator.Root className={styles.separator} />}
           </>
         ))}
-      </ol>
+      </ul>
     </div>
   );
 }

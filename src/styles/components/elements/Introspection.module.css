@@ -1,0 +1,28 @@
+.reflectionContainer {
+  position: relative;
+}
+
+.reflectionContainer > *:first-child {
+  position: absolute;
+  top: -4px;
+  left: -20px;
+}
+
+.positiveContent,
+.negativeContent {
+  margin: 0 0 0 20px;
+  padding: 0;
+}
+
+.positiveContent li::marker,
+.negativeContent li::marker {
+  color: #555555;
+}
+
+.positiveContent {
+  color: #8d7777;
+}
+
+.negativeContent {
+  color: #77898d;
+}

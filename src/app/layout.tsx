@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Kosugi_Maru } from "next/font/google";
 import styles from "../styles/global.module.css";
 import Sidebar from "@/components/layouts/Sidebar";
-import { PAGES } from "@/constants/PageLinksConst";
 
 const kosugiMaru = Kosugi_Maru({
   weight: "400",

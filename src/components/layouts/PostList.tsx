@@ -1,7 +1,6 @@
 import Post from "@/components/modules/Post";
 import useInit from "@/hooks/useInit";
 import styles from "@/styles/components/layouts/PostList.module.css";
-import FlowLine from "../elements/FlowLine";
 
 /**
  * 投稿一覧コンポーネント

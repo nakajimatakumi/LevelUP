@@ -44,6 +44,7 @@
   background-color: #a5a5a5;
   border-radius: 50%;
 }
+
 .endSecondLine::after {
   content: "";
   position: absolute;
