@@ -37,7 +37,13 @@ export default function DropdownList({ listItems, name, isGroup }: Props) {
           </Select.Icon>
         </Select.Trigger>
         <Select.Portal>
-          <Select.Content className={styles.content}>
+          <Select.Content
+            className={styles.content}
+            position="popper"
+            side="bottom"
+            align="end"
+            sideOffset={-2}
+          >
             <Select.Viewport className={styles.viewport}>
               {listItems.map((item) => (
                 <Select.Item

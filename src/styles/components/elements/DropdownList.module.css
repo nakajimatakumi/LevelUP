@@ -37,11 +37,11 @@
 .chevron {
   position: absolute;
   right: 7px;
+  transition: transform 0.15s ease;
 }
 
 .content {
   width: 140px;
-  margin-top: 25%;
   padding: 5px 10px;
 
   background-color: #eaeaea;
@@ -62,4 +62,19 @@
   padding: 4px 2px;
   background-color: #0000001a;
   border-radius: 5px;
+}
+
+.content[data-state="open"] {
+  animation: slideDown 0.15s ease;
+}
+
+@keyframes slideDown {
+  from {
+    max-height: 0;
+    opacity: 0;
+  }
+  to {
+    max-height: 200px;
+    opacity: 1;
+  }
 }

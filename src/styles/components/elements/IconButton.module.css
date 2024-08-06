@@ -14,3 +14,32 @@
 .root:hover {
   background-color: #00000010;
 }
+
+.iconWrapper {
+  position: relative;
+  width: 24px;
+  height: 24px;
+}
+
+.icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+}
+
+.defaultIcon {
+  opacity: 1;
+}
+
+.filledIcon {
+  opacity: 0;
+}
+
+.hideIcon {
+  opacity: 0;
+}
+
+.showIcon {
+  opacity: 1;
+}

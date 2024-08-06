@@ -6,11 +6,6 @@
   cursor: pointer;
 }
 
-.chevron:hover {
-  background-color: #00000010;
-  border-radius: 50%;
-}
-
 .userInfo {
   display: inline-flex;
   align-items: center;
@@ -26,6 +21,12 @@
 
 .chevron {
   padding: 6px;
+  transition: transform 0.1s ease-in-out;
+}
+
+.chevron:hover {
+  background-color: #00000010;
+  border-radius: 50%;
 }
 
 .trigger[data-state="open"] > .chevron {
