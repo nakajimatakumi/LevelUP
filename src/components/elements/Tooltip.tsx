@@ -7,6 +7,11 @@ type Props = {
   text: string;
 };
 
+/**
+ * ツールチップコンポーネント
+ * @param children 子要素
+ * @param text ツールチップテキスト
+ */
 export default function Tooltip({ children, text }: Props) {
   return (
     <RadixTooltip.Provider>

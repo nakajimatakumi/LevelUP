@@ -14,7 +14,9 @@ type Props = {
  * @param jobColor バッジの色
  */
 export default function JobBadge({ jobName, jobCategory, jobColor }: Props) {
+  /* 文字色を取得 */
   const color = useConvertColor(jobColor);
+  /* 職業アイコンのパスを取得 */
   const jobIconPath = `url(/job/${jobCategory}.svg)`;
 
   return (

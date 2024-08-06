@@ -7,6 +7,10 @@ type Props = {
   lessonsList: string[];
 };
 
+/**
+ * 教訓コンポーネント
+ * @param lessonsList 教訓リスト
+ */
 export default function Lesson({ lessonsList }: Props) {
   return (
     <div className={styles.lesson}>

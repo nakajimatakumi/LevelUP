@@ -7,11 +7,17 @@ import styles from "@/styles/components/layouts/PostList.module.css";
  */
 export default function PostList() {
   const { initData } = useInit();
-  const { postList } = initData.userData;
+  const { userInfo, postList } = initData;
+  const loginUserId = userInfo.userId;
   return (
     <div className={styles.root}>
       {postList.map((post, index) => (
-        <Post key={index} postInfo={post.postInfo} userInfo={post.userInfo} />
+        <Post
+          key={index}
+          postInfo={post.postInfo}
+          userInfo={post.userInfo}
+          loginUserId={loginUserId}
+        />
       ))}
     </div>
   );

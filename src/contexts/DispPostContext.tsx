@@ -1,11 +1,11 @@
 "use client";
 
 import { contentType } from "@/types/ContentType";
-import { jobInfoType } from "@/types/UserInfoType";
+import { jobInfoType, userInfoType } from "@/types/UserInfoType";
 import { createContext, useState } from "react";
 import useInit from "@/hooks/useInit";
 import useFormatPostInfo from "@/hooks/useFormatPostInfo";
-import { dispPostType } from "@/types/PostInfoType";
+import { dispPostType, postInfoType } from "@/types/PostInfoType";
 
 // デフォルト値
 const defaultData = {
@@ -19,10 +19,10 @@ const defaultData = {
  */
 export const dispPostContext = createContext<{
   dispPost: dispPostType;
-  setDispPost: React.Dispatch<React.SetStateAction<dispPostType>>;
+  handlePostClick: (formattedPostInfo: dispPostType) => void;
 }>({
   dispPost: defaultData,
-  setDispPost: () => {},
+  handlePostClick: () => {},
 });
 
 /**
@@ -34,16 +34,21 @@ export const DispPostProvider = ({
 }: {
   children: React.ReactNode;
 }) => {
+  /* 初期データ取得処理 */
   const { initData } = useInit();
-  const { userInfo } = initData.userData;
-  const formatPostInfo = useFormatPostInfo(userInfo, null);
+  const { userInfo } = initData;
+  /* カード表示データの状態 */
+  const [dispPost, setDispPost] = useState<dispPostType>(
+    useFormatPostInfo(userInfo, null)
+  );
 
-  const [dispPost, setDispPost] = useState<dispPostType>({
-    ...formatPostInfo,
-  });
+  /* 投稿クリック時処理 */
+  const handlePostClick = (formattedPostInfo: dispPostType) => {
+    setDispPost(formattedPostInfo);
+  };
 
   return (
-    <dispPostContext.Provider value={{ dispPost, setDispPost }}>
+    <dispPostContext.Provider value={{ dispPost, handlePostClick }}>
       {children}
     </dispPostContext.Provider>
   );

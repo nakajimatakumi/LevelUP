@@ -29,9 +29,9 @@ export default function FeaturedPost({ post, index }: Props) {
     return fullWidthNumbers[index];
   };
   return (
-    <li className={styles.item} key={post.postId}>
+    <div className={styles.item}>
       <p className={styles.number}>{toFullWidth(index + 1)}</p>
       <p className={styles.line}>{post.description}</p>
-    </li>
+    </div>
   );
 }

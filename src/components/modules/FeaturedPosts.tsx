@@ -10,9 +10,9 @@ import { COMPONENT_LABEL } from "@/constants/PageLinksConst";
  */
 export default function FeaturedPosts() {
   /** 初期データ取得関数 */
-  const initData = useInit();
+  const { initData } = useInit();
   /** 注目の経験 */
-  const { featuredPosts } = initData.initData.userData;
+  const featuredPosts = initData.featuredPosts;
 
   return (
     <div className={styles.root}>
@@ -21,10 +21,10 @@ export default function FeaturedPosts() {
       </div>
       <ul className={styles.list}>
         {featuredPosts.map((post, index) => (
-          <>
-            <FeaturedPost post={post} index={index} />
+          <li key={index} className={styles.item}>
+            <FeaturedPost post={post} index={index} key={index} />
             {index < 4 && <Separator.Root className={styles.separator} />}
-          </>
+          </li>
         ))}
       </ul>
     </div>

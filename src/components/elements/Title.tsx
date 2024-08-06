@@ -6,7 +6,6 @@ import Link from "next/link";
 
 /**
  * タイトルコンポーネント
- * @todo リンクにする
  */
 export default function Title() {
   return (

@@ -112,6 +112,7 @@
 .notLink[data-type="medium"] > *:first-child {
   width: 45px;
   height: 45px;
+  min-width: 45px;
 }
 
 .link[data-type="medium"] > *:last-child,

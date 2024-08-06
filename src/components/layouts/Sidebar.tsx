@@ -4,21 +4,25 @@ import styles from "@/styles/components/layouts/Sidebar.module.css";
 import NavLink from "../modules/NavLink";
 import useInit from "@/hooks/useInit";
 import { COMPONENT_SIZE, PAGES } from "@/constants/PageLinksConst";
+import { contentType } from "@/types/ContentType";
 
 /**
  * サイドバーコンポーネント
  */
 export default function Sidebar() {
+  /* 初期データ取得処理 */
   const { initData } = useInit();
-  const userIconInfo: userIconInfoType =
-    initData.userData.userInfo.userIconInfo;
-  const profilePage = {
+
+  /* プロフィール */
+  const profileContent: contentType = {
     ...PAGES.PROFILE,
-    userIconInfo,
-    pageName: initData.userData.userInfo.userName,
+    userIconInfo: initData.userInfo.userIconInfo,
+    pageName: initData.userInfo.userName,
     type: COMPONENT_SIZE.LARGE,
   };
-  const centerLinks = [
+
+  /* センターページリンク */
+  const centerLinks: contentType[] = [
     PAGES.MY_EXP,
     PAGES.ALL_EXP,
     PAGES.BOOKMARK,
@@ -33,7 +37,7 @@ export default function Sidebar() {
           <Title />
         </div>
         <div className={styles.topPageLinkWrapper}>
-          <NavLink content={profilePage} />
+          <NavLink content={profileContent} />
         </div>
         <nav className={styles.centerPageLinkWrapper}>
           {centerLinks.map((link) => (

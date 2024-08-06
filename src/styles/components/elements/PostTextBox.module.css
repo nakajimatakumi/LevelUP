@@ -4,5 +4,17 @@
 
   all: inherit;
   cursor: pointer;
-  margin-bottom: 15px;
+
+  width: calc(100% - 70px);
+  line-height: 1.4;
+  white-space: pre-wrap;
+  margin-left: 12px;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0 0 0;
+  padding: 0;
+  gap: 15px;
 }

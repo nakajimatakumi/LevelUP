@@ -4,7 +4,6 @@
  * @return 文字色
  */
 export default function useConvertColor(hex: string): string {
-  console.log("DEBUG LOG: ConvertColor");
   const amount: number = -85;
   const clamp = (value: number): number => Math.max(0, Math.min(255, value));
   const num: number = parseInt(hex.slice(1), 16);

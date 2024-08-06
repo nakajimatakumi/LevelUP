@@ -19,6 +19,9 @@ export type postInfoType = {
   postId: string;
   postedTime: string;
   category: string;
+  favoriteNum: string;
+  isFavorite: string;
+  isBookmark: string;
   experience: string;
   reflections: reflectionsType;
   improvementsList: string[];

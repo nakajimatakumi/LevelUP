@@ -1,6 +1,6 @@
 export const ICON_PATH = {
   CHEVRON: "/icon/chevron.svg",
-  BOOKMARK: "/icon/bookmark.svg",
+  BOOKMARK_MENU: "/icon/bookmark_menu.svg",
   HOME: "/icon/home.svg",
   CLOCK: "/icon/clock.svg",
   EDIT: "/icon/edit.svg",
@@ -15,4 +15,7 @@ export const ICON_PATH = {
   INTROSPECTION: "/icon/introspection.svg",
   IMPROVEMENT: "/icon/improvement.svg",
   LESSON: "/icon/lesson.svg",
+  DELETE: "/icon/delete.svg",
+  FAVORITE: "/icon/favorite.svg",
+  BOOKMARK: "/icon/bookmark.svg",
 };

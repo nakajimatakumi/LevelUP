@@ -4,10 +4,15 @@ import useInit from "@/hooks/useInit";
 
 type SearchConditionKey = "category" | "job" | "sort";
 
+/**
+ * 検索条件リストコンポーネント
+ */
 export default function SearchConditionList() {
+  /* 初期データ取得処理 */
   const { initData } = useInit();
   const { searchConditions } = initData;
 
+  /* 検索条件キー */
   const searchConditionKeys: SearchConditionKey[] = ["category", "job", "sort"];
 
   return (

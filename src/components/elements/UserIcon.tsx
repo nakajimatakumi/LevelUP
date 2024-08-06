@@ -8,8 +8,8 @@ type Props = {
 
 /**
  * ユーザーアイコンコンポーネント
+ * @param userIconInfo ユーザーアイコン情報
  */
-
 export default function UserIcon({ userIconInfo }: Props) {
   return (
     <div className={styles.icon}>

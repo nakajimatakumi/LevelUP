@@ -43,7 +43,7 @@ export const PAGES = {
   },
   BOOKMARK: {
     path: "/bookmark",
-    iconPath: ICON_PATH.BOOKMARK,
+    iconPath: ICON_PATH.BOOKMARK_MENU,
     pageName: "ブックマーク",
     isLink: true,
   },

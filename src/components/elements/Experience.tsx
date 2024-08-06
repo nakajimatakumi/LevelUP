@@ -7,6 +7,10 @@ type Props = {
   experience: string;
 };
 
+/**
+ * 経験コンポーネント
+ * @param experience 経験内容 経験コンポーネント
+ */
 export default function Experience({ experience }: Props) {
   return (
     <div className={styles.experience}>

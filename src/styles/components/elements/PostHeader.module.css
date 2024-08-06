@@ -1,0 +1,33 @@
+.trigger {
+  border: none;
+  outline: none;
+
+  all: inherit;
+  cursor: pointer;
+}
+
+.chevron:hover {
+  background-color: #00000010;
+  border-radius: 50%;
+}
+
+.userInfo {
+  display: inline-flex;
+  align-items: center;
+}
+
+.buttonContainer {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 10px;
+  transform: translateY(1px);
+}
+
+.chevron {
+  padding: 6px;
+}
+
+.trigger[data-state="open"] > .chevron {
+  transform: rotate(180deg);
+}

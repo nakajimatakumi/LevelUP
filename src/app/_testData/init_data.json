@@ -14,6 +14,75 @@
       "iconColor": "#DDC4C4"
     }
   },
+  "searchConditions": {
+    "category": {
+      "name": "カテゴリ",
+      "listItems": [
+        {
+          "name": "仕事",
+          "value": "job"
+        },
+        {
+          "name": "勉強",
+          "value": "study"
+        },
+        {
+          "name": "家事",
+          "value": "housework"
+        },
+        {
+          "name": "趣味",
+          "value": "hobby"
+        },
+        {
+          "name": "その他",
+          "value": "other"
+        }
+      ]
+    },
+    "job": {
+      "name": "職業",
+      "listItems": [
+        {
+          "name": "エンジニア",
+          "value": "engineer"
+        },
+        {
+          "name": "デザイナー",
+          "value": "designer"
+        },
+        {
+          "name": "マーケティング",
+          "value": "marketing"
+        },
+        {
+          "name": "先生",
+          "value": "teacher"
+        },
+        {
+          "name": "医者",
+          "value": "doctor"
+        },
+        {
+          "name": "弁護士",
+          "value": "lawyer"
+        }
+      ]
+    },
+    "sort": {
+      "name": "並び順",
+      "listItems": [
+        {
+          "name": "新着順",
+          "value": "new"
+        },
+        {
+          "name": "人気順",
+          "value": "popular"
+        }
+      ]
+    }
+  },
   "postList": [
     {
       "userInfo": {
@@ -35,6 +104,9 @@
         "postId": "000000000000",
         "postedTime": "2024-05-01 10:00:00",
         "category": "趣味",
+        "isFavorite": "false",
+        "isBookmark": "true",
+        "favoriteNum": "0",
         "experience": "手作りキャンドルのワークショップに参加して、自分でキャンドルを作ってみた。\nまずは講師の方にキャンドルの基本的な作り方を学んだ。\nそのあと、好きな色や香りで材料を選んで、混ぜ合わせた。\n型に流し込む時に、気泡が入らないように作るのが難しかった。\n他の人より時間はかかったけど、理想通りにつくれた。",
         "reflections": {
           "positiveList": [
@@ -77,6 +149,9 @@
         "postId": "000000000033",
         "postedTime": "2024-07-20 09:15:00",
         "category": "仕事",
+        "isFavorite": "true",
+        "isBookmark": "false",
+        "favoriteNum": "1200",
         "experience": "大規模なシステム開発プロジェクトのキックオフミーティングを主催した。\n多様なステークホルダーが参加し、プロジェクトの目標や課題について議論した。\n予想以上に意見が分かれ、調整に時間がかかったが、最終的に全員の合意を得ることができた。",
         "reflections": {
           "positiveList": [
@@ -121,6 +196,9 @@
         "postId": "000000000044",
         "postedTime": "2024-08-10 15:45:00",
         "category": "家庭",
+        "isFavorite": "true",
+        "isBookmark": "true",
+        "favoriteNum": "123",
         "experience": "子供たちと一緒に初めての家庭菜園に挑戦した。\nトマトとキュウリの苗を植え、毎日水やりと観察を行った。\n虫害に悩まされたが、オーガニックな対策方法を調べて実践。\n2ヶ月後、初めての収穫を家族で喜んだ。",
         "reflections": {
           "positiveList": [
@@ -163,9 +241,12 @@
         }
       },
       "postInfo": {
-        "postId": "000000000000",
+        "postId": "000000000001",
         "postedTime": "2024-05-01 10:00:00",
         "category": "趣味",
+        "isFavorite": "false",
+        "isBookmark": "true",
+        "favoriteNum": "0",
         "experience": "手作りキャンドルのワークショップに参加して、自分でキャンドルを作ってみた。\nまずは講師の方にキャンドルの基本的な作り方を学んだ。\nそのあと、好きな色や香りで材料を選んで、混ぜ合わせた。\n型に流し込む時に、気泡が入らないように作るのが難しかった。\n他の人より時間はかかったけど、理想通りにつくれた。",
         "reflections": {
           "positiveList": [
@@ -205,9 +286,12 @@
         }
       },
       "postInfo": {
-        "postId": "000000000033",
+        "postId": "000000000034",
         "postedTime": "2024-07-20 09:15:00",
         "category": "仕事",
+        "isFavorite": "true",
+        "isBookmark": "false",
+        "favoriteNum": "1200",
         "experience": "大規模なシステム開発プロジェクトのキックオフミーティングを主催した。\n多様なステークホルダーが参加し、プロジェクトの目標や課題について議論した。\n予想以上に意見が分かれ、調整に時間がかかったが、最終的に全員の合意を得ることができた。",
         "reflections": {
           "positiveList": [
@@ -249,9 +333,12 @@
         }
       },
       "postInfo": {
-        "postId": "000000000044",
+        "postId": "000000000045",
         "postedTime": "2024-08-10 15:45:00",
         "category": "家庭",
+        "isFavorite": "true",
+        "isBookmark": "true",
+        "favoriteNum": "123",
         "experience": "子供たちと一緒に初めての家庭菜園に挑戦した。\nトマトとキュウリの苗を植え、毎日水やりと観察を行った。\n虫害に悩まされたが、オーガニックな対策方法を調べて実践。\n2ヶ月後、初めての収穫を家族で喜んだ。",
         "reflections": {
           "positiveList": [
@@ -294,9 +381,12 @@
         }
       },
       "postInfo": {
-        "postId": "000000000000",
+        "postId": "000000000003",
         "postedTime": "2024-05-01 10:00:00",
         "category": "趣味",
+        "isFavorite": "false",
+        "isBookmark": "true",
+        "favoriteNum": "0",
         "experience": "手作りキャンドルのワークショップに参加して、自分でキャンドルを作ってみた。\nまずは講師の方にキャンドルの基本的な作り方を学んだ。\nそのあと、好きな色や香りで材料を選んで、混ぜ合わせた。\n型に流し込む時に、気泡が入らないように作るのが難しかった。\n他の人より時間はかかったけど、理想通りにつくれた。",
         "reflections": {
           "positiveList": [
@@ -336,9 +426,12 @@
         }
       },
       "postInfo": {
-        "postId": "000000000033",
+        "postId": "000000000035",
         "postedTime": "2024-07-20 09:15:00",
         "category": "仕事",
+        "isFavorite": "true",
+        "isBookmark": "false",
+        "favoriteNum": "1200",
         "experience": "大規模なシステム開発プロジェクトのキックオフミーティングを主催した。\n多様なステークホルダーが参加し、プロジェクトの目標や課題について議論した。\n予想以上に意見が分かれ、調整に時間がかかったが、最終的に全員の合意を得ることができた。",
         "reflections": {
           "positiveList": [
@@ -380,9 +473,12 @@
         }
       },
       "postInfo": {
-        "postId": "000000000044",
+        "postId": "000000000046",
         "postedTime": "2024-08-10 15:45:00",
         "category": "家庭",
+        "isFavorite": "true",
+        "isBookmark": "true",
+        "favoriteNum": "123",
         "experience": "子供たちと一緒に初めての家庭菜園に挑戦した。\nトマトとキュウリの苗を植え、毎日水やりと観察を行った。\n虫害に悩まされたが、オーガニックな対策方法を調べて実践。\n2ヶ月後、初めての収穫を家族で喜んだ。",
         "reflections": {
           "positiveList": [

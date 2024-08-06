@@ -32,7 +32,7 @@ export default function NavLink({ content }: Props) {
           <ul className={styles.menu}>
             {content.linkList?.map((link, index) => (
               <Link href={link.path} className={styles.navLink} key={index}>
-                <li>{link.pageName}</li>
+                <li key={index}>{link.pageName}</li>
               </Link>
             ))}
           </ul>
