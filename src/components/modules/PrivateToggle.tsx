@@ -1,5 +1,5 @@
-import styles from "@/styles/components/elements/PrivateToggle.module.css";
-import Toggle from "./Toggle";
+import styles from "@/styles/components/modules/PrivateToggle.module.css";
+import Toggle from "@/components/elements/Toggle";
 import { LABEL } from "@/constants/ButtonLabelConst";
 
 /**

@@ -28,6 +28,7 @@ export default function IconWithText({ content }: Props) {
 
   return (
     <>
+      {/* リンクがある場合 */}
       {content.isLink ? (
         <div className={styles.root}>
           <Link
@@ -40,6 +41,7 @@ export default function IconWithText({ content }: Props) {
           </Link>
         </div>
       ) : (
+        /* リンクがない場合 */
         <div className={styles.notLink} data-type={content.type}>
           {image}
           <p className={styles.pageName}>{content.pageName}</p>

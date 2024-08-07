@@ -1,7 +1,7 @@
-import styles from "@/styles/components/modules/FeaturedPosts.module.css";
-import FeaturedPost from "../elements/FeaturedPost";
+import styles from "@/styles/components/layouts/FeaturedPosts.module.css";
+import FeaturedPost from "@/components/modules/FeaturedPost";
 import * as Separator from "@radix-ui/react-separator";
-import useInit from "@/hooks/useInit";
+import useInit from "@/logics/hooks/useInit";
 import { COMPONENT_LABEL } from "@/constants/PageLinksConst";
 
 /**

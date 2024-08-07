@@ -1,5 +1,5 @@
 import styles from "@/styles/components/elements/JobBadge.module.css";
-import useConvertColor from "@/hooks/useConvertColor";
+import convertColor from "@/logics/functions/ConvertColor";
 
 type Props = {
   jobName: string;
@@ -15,7 +15,7 @@ type Props = {
  */
 export default function JobBadge({ jobName, jobCategory, jobColor }: Props) {
   /* 文字色を取得 */
-  const color = useConvertColor(jobColor);
+  const color = convertColor(jobColor);
   /* 職業アイコンのパスを取得 */
   const jobIconPath = `url(/job/${jobCategory}.svg)`;
 

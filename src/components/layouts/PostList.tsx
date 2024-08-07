@@ -1,5 +1,5 @@
 import Post from "@/components/modules/Post";
-import useInit from "@/hooks/useInit";
+import useInit from "@/logics/hooks/useInit";
 import styles from "@/styles/components/layouts/PostList.module.css";
 
 /**

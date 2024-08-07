@@ -1,8 +1,7 @@
-import Title from "../elements/Title";
-import { userIconInfoType } from "@/types/UserInfoType";
+import Title from "@/components/elements/Title";
 import styles from "@/styles/components/layouts/Sidebar.module.css";
-import NavLink from "../modules/NavLink";
-import useInit from "@/hooks/useInit";
+import NavLink from "@/components/elements/NavLink";
+import useInit from "@/logics/hooks/useInit";
 import { COMPONENT_SIZE, PAGES } from "@/constants/PageLinksConst";
 import { contentType } from "@/types/ContentType";
 

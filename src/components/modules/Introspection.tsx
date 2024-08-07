@@ -1,4 +1,4 @@
-import styles from "@/styles/components/elements/Introspection.module.css";
+import styles from "@/styles/components/modules/Introspection.module.css";
 
 type Props = {
   reflections: {

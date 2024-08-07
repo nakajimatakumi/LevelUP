@@ -1,8 +1,8 @@
 import { ICON_PATH } from "@/constants/IconPathConst";
-import styles from "@/styles/components/elements/FlowLine.module.css";
+import styles from "@/styles/components/modules/FlowLine.module.css";
 import * as Separator from "@radix-ui/react-separator";
 import Image from "next/image";
-import Tooltip from "./Tooltip";
+import Tooltip from "@/components/elements/Tooltip";
 
 type Props = {
   iconPath: string;

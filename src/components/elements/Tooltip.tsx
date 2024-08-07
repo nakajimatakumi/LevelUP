@@ -1,5 +1,4 @@
 import * as RadixTooltip from "@radix-ui/react-tooltip";
-import { TOOLTIP_TEXT } from "@/constants/TooltipConst";
 import styles from "@/styles/components/elements/Tooltip.module.css";
 
 type Props = {

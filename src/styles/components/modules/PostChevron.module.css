@@ -1,0 +1,7 @@
+.trigger {
+  border: none;
+  outline: none;
+
+  all: inherit;
+  cursor: pointer;
+}

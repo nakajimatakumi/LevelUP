@@ -1,14 +1,14 @@
-.trigger {
-  border: none;
-  outline: none;
-
-  all: inherit;
-  cursor: pointer;
-
+.root {
   width: calc(100% - 70px);
   line-height: 1.4;
   white-space: pre-wrap;
   margin-left: 12px;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 15px;
 }
 
 .content {
@@ -25,6 +25,12 @@
 
 .content[data-state="closed"] {
   animation: slideUp 0.2s ease;
+}
+
+.contentWrapper {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 15px;
 }
 
 @keyframes slideDown {

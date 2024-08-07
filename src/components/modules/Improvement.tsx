@@ -1,4 +1,4 @@
-import styles from "@/styles/components/elements/Improvement.module.css";
+import styles from "@/styles/components/modules/Improvement.module.css";
 
 type Props = {
   improvementsList: string[];

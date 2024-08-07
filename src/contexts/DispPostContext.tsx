@@ -1,11 +1,11 @@
 "use client";
 
 import { contentType } from "@/types/ContentType";
-import { jobInfoType, userInfoType } from "@/types/UserInfoType";
+import { jobInfoType } from "@/types/UserInfoType";
 import { createContext, useState } from "react";
-import useInit from "@/hooks/useInit";
-import useFormatPostInfo from "@/hooks/useFormatPostInfo";
-import { dispPostType, postInfoType } from "@/types/PostInfoType";
+import useInit from "@/logics/hooks/useInit";
+import { dispPostType } from "@/types/PostInfoType";
+import formatPostInfo from "@/logics/functions/FormatPostInfo";
 
 // デフォルト値
 const defaultData = {
@@ -39,7 +39,7 @@ export const DispPostProvider = ({
   const { userInfo } = initData;
   /* カード表示データの状態 */
   const [dispPost, setDispPost] = useState<dispPostType>(
-    useFormatPostInfo(userInfo, null)
+    formatPostInfo({ userInfo, postInfo: null })
   );
 
   /* 投稿クリック時処理 */

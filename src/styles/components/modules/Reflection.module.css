@@ -1,8 +1,9 @@
-/* レイアウト */
-.reflectionWrapper {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 15px;
+.trigger {
+  border: none;
+  outline: none;
+
+  all: inherit;
+  cursor: pointer;
 }
 
 /* メインコンテナ */

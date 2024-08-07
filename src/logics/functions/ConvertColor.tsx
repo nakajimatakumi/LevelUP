@@ -1,9 +1,9 @@
 /**
- * 背景色から文字色を作成するフック
+ * 背景色から文字色を作成する関数
  * @param hex 背景色
  * @return 文字色
  */
-export default function useConvertColor(hex: string): string {
+export default function convertColor(hex: string): string {
   const amount: number = -85;
   const clamp = (value: number): number => Math.max(0, Math.min(255, value));
   const num: number = parseInt(hex.slice(1), 16);

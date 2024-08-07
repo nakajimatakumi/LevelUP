@@ -1,7 +1,7 @@
 import * as Accordion from "@radix-ui/react-accordion";
-import styles from "@/styles/components/modules/NavLink.module.css";
+import styles from "@/styles/components/elements/NavLink.module.css";
 import { contentType } from "@/types/ContentType";
-import IconWithText from "../elements/IconWithText";
+import IconWithText from "@/components/elements/IconWithText";
 import Link from "next/link";
 import Image from "next/image";
 import { ICON_PATH } from "@/constants/IconPathConst";

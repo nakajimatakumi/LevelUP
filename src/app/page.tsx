@@ -1,7 +1,7 @@
-import SearchForm from "@/components/modules/SearchForm";
+import SearchForm from "@/components/layouts/SearchForm";
 import styles from "@/styles/app/Home.module.css";
-import UserInfoCard from "@/components/modules/UserInfoCard";
-import FeaturedPosts from "@/components/modules/FeaturedPosts";
+import UserInfoCard from "@/components/layouts/UserInfoCard";
+import FeaturedPosts from "@/components/layouts/FeaturedPosts";
 import PostList from "@/components/layouts/PostList";
 import { DispPostProvider } from "@/contexts/DispPostContext";
 

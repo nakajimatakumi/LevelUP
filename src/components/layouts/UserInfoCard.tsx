@@ -1,11 +1,11 @@
 "use client";
 
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { dispPostContext } from "@/contexts/DispPostContext";
-import styles from "@/styles/components/modules/UserInfoCard.module.css";
-import JobBadge from "../elements/JobBadge";
-import IconWithText from "../elements/IconWithText";
-import CategoryBadge from "../elements/CategoryBadge";
+import styles from "@/styles/components/layouts/UserInfoCard.module.css";
+import JobBadge from "@/components/elements/JobBadge";
+import IconWithText from "@/components/elements/IconWithText";
+import CategoryBadge from "@/components/elements/CategoryBadge";
 
 /**
  * ユーザー情報カード

@@ -3,10 +3,18 @@ import { contentType } from "@/types/ContentType";
 import { postInfoType } from "@/types/PostInfoType";
 import { userInfoType } from "@/types/UserInfoType";
 import { PAGES } from "@/constants/PageLinksConst";
-export default function useFormatPostInfo(
-  userInfo: userInfoType,
-  postInfo: postInfoType | null
-) {
+
+type Props = {
+  userInfo: userInfoType;
+  postInfo: postInfoType | null;
+};
+
+/**
+ * 投稿データを成形関数
+ * @param userInfo ユーザー情報
+ * @param postInfo 投稿情報
+ */
+export default function formatPostInfo({ userInfo, postInfo }: Props) {
   const formatUserInfo = (userInfo: userInfoType): contentType => {
     return {
       pageName: userInfo.userName,

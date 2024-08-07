@@ -1,6 +1,6 @@
 import DropdownList from "@/components/elements/DropdownList";
-import styles from "@/styles/components/elements/SearchConditionList.module.css";
-import useInit from "@/hooks/useInit";
+import styles from "@/styles/components/modules/SearchConditionList.module.css";
+import useInit from "@/logics/hooks/useInit";
 
 type SearchConditionKey = "category" | "job" | "sort";
 

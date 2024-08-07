@@ -48,6 +48,7 @@
 .notLink[data-type="userInfoCard"] > *:first-child {
   width: 40px;
   height: 40px;
+  min-width: 40px;
 }
 
 .link[data-type="userInfoCard"] > *:last-child,
@@ -69,6 +70,7 @@
 .notLink[data-type="postedTime"] > *:first-child {
   width: 20px;
   height: 20px;
+  min-width: 20px;
 }
 
 .link[data-type="postedTime"] > *:last-child,
@@ -92,6 +94,7 @@
 .notLink[data-type="large"] > *:first-child {
   width: 46px;
   height: 46px;
+  min-width: 46px;
 }
 
 .link[data-type="large"] > *:last-child,

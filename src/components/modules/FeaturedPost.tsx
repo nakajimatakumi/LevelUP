@@ -1,4 +1,4 @@
-import styles from "../../styles/components/elements/FeaturedPost.module.css";
+import styles from "@/styles/components/modules/FeaturedPost.module.css";
 
 type Post = {
   postId: string;
