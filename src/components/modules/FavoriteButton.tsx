@@ -5,10 +5,11 @@ import ActiveButton from "@/components/elements/ActiveButton";
 import { ICON_PATH } from "@/constants/IconPathConst";
 import useFavorite from "@/logics/hooks/useFavorite";
 import { useContext } from "react";
-import { dispPostContext } from "@/contexts/DispPostContext";
+import { dispPostCardContext } from "@/contexts/DispPostCardContext";
 import formatPostInfo from "@/logics/functions/FormatPostInfo";
 import { userInfoType } from "@/types/UserInfoType";
 import { postInfoType } from "@/types/PostInfoType";
+import Image from "next/image";
 
 type Props = {
   favoriteNum: number;
@@ -30,7 +31,7 @@ export default function FavoriteButton({
   postInfo,
 }: Props) {
   /* カード表示データの状態更新関数 */
-  const { handlePostClick } = useContext(dispPostContext);
+  const { handlePostClick } = useContext(dispPostCardContext);
 
   /* データ成形処理 */
   const formattedPostInfo = formatPostInfo({ userInfo, postInfo });
@@ -51,11 +52,9 @@ export default function FavoriteButton({
 
   return (
     <div className={styles.root}>
-      <ActiveButton
-        iconPath={ICON_PATH.FAVORITE}
-        isActive={isFavoriteState}
-        onClick={handleClick}
-      />
+      <ActiveButton isActive={isFavoriteState} onClick={handleClick}>
+        <Image src={ICON_PATH.FAVORITE} alt="favorite" height={24} width={24} />
+      </ActiveButton>
       <p>{formattedFavoriteNum}</p>
     </div>
   );

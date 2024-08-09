@@ -1,21 +1,38 @@
 import styles from "@/styles/components/elements/Button.module.css";
-import Image from "next/image";
+import { forwardRef, ButtonHTMLAttributes } from "react";
+import clsx from "clsx";
 
-type Props = {
-  label?: string;
-  iconPath?: string;
-};
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactNode;
+  size?: "small" | "medium" | "large";
+  variant?: "primary" | "secondary" | "search" | "icon";
+}
 
 /**
  * ボタンコンポーネント
- * @param label ボタンのラベル
+ * @param children ボタンの子要素
+ * @param size ボタンのサイズ
+ * @param variant ボタンのバリアント
+ * @param rest その他の属性
  */
-export default function Button({ label, iconPath }: Props) {
-  return iconPath ? (
-    <button className={styles.root}>
-      <Image src={iconPath} alt="" width={24} height={24} />
-    </button>
-  ) : (
-    <button className={styles.button}>{label}</button>
+const Button = forwardRef<HTMLButtonElement, Props>((props, ref) => {
+  /* プロパティを分割 */
+  const { children, size, variant, ...rest } = props;
+  /* クラス名を生成 */
+  const classNames = clsx(
+    styles.button,
+    {
+      [styles[size as keyof typeof styles]]: size,
+      [styles[variant as keyof typeof styles]]: variant,
+    },
+    rest.className
   );
-}
+  return (
+    <button ref={ref} className={classNames} onClick={rest.onClick}>
+      {children}
+    </button>
+  );
+});
+
+Button.displayName = "Button";
+export default Button;

@@ -1,6 +1,6 @@
 import styles from "@/styles/components/modules/PrivateToggle.module.css";
 import Toggle from "@/components/elements/Toggle";
-import { LABEL } from "@/constants/ButtonLabelConst";
+import { LABEL } from "@/constants/ButtonConst";
 
 /**
  * 公開設定トグル

@@ -3,6 +3,8 @@ import styles from "@/styles/components/modules/FlowLine.module.css";
 import * as Separator from "@radix-ui/react-separator";
 import Image from "next/image";
 import Tooltip from "@/components/elements/Tooltip";
+import generateMessage from "@/logics/functions/GenerateMessage";
+import { MESSAGE_TEMPLATE } from "@/constants/MessageTemplateConst";
 
 type Props = {
   iconPath: string;
@@ -24,7 +26,11 @@ export default function FlowLine({ iconPath, tooltipText }: Props) {
             : styles.firstLine
         }
       />
-      <Tooltip text={tooltipText}>
+      <Tooltip
+        message={generateMessage(MESSAGE_TEMPLATE.TOOLTIP_MESSAGE, [
+          tooltipText,
+        ])}
+      >
         <Image
           src={iconPath}
           alt="icon"

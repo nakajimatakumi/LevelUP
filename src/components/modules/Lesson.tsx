@@ -1,6 +1,6 @@
 "use client";
 
-import { dispPostContext } from "@/contexts/DispPostContext";
+import { dispPostCardContext } from "@/contexts/DispPostCardContext";
 import formatPostInfo from "@/logics/functions/FormatPostInfo";
 import styles from "@/styles/components/modules/Lesson.module.css";
 import { postInfoType } from "@/types/PostInfoType";
@@ -22,7 +22,7 @@ type Props = {
  */
 export default function Lesson({ userInfo, postInfo, lessonsList }: Props) {
   /* カード表示データの状態更新関数 */
-  const { handlePostClick } = useContext(dispPostContext);
+  const { handlePostClick } = useContext(dispPostCardContext);
 
   /* データ成形処理 */
   const formattedPostInfo = formatPostInfo({ userInfo, postInfo });

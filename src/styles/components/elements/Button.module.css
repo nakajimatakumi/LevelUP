@@ -1,38 +1,80 @@
+/* 基本のスタイル */
 .button {
   display: flex;
   align-items: center;
   justify-content: center;
-
-  width: 124px;
-  height: 44px;
-
-  background-color: #cecdcb;
-  border: none;
-  border-radius: 10px;
-
   font-family: inherit;
-  color: #555555;
-  font-size: 24px;
   cursor: pointer;
+  backface-visibility: hidden;
 }
 
-.button:hover {
+/* size */
+.small {
+  width: 124px;
+  height: 44px;
+  border-radius: 10px;
+}
+
+.medium {
+  width: 100px;
+  height: 36px;
+  border-radius: 10px;
+  font-size: 18px;
+}
+
+.large {
+  width: 124px;
+  height: 44px;
+  border-radius: 10px;
+  font-size: 24px;
+}
+
+/* variant */
+
+/* primary */
+.primary {
+  background-color: #737272;
+  border: none;
+  color: #eeeeee;
+}
+
+.primary:hover {
+  background-color: #00000070;
+}
+
+/* secondary */
+.secondary {
+  background-color: #eeeeee;
+  border: 2px solid #737272;
+  color: #737272;
+}
+
+.secondary:hover {
+  background-color: #00000020;
+}
+
+/* search */
+.search {
+  background-color: #cecdcb;
+  border: none;
+  color: #555555;
+  font-size: 24px;
+}
+
+.search:hover {
   background-color: #bebebe;
 }
 
-.root {
+/* icon */
+.icon {
   background-color: transparent;
   border: none;
-  cursor: pointer;
   border-radius: 50%;
   padding: 0;
   width: 30px;
   height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
-.root:hover {
+.icon:hover {
   background-color: #00000010;
 }

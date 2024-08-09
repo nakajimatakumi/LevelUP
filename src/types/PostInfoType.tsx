@@ -4,7 +4,7 @@ import { jobInfoType } from "./UserInfoType";
 /**
  * 表示用投稿情報タイプ
  */
-export type dispPostType = {
+export type dispPostCardType = {
   userInfo: contentType;
   jobInfo: jobInfoType;
   description: string;

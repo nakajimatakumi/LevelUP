@@ -4,10 +4,10 @@ import { contentType } from "@/types/ContentType";
 import { jobInfoType } from "@/types/UserInfoType";
 import { createContext, useState } from "react";
 import useInit from "@/logics/hooks/useInit";
-import { dispPostType } from "@/types/PostInfoType";
+import { dispPostCardType } from "@/types/PostInfoType";
 import formatPostInfo from "@/logics/functions/FormatPostInfo";
 
-// デフォルト値
+/* デフォルト値 */
 const defaultData = {
   userInfo: {} as contentType,
   jobInfo: {} as jobInfoType,
@@ -15,13 +15,13 @@ const defaultData = {
 };
 
 /**
- * 投稿情報表示コンポーネントの表示内容を管理するコンテキスト
+ * 投稿情報表示カードコンポーネントの表示内容を管理するコンテキスト
  */
-export const dispPostContext = createContext<{
-  dispPost: dispPostType;
-  handlePostClick: (formattedPostInfo: dispPostType) => void;
+export const dispPostCardContext = createContext<{
+  dispPostCard: dispPostCardType;
+  handlePostClick: (formattedPostInfo: dispPostCardType) => void;
 }>({
-  dispPost: defaultData,
+  dispPostCard: defaultData,
   handlePostClick: () => {},
 });
 
@@ -29,7 +29,7 @@ export const dispPostContext = createContext<{
  * コンテキストプロバイダー
  * @param children 子コンポーネント
  */
-export const DispPostProvider = ({
+export const DispPostCardProvider = ({
   children,
 }: {
   children: React.ReactNode;
@@ -38,18 +38,18 @@ export const DispPostProvider = ({
   const { initData } = useInit();
   const { userInfo } = initData;
   /* カード表示データの状態 */
-  const [dispPost, setDispPost] = useState<dispPostType>(
+  const [dispPostCard, setDispPostCard] = useState<dispPostCardType>(
     formatPostInfo({ userInfo, postInfo: null })
   );
 
   /* 投稿クリック時処理 */
-  const handlePostClick = (formattedPostInfo: dispPostType) => {
-    setDispPost(formattedPostInfo);
+  const handlePostClick = (formattedPostInfo: dispPostCardType) => {
+    setDispPostCard(formattedPostInfo);
   };
 
   return (
-    <dispPostContext.Provider value={{ dispPost, handlePostClick }}>
+    <dispPostCardContext.Provider value={{ dispPostCard, handlePostClick }}>
       {children}
-    </dispPostContext.Provider>
+    </dispPostCardContext.Provider>
   );
 };

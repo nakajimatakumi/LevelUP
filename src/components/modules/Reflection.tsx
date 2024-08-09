@@ -9,11 +9,13 @@ import Introspection from "@/components/modules/Introspection";
 import Improvement from "@/components/modules/Improvement";
 import Tooltip from "@/components/elements/Tooltip";
 import { useContext } from "react";
-import { dispPostContext } from "@/contexts/DispPostContext";
+import { dispPostCardContext } from "@/contexts/DispPostCardContext";
 import formatPostInfo from "@/logics/functions/FormatPostInfo";
 import { userInfoType } from "@/types/UserInfoType";
 import { postInfoType } from "@/types/PostInfoType";
 import * as Accordion from "@radix-ui/react-accordion";
+import generateMessage from "@/logics/functions/GenerateMessage";
+import { MESSAGE_TEMPLATE } from "@/constants/MessageTemplateConst";
 type Props = {
   reflections: {
     positiveList: string[];
@@ -38,7 +40,7 @@ export default function Reflection({
   improvementsList,
 }: Props) {
   /* カード表示データの状態更新関数 */
-  const { handlePostClick } = useContext(dispPostContext);
+  const { handlePostClick } = useContext(dispPostCardContext);
 
   /* データ成形処理 */
   const formattedPostInfo = formatPostInfo({ userInfo, postInfo });
@@ -49,7 +51,11 @@ export default function Reflection({
     >
       <div className={styles.reflection}>
         <div className={styles.container}>
-          <Tooltip text={TOOLTIP_TEXT.INTROSPECTION}>
+          <Tooltip
+            message={generateMessage(MESSAGE_TEMPLATE.TOOLTIP_MESSAGE, [
+              TOOLTIP_TEXT.INTROSPECTION,
+            ])}
+          >
             <Image
               src={ICON_PATH.INTROSPECTION}
               alt="introspection"
@@ -61,7 +67,11 @@ export default function Reflection({
         </div>
         <Separator className={styles.separator} />
         <div className={styles.container}>
-          <Tooltip text={TOOLTIP_TEXT.IMPROVEMENT}>
+          <Tooltip
+            message={generateMessage(MESSAGE_TEMPLATE.TOOLTIP_MESSAGE, [
+              TOOLTIP_TEXT.IMPROVEMENT,
+            ])}
+          >
             <Image
               src={ICON_PATH.IMPROVEMENT}
               alt="improvement"

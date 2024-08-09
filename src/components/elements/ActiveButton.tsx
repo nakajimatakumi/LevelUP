@@ -1,54 +1,63 @@
 import styles from "@/styles/components/elements/ActiveButton.module.css";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, ButtonHTMLAttributes, useMemo } from "react";
+import Button from "./Button";
+import { VARIANT } from "@/constants/ButtonConst";
+import clsx from "clsx";
 
-type Props = {
-  iconPath: string;
-  isActive?: boolean;
-  onClick?: (isActive?: boolean) => void;
-};
+interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+  children: React.ReactElement;
+  isActive: boolean;
+}
 
 /**
  * アイコンボタン
- * @param iconPath アイコンのパス
+ * @param children アイコン
  * @param isActive アクティブ状態
  * @param onClick クリック時のイベント
  */
-export default function ActiveButton({ iconPath, isActive, onClick }: Props) {
+export default function ActiveButton({ children, isActive, onClick }: Props) {
   /* アクティブ状態管理 */
   const [isActiveState, setIsActiveState] = useState(isActive);
 
   /* フィルタ済みのパスを取得 */
-  const getFilledPath = (path: string) => path.replace(".svg", "_fill.svg");
+  const getFilledPath = useMemo(
+    () => children.props.src.replace(".svg", "_fill.svg"),
+    [children.props.src]
+  );
 
+  const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
+    setIsActiveState(!isActiveState);
+    console.log(onClick);
+    onClick && onClick(event);
+  };
   return (
-    <button
-      className={styles.root}
-      onClick={() => {
-        setIsActiveState(!isActiveState);
-        onClick && onClick(isActiveState);
-      }}
-    >
-      <div className={styles.iconWrapper}>
+    <div className={styles.root}>
+      <Button
+        variant={VARIANT.ICON}
+        onClick={handleClick}
+        className={clsx(styles.icon, {
+          [styles.hideIcon]: isActiveState,
+          [styles.showIcon]: !isActiveState,
+        })}
+      >
+        {children}
+      </Button>
+      <Button
+        variant={VARIANT.ICON}
+        onClick={handleClick}
+        className={clsx(styles.icon, {
+          [styles.showIcon]: isActiveState,
+          [styles.hideIcon]: !isActiveState,
+        })}
+      >
         <Image
-          src={iconPath}
-          alt=""
-          width={24}
-          height={24}
-          className={`${styles.icon} ${styles.defaultIcon} ${
-            isActiveState ? styles.hideIcon : ""
-          }`}
+          src={getFilledPath}
+          alt={children.props.alt}
+          width={children.props.width}
+          height={children.props.height}
         />
-        <Image
-          src={getFilledPath(iconPath)}
-          alt=""
-          width={24}
-          height={24}
-          className={`${styles.icon} ${styles.filledIcon} ${
-            isActiveState ? styles.showIcon : ""
-          }`}
-        />
-      </div>
-    </button>
+      </Button>
+    </div>
   );
 }

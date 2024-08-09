@@ -3,22 +3,22 @@ import styles from "@/styles/components/elements/Tooltip.module.css";
 
 type Props = {
   children: React.ReactNode;
-  text: string;
+  message: string;
 };
 
 /**
  * ツールチップコンポーネント
  * @param children 子要素
- * @param text ツールチップテキスト
+ * @param message ツールチップメッセージ
  */
-export default function Tooltip({ children, text }: Props) {
+export default function Tooltip({ children, message }: Props) {
   return (
     <RadixTooltip.Provider>
       <RadixTooltip.Root delayDuration={300}>
         <RadixTooltip.Trigger asChild>{children}</RadixTooltip.Trigger>
         <RadixTooltip.Portal>
           <RadixTooltip.Content data-side="left">
-            <p className={styles.tooltipContent}>{text}</p>
+            <p className={styles.tooltipContent}>{message}</p>
           </RadixTooltip.Content>
         </RadixTooltip.Portal>
       </RadixTooltip.Root>
