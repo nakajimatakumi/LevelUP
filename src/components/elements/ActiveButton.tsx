@@ -8,6 +8,10 @@ import clsx from "clsx";
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactElement;
   isActive: boolean;
+  onClick: (
+    event: React.MouseEvent<HTMLButtonElement>,
+    isActive?: boolean
+  ) => void;
 }
 
 /**
@@ -28,8 +32,7 @@ export default function ActiveButton({ children, isActive, onClick }: Props) {
 
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
     setIsActiveState(!isActiveState);
-    console.log(onClick);
-    onClick && onClick(event);
+    onClick && onClick(event, isActiveState);
   };
   return (
     <div className={styles.root}>

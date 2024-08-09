@@ -2,12 +2,18 @@
 
 import { ICON_PATH } from "@/constants/IconPathConst";
 import ActiveButton from "@/components/elements/ActiveButton";
-import { useContext } from "react";
+import { useContext, useCallback } from "react";
 import { dispPostCardContext } from "@/contexts/DispPostCardContext";
 import formatPostInfo from "@/logics/functions/FormatPostInfo";
 import { userInfoType } from "@/types/UserInfoType";
 import { postInfoType } from "@/types/PostInfoType";
 import Image from "next/image";
+import { ToastContext } from "@/contexts/ToastContext";
+import {
+  MESSAGE_PARAMS,
+  MESSAGE_TEMPLATE,
+} from "@/constants/MessageTemplateConst";
+import generateMessage from "@/logics/functions/GenerateMessage";
 
 type Props = {
   isBookmark: boolean;
@@ -31,11 +37,31 @@ export default function BookmarkButton({
 
   /* データ成形処理 */
   const formattedPostInfo = formatPostInfo({ userInfo, postInfo });
+
+  /* toast表示関数 */
+  const { showToast } = useContext(ToastContext);
+
+  /* イベントハンドラ */
+  const handleClick = useCallback(
+    (event: React.MouseEvent<HTMLButtonElement>, isActive?: boolean) => {
+      handlePostClick(formattedPostInfo);
+      isActive
+        ? showToast(
+            generateMessage(MESSAGE_TEMPLATE.REMOVE_MESSAGE, [
+              MESSAGE_PARAMS.BOOKMARK,
+            ])
+          )
+        : showToast(
+            generateMessage(MESSAGE_TEMPLATE.ADD_MESSAGE, [
+              MESSAGE_PARAMS.BOOKMARK,
+            ])
+          );
+    },
+    [formattedPostInfo, handlePostClick, showToast]
+  );
+
   return (
-    <ActiveButton
-      isActive={isBookmark}
-      onClick={() => handlePostClick(formattedPostInfo)}
-    >
+    <ActiveButton isActive={isBookmark} onClick={handleClick}>
       <Image src={ICON_PATH.BOOKMARK} alt="bookmark" height={24} width={24} />
     </ActiveButton>
   );

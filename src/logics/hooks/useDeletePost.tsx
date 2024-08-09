@@ -1,5 +1,11 @@
+import {
+  MESSAGE_PARAMS,
+  MESSAGE_TEMPLATE,
+} from "@/constants/MessageTemplateConst";
 import { dispPostListContext } from "@/contexts/DispPostListContext";
 import { useContext } from "react";
+import generateMessage from "../functions/GenerateMessage";
+import { ToastContext } from "@/contexts/ToastContext";
 
 /**
  * 投稿削除ロジック
@@ -9,11 +15,14 @@ import { useContext } from "react";
 export default function useDeletePost(postId: string) {
   /* 投稿表示データの状態更新関数取得 */
   const { setDispPostList } = useContext(dispPostListContext);
-
+  const { showToast } = useContext(ToastContext);
   /* 投稿削除関数 */
   const deletePost = () => {
     setDispPostList((prev) =>
       prev.filter((post) => post.postInfo.postId !== postId)
+    );
+    showToast(
+      generateMessage(MESSAGE_TEMPLATE.DELETE_MESSAGE, [MESSAGE_PARAMS.POST])
     );
   };
 

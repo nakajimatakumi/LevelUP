@@ -26,7 +26,7 @@ export const dispPostCardContext = createContext<{
 });
 
 /**
- * コンテキストプロバイダー
+ * コンテキストプロバイダ
  * @param children 子コンポーネント
  */
 export const DispPostCardProvider = ({

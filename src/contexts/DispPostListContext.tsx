@@ -16,7 +16,7 @@ export const dispPostListContext = createContext<{
 });
 
 /**
- * コンテキストプロバイダー
+ * コンテキストプロバイダ
  * @param children 子コンポーネント
  */
 export const DispPostListProvider = ({

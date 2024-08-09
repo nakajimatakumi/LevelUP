@@ -53,8 +53,8 @@ export default function PostHeader({ userInfo, postInfo, loginUserId }: Props) {
   const deleteMessage = useMemo(
     () => ({
       title: generateMessage(MESSAGE_TEMPLATE.CONFIRM_MESSAGE, [
-        MESSAGE_PARAMS.DELETE,
         MESSAGE_PARAMS.POST,
+        MESSAGE_PARAMS.DELETE,
       ]),
       description: MESSAGE_TEMPLATE.CANT_UNDO_MESSAGE,
     }),
