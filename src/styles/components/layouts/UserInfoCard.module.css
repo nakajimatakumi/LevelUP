@@ -1,58 +1,30 @@
 .card {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
 
-  width: 471px;
-  height: 250px;
-  padding: 10px;
-
-  border: 2px solid #69696985;
-  border-radius: 10px;
-  box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.5);
+  width: 491px;
+  height: 275px;
+  padding: 13px 16px;
 }
 
-.userName {
-  position: absolute;
-  top: 2px;
-  left: 12px;
+.topContent,
+.bottomContent {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
 }
 
-.jobBadge {
-  position: absolute;
-  top: 16px;
-  right: 12px;
-}
-
-.description {
-  position: absolute;
-  top: 62px;
-  left: 40px;
-
+.centerContent {
   width: 420px;
   height: 150px;
-
-  margin: 0;
-  line-height: 1.4;
-
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 6;
-
-  font-size: 18px;
-  line-clamp: 6;
-  white-space: pre-wrap;
-  overflow: hidden;
-  word-break: break-word;
-  text-overflow: ellipsis;
+  margin-top: -5px;
 }
 
-.postCategory {
-  position: absolute;
-  bottom: 9px;
-  left: 20px;
-}
-
-.postTime {
-  position: absolute;
-  bottom: 1px;
-  right: 10px;
+.bottomContent {
+  margin-bottom: -3px;
+  height: 30px;
 }

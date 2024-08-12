@@ -1,9 +1,13 @@
 import styles from "@/styles/components/modules/PostHeader.module.css";
 import IconWithText from "@/components/elements/IconWithText";
 import PrivateToggle from "@/components/modules/PrivateToggle";
-import { userInfoType } from "@/types/UserInfoType";
-import { COMPONENT_SIZE } from "@/constants/PageLinksConst";
-import { postInfoType } from "@/types/PostInfoType";
+import { UserInfoType } from "@/types/UserInfoType";
+import {
+  COMPONENT_LENGTH,
+  COMPONENT_SIZE,
+  COMPONENT_TYPE,
+} from "@/constants/PageLinksConst";
+import { PostInfoType } from "@/types/PostInfoType";
 import FavoriteButton from "@/components/modules/FavoriteButton";
 import BookmarkButton from "./BookmarkButton";
 import { VARIANT } from "@/constants/ButtonConst";
@@ -23,8 +27,8 @@ import formatPostInfo from "@/logics/functions/FormatPostInfo";
 import useDeletePost from "@/logics/hooks/useDeletePost";
 
 type Props = {
-  userInfo: userInfoType;
-  postInfo: postInfoType;
+  userInfo: UserInfoType;
+  postInfo: PostInfoType;
   loginUserId: string;
 };
 
@@ -40,14 +44,6 @@ export default function PostHeader({ userInfo, postInfo, loginUserId }: Props) {
 
   /* データ成形処理 */
   const formattedPostInfo = formatPostInfo({ userInfo, postInfo });
-
-  /* ユーザー情報をフォーマット */
-  const userContent = {
-    pageName: userInfo.userName,
-    userIconInfo: userInfo.userIconInfo,
-    isLink: false,
-    type: COMPONENT_SIZE.MEDIUM,
-  };
 
   /* ダイアログのメッセージを生成 */
   const deleteMessage = useMemo(
@@ -66,7 +62,13 @@ export default function PostHeader({ userInfo, postInfo, loginUserId }: Props) {
 
   return (
     <div className={styles.userInfo}>
-      <IconWithText content={userContent} />
+      <IconWithText
+        size={COMPONENT_SIZE.MEDIUM}
+        length={COMPONENT_LENGTH.FIT}
+        type={COMPONENT_TYPE.USER}
+        text={userInfo.userName}
+        userIconInfo={userInfo.userIconInfo}
+      />
       <Accordion.Trigger
         className={styles.trigger}
         onClick={() => handlePostClick(formattedPostInfo)}

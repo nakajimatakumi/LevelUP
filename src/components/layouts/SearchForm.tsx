@@ -23,8 +23,8 @@ export default function SearchForm() {
             height={25}
             className={styles.searchIcon}
           />
-          <Form.Control asChild>
-            <div className={styles.inputArea}>
+          <Form.Control asChild className={styles.inputArea}>
+            <div>
               <input type="text" className={styles.input} />
             </div>
           </Form.Control>

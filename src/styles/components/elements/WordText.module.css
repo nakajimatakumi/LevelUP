@@ -1,0 +1,47 @@
+.text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-break: break-all;
+  text-align: left;
+  margin: 0;
+}
+
+/* サイズ */
+.extraSmall {
+  font-size: 14px;
+}
+
+.small {
+  font-size: 18px;
+}
+
+.medium {
+  font-size: 20px;
+}
+
+.large {
+  font-size: 22px;
+}
+
+.extraLarge {
+  font-size: 24px;
+}
+
+/* 長さ */
+.short {
+  width: 145px;
+}
+
+.medium {
+  width: 180px;
+}
+
+.long {
+  width: 195px;
+}
+
+.fit {
+  width: fit-content;
+  max-width: 240px;
+}

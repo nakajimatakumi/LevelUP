@@ -1,4 +1,6 @@
 import styles from "@/styles/components/modules/Improvement.module.css";
+import ListText from "../elements/ListText";
+import { TEXT_STYLE } from "@/constants/PageLinksConst";
 
 type Props = {
   improvementsList: string[];
@@ -10,12 +12,14 @@ type Props = {
  */
 export default function Improvement({ improvementsList }: Props) {
   return (
-    <ul className={styles.improvementContent}>
-      {improvementsList.map((improvement, index) => (
-        <li key={index} className={styles.improvementContent}>
-          {improvement}
-        </li>
-      ))}
-    </ul>
+    <div className={styles.improvementContainer}>
+      <ListText
+        textList={improvementsList}
+        textStyle={TEXT_STYLE.NORMAL}
+        lineClamp={1}
+        fontSize={16}
+        lineHeight={1.5}
+      />
+    </div>
   );
 }

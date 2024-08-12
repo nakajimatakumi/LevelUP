@@ -1,21 +1,20 @@
-import { contentType } from "./ContentType";
-import { jobInfoType } from "./UserInfoType";
+import { JobInfoType, UserIconInfoType, UserInfoType } from "./UserInfoType";
 
 /**
  * 表示用投稿情報タイプ
  */
-export type dispPostCardType = {
-  userInfo: contentType;
-  jobInfo: jobInfoType;
+export type DispPostCardType = {
+  userInfo: UserIconNameType;
+  jobInfo: JobInfoType;
   description: string;
   category?: string;
-  postedTime?: contentType;
+  postedTime?: string;
 };
 
 /**
  * 投稿情報タイプ
  */
-export type postInfoType = {
+export type PostInfoType = {
   postId: string;
   postedTime: string;
   category: string;
@@ -23,12 +22,17 @@ export type postInfoType = {
   isFavorite: string;
   isBookmark: string;
   experience: string;
-  reflections: reflectionsType;
+  reflections: ReflectionsType;
   improvementsList: string[];
   lessonsList: string[];
 };
 
-type reflectionsType = {
+export type ReflectionsType = {
   positiveList: string[];
   negativeList: string[];
+};
+
+export type UserIconNameType = {
+  userName: string;
+  userIconInfo: UserIconInfoType;
 };

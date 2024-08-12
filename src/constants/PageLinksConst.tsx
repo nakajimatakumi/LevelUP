@@ -1,88 +1,130 @@
-import { ICON_PATH } from "@/constants/IconPathConst";
+import { ICON_PATH } from "./IconPathConst";
 
 /*
  * テキストカテゴリ
  */
-export const TEXT_CATEGORY = {
-  POSTED_TIME: "postedTime",
-  USER_INFO_CARD: "userInfoCard",
-};
+export const COMPONENT_TYPE = {
+  USER: "user",
+  NAV: "nav",
+  POSTED_TIME: "time",
+  NONE: "none",
+} as const;
 
 export const COMPONENT_SIZE = {
-  LARGE: "large",
-  MEDIUM: "medium",
   SMALL: "small",
+  MEDIUM: "medium",
+  LARGE: "large",
   FIT: "fit",
-};
+  NONE: "none",
+} as const;
+
+export const COMPONENT_LENGTH = {
+  SHORT: "short",
+  MEDIUM: "medium",
+  LONG: "long",
+  FIT: "fit",
+  NONE: "none",
+} as const;
 
 /**
  * ページ
  */
-export const PAGES = {
+export const NAV_ITEMS = {
   PROFILE: {
-    path: "/profile",
-    iconPath: "/profile/userIcon.svg",
-    pageName: "ユーザー名",
-    isLink: false,
-    linkList: [
-      { pageName: "プロフィール設定", path: "/profile" },
-      { pageName: "ログアウト", path: "/profile" },
-    ],
+    ListItems: ["プロフィール設定", "ログアウト"],
   },
   MY_EXP: {
-    path: "/myExp",
+    ItemName: "じぶんの経験",
     iconPath: ICON_PATH.HOME,
-    pageName: "じぶんの経験",
-    isLink: true,
   },
   ALL_EXP: {
-    path: "/allExp",
+    ItemName: "みんなの経験",
     iconPath: ICON_PATH.VIEW,
-    pageName: "みんなの経験",
-    isLink: true,
   },
   BOOKMARK: {
-    path: "/bookmark",
+    ItemName: "ブックマーク",
     iconPath: ICON_PATH.BOOKMARK_MENU,
-    pageName: "ブックマーク",
-    isLink: true,
   },
   NOTIFICATION: {
-    path: "/notification",
+    ItemName: "通知",
     iconPath: ICON_PATH.NOTIFICATION,
-    pageName: "通知",
-    isLink: true,
   },
   SETTING: {
-    path: "/setting",
+    ItemName: "設定",
     iconPath: ICON_PATH.SETTING,
-    pageName: "設定",
-    isLink: false,
-    linkList: [
-      { pageName: "アカウント設定", path: "/setting" },
-      { pageName: "公開設定", path: "/setting" },
-      { pageName: "通知設定", path: "/setting" },
-      { pageName: "LevelUPについて", path: "/setting" },
-      { pageName: "お問い合わせ", path: "/setting" },
+    ListItems: [
+      "アカウント設定",
+      "公開設定",
+      "通知設定",
+      "LevelUPについて",
+      "お問い合わせ",
     ],
   },
   POST: {
-    path: "/post",
+    ItemName: "記録する",
     iconPath: ICON_PATH.EDIT,
-    pageName: "記録する",
-    isLink: true,
-    type: COMPONENT_SIZE.FIT,
-  },
-
-  POSTED_TIME: {
-    path: "",
-    iconPath: ICON_PATH.CLOCK,
-    pageName: "投稿時間",
-    isLink: false,
-    type: TEXT_CATEGORY.POSTED_TIME,
   },
 };
 
 export const COMPONENT_LABEL = {
   FEATURED_POSTS: "注目の経験",
 };
+
+export const ICON_SIZE = {
+  SMALL: "small",
+  MEDIUM: "medium",
+  LARGE: "large",
+  EXTRA_LARGE: "extraLarge",
+  FIT: "fit",
+  NONE: "none",
+};
+
+export const TEXT_SIZE = {
+  EXTRA_SMALL: "extraSmall",
+  SMALL: "small",
+  MEDIUM: "medium",
+  LARGE: "large",
+  EXTRA_LARGE: "extraLarge",
+  FIT: "fit",
+  NONE: "none",
+};
+
+export const USER_SIZE = {
+  iconSize: {
+    SMALL: ICON_SIZE.SMALL,
+    MEDIUM: ICON_SIZE.MEDIUM,
+    LARGE: ICON_SIZE.MEDIUM,
+    FIT: ICON_SIZE.FIT,
+    NONE: ICON_SIZE.NONE,
+  },
+  textSize: {
+    SMALL: TEXT_SIZE.SMALL,
+    MEDIUM: TEXT_SIZE.MEDIUM,
+    LARGE: TEXT_SIZE.LARGE,
+    FIT: TEXT_SIZE.FIT,
+    NONE: TEXT_SIZE.NONE,
+  },
+};
+
+export const NAV_SIZE = {
+  iconSize: {
+    SMALL: ICON_SIZE.SMALL,
+    MEDIUM: ICON_SIZE.MEDIUM,
+    LARGE: ICON_SIZE.EXTRA_LARGE,
+    FIT: ICON_SIZE.FIT,
+    NONE: ICON_SIZE.NONE,
+  },
+  textSize: {
+    SMALL: TEXT_SIZE.SMALL,
+    MEDIUM: TEXT_SIZE.MEDIUM,
+    LARGE: TEXT_SIZE.EXTRA_LARGE,
+    FIT: TEXT_SIZE.FIT,
+    NONE: TEXT_SIZE.NONE,
+  },
+};
+
+export const TEXT_STYLE = {
+  POSITIVE: "positive",
+  NEGATIVE: "negative",
+  NORMAL: "normal",
+} as const;

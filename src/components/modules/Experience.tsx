@@ -3,14 +3,16 @@
 import { dispPostCardContext } from "@/contexts/DispPostCardContext";
 import formatPostInfo from "@/logics/functions/FormatPostInfo";
 import styles from "@/styles/components/modules/Experience.module.css";
-import { postInfoType } from "@/types/PostInfoType";
-import { userInfoType } from "@/types/UserInfoType";
+import { PostInfoType } from "@/types/PostInfoType";
+import { UserInfoType } from "@/types/UserInfoType";
 import { useContext } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
+import SentenceText from "../elements/SentenceText";
+import Card from "../elements/Card";
 
 type Props = {
-  userInfo: userInfoType;
-  postInfo: postInfoType;
+  userInfo: UserInfoType;
+  postInfo: PostInfoType;
   experience: string;
 };
 
@@ -31,7 +33,16 @@ export default function Experience({ userInfo, postInfo, experience }: Props) {
       className={styles.trigger}
       onClick={() => handlePostClick(formattedPostInfo)}
     >
-      <p className={styles.experienceContent}>{experience}</p>
+      <Card>
+        <div className={styles.experienceContent}>
+          <SentenceText
+            text={experience}
+            lineClamp={20}
+            lineHeight={1.4}
+            fontSize={16}
+          />
+        </div>
+      </Card>
     </Accordion.Trigger>
   );
 }

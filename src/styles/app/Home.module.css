@@ -1,18 +1,22 @@
+.root {
+  display: flex;
+  justify-content: center;
+  margin: 30px calc(495px + 80px) 30px 340px;
+}
+
 .centerContent {
-  position: relative;
-  left: 22%;
-  margin-top: 10px;
   width: 800px;
 }
 
 .rightSideContent {
   position: fixed;
   top: 0;
-  left: 1250px;
+  right: calc(100% - 100vw);
 
   display: flex;
   flex-direction: column;
 
   gap: 20px;
-  padding: 25px 80px;
+  margin-top: 25px;
+  margin-right: 80px;
 }

@@ -1,23 +1,23 @@
 /**
  * ユーザー情報タイプ
  */
-export type userInfoType = {
+export type UserInfoType = {
   userId: string;
   userName: string;
   description: string;
-  jobInfo: jobInfoType;
-  userIconInfo: userIconInfoType;
+  jobInfo: JobInfoType;
+  userIconInfo: UserIconInfoType;
 };
 
 /* ユーザーの職業情報タイプ */
-export type jobInfoType = {
+export type JobInfoType = {
   jobName: string;
   jobCategory: string;
   jobColor: string;
 };
 
 /* ユーザーアイコン情報タイプ */
-export type userIconInfoType = {
+export type UserIconInfoType = {
   facePath: string;
   hairPath: string;
   iconColor: string;

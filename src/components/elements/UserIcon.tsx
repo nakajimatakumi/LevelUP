@@ -1,20 +1,25 @@
 import Image from "next/image";
 import styles from "@/styles/components/elements/UserIcon.module.css";
-import { userIconInfoType } from "@/types/UserInfoType";
+import { UserIconInfoType } from "@/types/UserInfoType";
+import clsx from "clsx";
 
 type Props = {
-  userIconInfo: userIconInfoType;
+  size: "small" | "medium" | "large" | "none";
+  userIconInfo: UserIconInfoType;
+  className?: string;
 };
 
 /**
  * ユーザーアイコンコンポーネント
+ * @param size ユーザーアイコンのサイズ
  * @param userIconInfo ユーザーアイコン情報
+ * @param className クラス名
  */
-export default function UserIcon({ userIconInfo }: Props) {
+export default function UserIcon({ size, userIconInfo, className }: Props) {
   return (
-    <div className={styles.icon}>
+    <div className={clsx(styles.icon, styles[size], className)}>
       <span
-        className={styles.color}
+        className={clsx(styles.color, className)}
         style={{ ["--color" as string]: userIconInfo.iconColor }}
       />
       <Image
@@ -22,16 +27,16 @@ export default function UserIcon({ userIconInfo }: Props) {
         alt="髪型"
         width={30}
         height={30}
-        className={styles.faceLayer}
+        className={clsx(styles.faceLayer, className)}
       />
       <Image
         src={userIconInfo.facePath}
         alt="表情"
         width={30}
         height={30}
-        className={styles.faceLayer}
+        className={clsx(styles.faceLayer, className)}
       />
-      <span className={styles.border} />
+      <span className={clsx(styles.border, className)} />
     </div>
   );
 }

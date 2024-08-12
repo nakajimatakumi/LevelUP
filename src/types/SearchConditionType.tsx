@@ -1,15 +1,15 @@
-export type searchConditionsType = {
-  category: conditionType;
-  job: conditionType;
-  sort: conditionType;
+export type SearchConditionsType = {
+  category: ConditionType;
+  job: ConditionType;
+  sort: ConditionType;
 };
 
-export type conditionType = {
-  listItems: listItemsType[];
+export type ConditionType = {
+  listItems: ListItemsType[];
   name: string;
 };
 
-export type listItemsType = {
+export type ListItemsType = {
   value: string;
   name: string;
 };

@@ -1,10 +1,11 @@
 import { ICON_PATH } from "@/constants/IconPathConst";
 import styles from "@/styles/components/modules/FlowLine.module.css";
 import * as Separator from "@radix-ui/react-separator";
-import Image from "next/image";
 import Tooltip from "@/components/elements/Tooltip";
 import generateMessage from "@/logics/functions/GenerateMessage";
 import { MESSAGE_TEMPLATE } from "@/constants/MessageTemplateConst";
+import Icon from "../elements/Icon";
+import { COMPONENT_SIZE } from "@/constants/PageLinksConst";
 
 type Props = {
   iconPath: string;
@@ -31,13 +32,9 @@ export default function FlowLine({ iconPath, tooltipText }: Props) {
           tooltipText,
         ])}
       >
-        <Image
-          src={iconPath}
-          alt="icon"
-          className={styles.icon}
-          width={30}
-          height={30}
-        />
+        <span>
+          <Icon iconPath={iconPath} size={COMPONENT_SIZE.LARGE} />
+        </span>
       </Tooltip>
       <Separator.Root
         className={

@@ -1,0 +1,8 @@
+.root {
+  width: fit-content;
+  height: fit-content;
+  padding: var(--padding);
+  border: 2px solid #69696985;
+  border-radius: 10px;
+  box-shadow: 0 6px 6px -6px rgba(0, 0, 0, 0.5);
+}

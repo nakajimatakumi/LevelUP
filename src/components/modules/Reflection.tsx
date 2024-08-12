@@ -11,19 +11,22 @@ import Tooltip from "@/components/elements/Tooltip";
 import { useContext } from "react";
 import { dispPostCardContext } from "@/contexts/DispPostCardContext";
 import formatPostInfo from "@/logics/functions/FormatPostInfo";
-import { userInfoType } from "@/types/UserInfoType";
-import { postInfoType } from "@/types/PostInfoType";
+import { UserInfoType } from "@/types/UserInfoType";
+import { PostInfoType } from "@/types/PostInfoType";
 import * as Accordion from "@radix-ui/react-accordion";
 import generateMessage from "@/logics/functions/GenerateMessage";
 import { MESSAGE_TEMPLATE } from "@/constants/MessageTemplateConst";
+import { COMPONENT_SIZE } from "@/constants/PageLinksConst";
+import Icon from "../elements/Icon";
+import Card from "../elements/Card";
 type Props = {
   reflections: {
     positiveList: string[];
     negativeList: string[];
   };
   improvementsList: string[];
-  userInfo: userInfoType;
-  postInfo: postInfoType;
+  userInfo: UserInfoType;
+  postInfo: PostInfoType;
 };
 
 /**
@@ -49,39 +52,41 @@ export default function Reflection({
       className={styles.trigger}
       onClick={() => handlePostClick(formattedPostInfo)}
     >
-      <div className={styles.reflection}>
-        <div className={styles.container}>
-          <Tooltip
-            message={generateMessage(MESSAGE_TEMPLATE.TOOLTIP_MESSAGE, [
-              TOOLTIP_TEXT.INTROSPECTION,
-            ])}
-          >
-            <Image
-              src={ICON_PATH.INTROSPECTION}
-              alt="introspection"
-              width={25}
-              height={25}
-            />
-          </Tooltip>
-          <Introspection reflections={reflections} />
+      <Card>
+        <div className={styles.reflection}>
+          <div className={styles.container}>
+            <Tooltip
+              message={generateMessage(MESSAGE_TEMPLATE.TOOLTIP_MESSAGE, [
+                TOOLTIP_TEXT.INTROSPECTION,
+              ])}
+            >
+              <span>
+                <Icon
+                  iconPath={ICON_PATH.INTROSPECTION}
+                  size={COMPONENT_SIZE.MEDIUM}
+                />
+              </span>
+            </Tooltip>
+            <Introspection reflections={reflections} />
+          </div>
+          <Separator className={styles.separator} />
+          <div className={styles.container}>
+            <Tooltip
+              message={generateMessage(MESSAGE_TEMPLATE.TOOLTIP_MESSAGE, [
+                TOOLTIP_TEXT.IMPROVEMENT,
+              ])}
+            >
+              <span>
+                <Icon
+                  iconPath={ICON_PATH.IMPROVEMENT}
+                  size={COMPONENT_SIZE.MEDIUM}
+                />
+              </span>
+            </Tooltip>
+            <Improvement improvementsList={improvementsList} />
+          </div>
         </div>
-        <Separator className={styles.separator} />
-        <div className={styles.container}>
-          <Tooltip
-            message={generateMessage(MESSAGE_TEMPLATE.TOOLTIP_MESSAGE, [
-              TOOLTIP_TEXT.IMPROVEMENT,
-            ])}
-          >
-            <Image
-              src={ICON_PATH.IMPROVEMENT}
-              alt="improvement"
-              width={25}
-              height={25}
-            />
-          </Tooltip>
-          <Improvement improvementsList={improvementsList} />
-        </div>
-      </div>
+      </Card>
     </Accordion.Trigger>
   );
 }

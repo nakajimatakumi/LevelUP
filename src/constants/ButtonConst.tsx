@@ -19,4 +19,5 @@ export const VARIANT = {
   PRIMARY: "primary",
   SECONDARY: "secondary",
   ICON: "icon",
+  NONE: "none",
 } as const;

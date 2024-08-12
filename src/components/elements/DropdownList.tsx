@@ -2,11 +2,11 @@ import React from "react";
 import * as Select from "@radix-ui/react-select";
 import styles from "@/styles/components/elements/DropdownList.module.css";
 import Image from "next/image";
-import { listItemsType } from "@/types/SearchConditionType";
+import { ListItemsType } from "@/types/SearchConditionType";
 import { ICON_PATH } from "@/constants/IconPathConst";
 
 type Props = {
-  listItems: listItemsType[];
+  listItems: ListItemsType[];
   name: string;
   isGroup: boolean;
 };

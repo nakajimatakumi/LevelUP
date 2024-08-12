@@ -1,14 +1,14 @@
-import { postInfoType } from "./PostInfoType";
-import { searchConditionsType } from "./SearchConditionType";
-import { userInfoType } from "./UserInfoType";
+import { PostInfoType } from "./PostInfoType";
+import { SearchConditionsType } from "./SearchConditionType";
+import { UserInfoType } from "./UserInfoType";
 
 export type InitDataType = {
-  userInfo: userInfoType;
-  searchConditions: searchConditionsType;
-  postList: postListType[];
+  userInfo: UserInfoType;
+  searchConditions: SearchConditionsType;
+  postList: PostListType[];
 };
 
-export type postListType = {
-  userInfo: userInfoType;
-  postInfo: postInfoType;
+export type PostListType = {
+  userInfo: UserInfoType;
+  postInfo: PostInfoType;
 };

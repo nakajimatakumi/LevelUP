@@ -3,15 +3,18 @@
 import { dispPostCardContext } from "@/contexts/DispPostCardContext";
 import formatPostInfo from "@/logics/functions/FormatPostInfo";
 import styles from "@/styles/components/modules/Lesson.module.css";
-import { postInfoType } from "@/types/PostInfoType";
-import { userInfoType } from "@/types/UserInfoType";
+import { PostInfoType } from "@/types/PostInfoType";
+import { UserInfoType } from "@/types/UserInfoType";
 import { useContext } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
+import { TEXT_STYLE } from "@/constants/PageLinksConst";
+import ListText from "../elements/ListText";
+import Card from "../elements/Card";
 
 type Props = {
   lessonsList: string[];
-  userInfo: userInfoType;
-  postInfo: postInfoType;
+  userInfo: UserInfoType;
+  postInfo: PostInfoType;
 };
 
 /**
@@ -31,13 +34,17 @@ export default function Lesson({ userInfo, postInfo, lessonsList }: Props) {
       className={styles.trigger}
       onClick={() => handlePostClick(formattedPostInfo)}
     >
-      <ul className={styles.lessonContents}>
-        {lessonsList.map((lesson, index) => (
-          <li key={index} className={styles.lessonContent}>
-            {lesson}
-          </li>
-        ))}
-      </ul>
+      <Card>
+        <div className={styles.lessonContents}>
+          <ListText
+            textList={lessonsList}
+            textStyle={TEXT_STYLE.NORMAL}
+            lineClamp={1}
+            fontSize={16}
+            lineHeight={1.5}
+          />
+        </div>
+      </Card>
     </Accordion.Trigger>
   );
 }

@@ -1,13 +1,13 @@
 import styles from "@/styles/components/modules/Post.module.css";
-import { postInfoType } from "@/types/PostInfoType";
-import { userInfoType } from "@/types/UserInfoType";
+import { PostInfoType } from "@/types/PostInfoType";
+import { UserInfoType } from "@/types/UserInfoType";
 import PostTextBox from "@/components/modules/PostTextBox";
 import * as Accordion from "@radix-ui/react-accordion";
 import PostHeader from "@/components/modules/PostHeader";
 
 type Props = {
-  postInfo: postInfoType;
-  userInfo: userInfoType;
+  postInfo: PostInfoType;
+  userInfo: UserInfoType;
   loginUserId: string;
 };
 
@@ -20,16 +20,14 @@ type Props = {
 export default function Post({ postInfo, userInfo, loginUserId }: Props) {
   return (
     <div className={styles.root}>
-      <Accordion.Root type="single" collapsible className={styles.root}>
-        <Accordion.Item value="item-1">
+      <Accordion.Root type="single" collapsible>
+        <Accordion.Item value="item-1" className={styles.item}>
           <PostHeader
             userInfo={userInfo}
             postInfo={postInfo}
             loginUserId={loginUserId}
           />
-          <div className={styles.textboxContainer}>
-            <PostTextBox userInfo={userInfo} postInfo={postInfo} />
-          </div>
+          <PostTextBox userInfo={userInfo} postInfo={postInfo} />
         </Accordion.Item>
       </Accordion.Root>
     </div>

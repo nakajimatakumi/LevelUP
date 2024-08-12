@@ -8,10 +8,9 @@
 .content {
   background-color: #eaeaea;
   animation: contentShow 0.2s ease;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 480px;
+  top: calc(50% - 170px);
+  left: calc(50% - 220px);
+  width: 400px;
   min-height: 150px;
   padding: 20px;
   border-radius: 10px;
@@ -21,7 +20,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-sizing: border-box;
 }
 
 .close {

@@ -22,15 +22,18 @@
 .topPageLinkWrapper {
   position: absolute;
   top: 150px;
-  left: 30px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
 }
 
 .centerPageLinkWrapper {
   position: absolute;
   top: 320px;
   left: 55px;
-
-  width: 210px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
 
 .bottomPageLinkWrapper {

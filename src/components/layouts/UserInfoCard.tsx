@@ -6,6 +6,14 @@ import styles from "@/styles/components/layouts/UserInfoCard.module.css";
 import JobBadge from "@/components/elements/JobBadge";
 import IconWithText from "@/components/elements/IconWithText";
 import CategoryBadge from "@/components/elements/CategoryBadge";
+import {
+  COMPONENT_LENGTH,
+  COMPONENT_SIZE,
+  COMPONENT_TYPE,
+} from "@/constants/PageLinksConst";
+import { ICON_PATH } from "@/constants/IconPathConst";
+import SentenceText from "../elements/SentenceText";
+import Card from "../elements/Card";
 
 /**
  * ユーザー情報カード
@@ -15,24 +23,41 @@ export default function UserInfoCard() {
   /* 表示情報を取得 */
   const { dispPostCard } = useContext(dispPostCardContext);
   return (
-    <div className={styles.card}>
-      <div className={styles.userName}>
-        <IconWithText content={dispPostCard.userInfo} />
+    <Card padding={0}>
+      <div className={styles.card}>
+        <div className={styles.topContent}>
+          <IconWithText
+            userIconInfo={dispPostCard.userInfo.userIconInfo}
+            size={COMPONENT_SIZE.SMALL}
+            length={COMPONENT_LENGTH.MEDIUM}
+            text={dispPostCard.userInfo.userName}
+            type={COMPONENT_TYPE.USER}
+          />
+          <JobBadge {...dispPostCard.jobInfo} />
+        </div>
+        <div className={styles.centerContent}>
+          <SentenceText
+            text={dispPostCard.description}
+            lineClamp={6}
+            lineHeight={1.4}
+            fontSize={18}
+          />
+        </div>
+        <div className={styles.bottomContent}>
+          {dispPostCard.category && dispPostCard.postedTime && (
+            <>
+              <CategoryBadge postCategory={dispPostCard.category} />
+              <IconWithText
+                iconPath={ICON_PATH.CLOCK}
+                size={COMPONENT_SIZE.NONE}
+                length={COMPONENT_LENGTH.NONE}
+                text={dispPostCard.postedTime}
+                type={COMPONENT_TYPE.POSTED_TIME}
+              />
+            </>
+          )}
+        </div>
       </div>
-      <div className={styles.jobBadge}>
-        <JobBadge {...dispPostCard.jobInfo} />
-      </div>
-      <p className={styles.description}>{dispPostCard.description}</p>
-      {dispPostCard.category && dispPostCard.postedTime && (
-        <>
-          <div className={styles.postCategory}>
-            <CategoryBadge postCategory={dispPostCard.category} />
-          </div>
-          <div className={styles.postTime}>
-            <IconWithText content={dispPostCard.postedTime} />
-          </div>
-        </>
-      )}
-    </div>
+    </Card>
   );
 }

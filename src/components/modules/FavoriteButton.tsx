@@ -7,15 +7,15 @@ import useFavorite from "@/logics/hooks/useFavorite";
 import { useContext } from "react";
 import { dispPostCardContext } from "@/contexts/DispPostCardContext";
 import formatPostInfo from "@/logics/functions/FormatPostInfo";
-import { userInfoType } from "@/types/UserInfoType";
-import { postInfoType } from "@/types/PostInfoType";
+import { UserInfoType } from "@/types/UserInfoType";
+import { PostInfoType } from "@/types/PostInfoType";
 import Image from "next/image";
 
 type Props = {
   favoriteNum: number;
   isFavorite: boolean;
-  userInfo: userInfoType;
-  postInfo: postInfoType;
+  userInfo: UserInfoType;
+  postInfo: PostInfoType;
 };
 
 /**

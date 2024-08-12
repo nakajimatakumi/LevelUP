@@ -4,8 +4,8 @@ import clsx from "clsx";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
-  size?: "small" | "medium" | "large";
-  variant?: "primary" | "secondary" | "search" | "icon";
+  size?: "small" | "medium" | "large" | "fit";
+  variant?: "primary" | "secondary" | "search" | "icon" | "none";
 }
 
 /**

@@ -5,8 +5,8 @@ import ActiveButton from "@/components/elements/ActiveButton";
 import { useContext, useCallback } from "react";
 import { dispPostCardContext } from "@/contexts/DispPostCardContext";
 import formatPostInfo from "@/logics/functions/FormatPostInfo";
-import { userInfoType } from "@/types/UserInfoType";
-import { postInfoType } from "@/types/PostInfoType";
+import { UserInfoType } from "@/types/UserInfoType";
+import { PostInfoType } from "@/types/PostInfoType";
 import Image from "next/image";
 import { ToastContext } from "@/contexts/ToastContext";
 import {
@@ -17,8 +17,8 @@ import generateMessage from "@/logics/functions/GenerateMessage";
 
 type Props = {
   isBookmark: boolean;
-  userInfo: userInfoType;
-  postInfo: postInfoType;
+  userInfo: UserInfoType;
+  postInfo: PostInfoType;
 };
 
 /**

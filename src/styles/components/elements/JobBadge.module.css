@@ -13,13 +13,13 @@
 
   color: var(--color);
   font-size: 18px;
+  gap: 5px;
 }
 
 .badgeText {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
-  margin-right: 7px;
 }
 
 .jobIcons {

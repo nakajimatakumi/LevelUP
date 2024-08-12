@@ -18,4 +18,5 @@ export const ICON_PATH = {
   DELETE: "/icon/delete.svg",
   FAVORITE: "/icon/favorite.svg",
   BOOKMARK: "/icon/bookmark.svg",
+  CLOSE: "/icon/close.svg",
 };

@@ -1,9 +1,18 @@
 import Title from "@/components/elements/Title";
 import styles from "@/styles/components/layouts/Sidebar.module.css";
-import NavLink from "@/components/elements/NavLink";
+import AccordionList from "@/components/elements/AccordionList";
 import useInit from "@/logics/hooks/useInit";
-import { COMPONENT_SIZE, PAGES } from "@/constants/PageLinksConst";
-import { contentType } from "@/types/ContentType";
+import {
+  COMPONENT_LENGTH,
+  COMPONENT_SIZE,
+  COMPONENT_TYPE,
+  NAV_ITEMS,
+} from "@/constants/PageLinksConst";
+import IconWithText from "../elements/IconWithText";
+import { ICON_PATH } from "@/constants/IconPathConst";
+import Button from "../elements/Button";
+import { VARIANT } from "@/constants/ButtonConst";
+import MessageDialog from "../elements/MessageDialog";
 
 /**
  * サイドバーコンポーネント
@@ -12,21 +21,11 @@ export default function Sidebar() {
   /* 初期データ取得処理 */
   const { initData } = useInit();
 
-  /* プロフィール */
-  const profileContent: contentType = {
-    ...PAGES.PROFILE,
-    userIconInfo: initData.userInfo.userIconInfo,
-    pageName: initData.userInfo.userName,
-    type: COMPONENT_SIZE.LARGE,
-  };
-
-  /* センターページリンク */
-  const centerLinks: contentType[] = [
-    PAGES.MY_EXP,
-    PAGES.ALL_EXP,
-    PAGES.BOOKMARK,
-    PAGES.NOTIFICATION,
-    PAGES.SETTING,
+  const centerItems = [
+    NAV_ITEMS.MY_EXP,
+    NAV_ITEMS.ALL_EXP,
+    NAV_ITEMS.BOOKMARK,
+    NAV_ITEMS.NOTIFICATION,
   ];
 
   return (
@@ -36,15 +35,79 @@ export default function Sidebar() {
           <Title />
         </div>
         <div className={styles.topPageLinkWrapper}>
-          <NavLink content={profileContent} />
+          <AccordionList listItems={NAV_ITEMS.PROFILE.ListItems}>
+            <IconWithText
+              size={COMPONENT_SIZE.MEDIUM}
+              length={COMPONENT_LENGTH.FIT}
+              type={COMPONENT_TYPE.USER}
+              text={initData.userInfo.userName}
+              userIconInfo={initData.userInfo.userIconInfo}
+            />
+          </AccordionList>
         </div>
         <nav className={styles.centerPageLinkWrapper}>
-          {centerLinks.map((link) => (
-            <NavLink content={link} key={link.path} />
-          ))}
+          <Button variant={VARIANT.NONE}>
+            <IconWithText
+              size={COMPONENT_SIZE.LARGE}
+              length={COMPONENT_LENGTH.MEDIUM}
+              type={COMPONENT_TYPE.NAV}
+              text={NAV_ITEMS.MY_EXP.ItemName}
+              iconPath={NAV_ITEMS.MY_EXP.iconPath}
+            />
+          </Button>
+          <Button variant={VARIANT.NONE}>
+            <IconWithText
+              size={COMPONENT_SIZE.LARGE}
+              length={COMPONENT_LENGTH.MEDIUM}
+              type={COMPONENT_TYPE.NAV}
+              text={NAV_ITEMS.ALL_EXP.ItemName}
+              iconPath={NAV_ITEMS.ALL_EXP.iconPath}
+            />
+          </Button>
+          <Button variant={VARIANT.NONE}>
+            <IconWithText
+              size={COMPONENT_SIZE.LARGE}
+              length={COMPONENT_LENGTH.MEDIUM}
+              type={COMPONENT_TYPE.NAV}
+              text={NAV_ITEMS.BOOKMARK.ItemName}
+              iconPath={NAV_ITEMS.BOOKMARK.iconPath}
+            />
+          </Button>
+          <MessageDialog
+            title="通知"
+            description="通知を表示しますか？"
+            dispButton={false}
+          >
+            <Button variant={VARIANT.NONE}>
+              <IconWithText
+                size={COMPONENT_SIZE.LARGE}
+                length={COMPONENT_LENGTH.MEDIUM}
+                type={COMPONENT_TYPE.NAV}
+                text={NAV_ITEMS.NOTIFICATION.ItemName}
+                iconPath={NAV_ITEMS.NOTIFICATION.iconPath}
+              />
+            </Button>
+          </MessageDialog>
+          <AccordionList listItems={NAV_ITEMS.SETTING.ListItems}>
+            <IconWithText
+              size={COMPONENT_SIZE.LARGE}
+              length={COMPONENT_LENGTH.FIT}
+              type={COMPONENT_TYPE.NAV}
+              text={NAV_ITEMS.SETTING.ItemName}
+              iconPath={ICON_PATH.SETTING}
+            />
+          </AccordionList>
         </nav>
         <div className={styles.bottomPageLinkWrapper}>
-          <NavLink content={PAGES.POST} />
+          <Button variant={VARIANT.NONE}>
+            <IconWithText
+              size={COMPONENT_SIZE.LARGE}
+              length={COMPONENT_LENGTH.FIT}
+              type={COMPONENT_TYPE.NAV}
+              text={NAV_ITEMS.POST.ItemName}
+              iconPath={ICON_PATH.EDIT}
+            />
+          </Button>
         </div>
       </div>
     </div>

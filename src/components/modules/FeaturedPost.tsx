@@ -1,4 +1,5 @@
 import styles from "@/styles/components/modules/FeaturedPost.module.css";
+import SentenceText from "../elements/SentenceText";
 
 type Post = {
   postId: string;
@@ -31,7 +32,15 @@ export default function FeaturedPost({ post, index }: Props) {
   return (
     <div className={styles.item}>
       <p className={styles.number}>{toFullWidth(index + 1)}</p>
-      <p className={styles.line}>{post.description}</p>
+      {/* <p className={styles.line}>{post.description}</p> */}
+      <div className={styles.description}>
+        <SentenceText
+          text={post.description}
+          lineClamp={3}
+          lineHeight={1.3}
+          fontSize={16}
+        />
+      </div>
     </div>
   );
 }

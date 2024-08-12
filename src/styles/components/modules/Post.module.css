@@ -1,5 +1,10 @@
 .root {
-  width: 800px;
+  width: 100%;
   padding: 10px;
-  position: relative;
+}
+
+.item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }

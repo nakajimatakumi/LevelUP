@@ -1,52 +1,70 @@
-import Image from "next/image";
-import Link from "next/link";
 import styles from "@/styles/components/elements/IconWithText.module.css";
-import { contentType } from "@/types/ContentType";
 import UserIcon from "./UserIcon";
+import clsx from "clsx";
+import { UserIconType, OtherIconType, SizeType } from "@/types/ContentType";
+import Icon from "./Icon";
+import WordText from "./WordText";
+import {
+  COMPONENT_SIZE,
+  COMPONENT_TYPE,
+  ICON_SIZE,
+  NAV_SIZE,
+  TEXT_SIZE,
+  USER_SIZE,
+} from "@/constants/PageLinksConst";
 
-type Props = {
-  content: contentType;
-};
+type Props = UserIconType | OtherIconType;
 
 /**
  * アイコンとテキストコンポーネント
- * @param content 表示内容
+ * @param size サイズ
+ * @param length 長さ
+ * @param iconPath アイコンのパス
+ * @param userIconInfo ユーザーのアイコン情報
+ * @param text テキスト
+ * @param type タイプ
  */
-export default function IconWithText({ content }: Props) {
-  const image = content.userIconInfo ? (
-    <UserIcon userIconInfo={content.userIconInfo} />
-  ) : (
-    <Image
-      src={content.iconPath ?? ""}
-      alt={content.pageName}
-      width={35}
-      height={35}
-      className={styles.icon}
-      data-type={content.type}
-    />
-  );
+export default function IconWithText({
+  size,
+  length,
+  iconPath,
+  userIconInfo,
+  type,
+  text,
+}: Props) {
+  /* タイプごとにサイズを設定 */
+  const sizeUpper = size.toUpperCase() as keyof typeof COMPONENT_SIZE;
+  let iconSize, textSize;
+  switch (type) {
+    case COMPONENT_TYPE.USER:
+      iconSize = USER_SIZE.iconSize[sizeUpper];
+      textSize = USER_SIZE.textSize[sizeUpper];
+      break;
+    case COMPONENT_TYPE.NAV:
+      iconSize = NAV_SIZE.iconSize[sizeUpper];
+      textSize = NAV_SIZE.textSize[sizeUpper];
+      break;
+    case COMPONENT_TYPE.POSTED_TIME:
+      iconSize = ICON_SIZE.SMALL;
+      textSize = TEXT_SIZE.SMALL;
+      break;
+    case COMPONENT_TYPE.NONE:
+      iconSize = ICON_SIZE.SMALL;
+      textSize = TEXT_SIZE.SMALL;
+      break;
+  }
+
+  /* ルートクラス */
+  const rootClassName = clsx(styles.root, styles[size], styles[type]);
 
   return (
-    <>
-      {/* リンクがある場合 */}
-      {content.isLink ? (
-        <div className={styles.root}>
-          <Link
-            href={content.path ?? "/"}
-            className={styles.link}
-            data-type={content.type}
-          >
-            {image}
-            <p className={styles.pageName}>{content.pageName}</p>
-          </Link>
-        </div>
+    <div className={rootClassName}>
+      {type === COMPONENT_TYPE.USER ? (
+        <UserIcon userIconInfo={userIconInfo!} size={iconSize as SizeType} />
       ) : (
-        /* リンクがない場合 */
-        <div className={styles.notLink} data-type={content.type}>
-          {image}
-          <p className={styles.pageName}>{content.pageName}</p>
-        </div>
+        <Icon iconPath={iconPath!} size={iconSize as SizeType} />
       )}
-    </>
+      <WordText text={text} size={textSize as SizeType} length={length} />
+    </div>
   );
 }

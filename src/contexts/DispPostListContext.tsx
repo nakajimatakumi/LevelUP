@@ -2,14 +2,14 @@
 
 import useInit from "@/logics/hooks/useInit";
 import { createContext, useState } from "react";
-import { postListType } from "@/types/InitDataType";
+import { PostListType } from "@/types/InitDataType";
 
 /**
  * 投稿一覧コンポーネントの表示内容を管理するコンテキスト
  */
 export const dispPostListContext = createContext<{
-  dispPostList: postListType[];
-  setDispPostList: React.Dispatch<React.SetStateAction<postListType[]>>;
+  dispPostList: PostListType[];
+  setDispPostList: React.Dispatch<React.SetStateAction<PostListType[]>>;
 }>({
   dispPostList: [],
   setDispPostList: () => {},
@@ -25,7 +25,7 @@ export const DispPostListProvider = ({
   children: React.ReactNode;
 }) => {
   const { initData } = useInit();
-  const [dispPostList, setDispPostList] = useState<postListType[]>(
+  const [dispPostList, setDispPostList] = useState<PostListType[]>(
     initData.postList
   );
 
