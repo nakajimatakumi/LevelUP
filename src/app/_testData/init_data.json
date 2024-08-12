@@ -83,6 +83,80 @@
       ]
     }
   },
+  "notificationList": [
+    {
+      "notificationId": "000000000001",
+      "notificationType": "favorite",
+      "notificationTime": "2024-05-01 10:00:00",
+      "notificationMessage": "テストユーザー1があなたの投稿にいいねしました。"
+    },
+    {
+      "notificationId": "000000000002",
+      "notificationType": "favorite",
+      "notificationTime": "2024-12-31 23:03:00",
+      "notificationMessage": "テストユーザー2があなたの投稿にいいねしました。"
+    },
+    {
+      "notificationId": "000000000003",
+      "notificationType": "favorite",
+      "notificationTime": "2024-01-01 23:03:00",
+      "notificationMessage": "テストユーザー3があなたの投稿にいいねしました。"
+    },
+    {
+      "notificationId": "000000000004",
+      "notificationType": "favorite",
+      "notificationTime": "2024-01-01 23:03:00",
+      "notificationMessage": "テストユーザー4があなたの投稿にいいねしました。"
+    },
+    {
+      "notificationId": "000000000005",
+      "notificationType": "announce",
+      "notificationTime": "2026-11-01 23:03:00",
+      "notificationMessage": "アップデートを行いました。"
+    },
+    {
+      "notificationId": "000000000006",
+      "notificationType": "favorite",
+      "notificationTime": "2024-01-01 23:03:00",
+      "notificationMessage": "テストユーザー5があなたの投稿にいいねしました。"
+    },
+    {
+      "notificationId": "000000000007",
+      "notificationType": "favorite",
+      "notificationTime": "2024-01-01 23:03:00",
+      "notificationMessage": "テストユーザー6があなたの投稿にいいねしました。"
+    },
+    {
+      "notificationId": "000000000008",
+      "notificationType": "announce",
+      "notificationTime": "2026-11-01 23:03:00",
+      "notificationMessage": "アップデートを行いました。"
+    },
+    {
+      "notificationId": "000000000009",
+      "notificationType": "announce",
+      "notificationTime": "2026-11-01 23:03:00",
+      "notificationMessage": "アップデートを行いました。"
+    },
+    {
+      "notificationId": "000000000010",
+      "notificationType": "favorite",
+      "notificationTime": "2024-01-01 23:03:00",
+      "notificationMessage": "テストユーザー7があなたの投稿にいいねしました。"
+    },
+    {
+      "notificationId": "000000000011",
+      "notificationType": "favorite",
+      "notificationTime": "2024-01-01 23:03:00",
+      "notificationMessage": "テストユーザー8があなたの投稿にいいねしました。"
+    },
+    {
+      "notificationId": "000000000012",
+      "notificationType": "announce",
+      "notificationTime": "2024-04-22 10:56:00",
+      "notificationMessage": "webサイトをリリースしました。"
+    }
+  ],
   "postList": [
     {
       "userInfo": {

@@ -13,20 +13,13 @@ import { ICON_PATH } from "@/constants/IconPathConst";
 import Button from "../elements/Button";
 import { VARIANT } from "@/constants/ButtonConst";
 import MessageDialog from "../elements/MessageDialog";
-
+import Notification from "../modules/Notification";
 /**
  * サイドバーコンポーネント
  */
 export default function Sidebar() {
   /* 初期データ取得処理 */
   const { initData } = useInit();
-
-  const centerItems = [
-    NAV_ITEMS.MY_EXP,
-    NAV_ITEMS.ALL_EXP,
-    NAV_ITEMS.BOOKMARK,
-    NAV_ITEMS.NOTIFICATION,
-  ];
 
   return (
     <div className={styles.sidebarWrapper}>
@@ -75,7 +68,7 @@ export default function Sidebar() {
           </Button>
           <MessageDialog
             title="通知"
-            description="通知を表示しますか？"
+            description={<Notification />}
             dispButton={false}
           >
             <Button variant={VARIANT.NONE}>

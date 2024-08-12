@@ -1,0 +1,11 @@
+.sentenceWrapper {
+  margin: 0 7px;
+}
+
+.separator {
+  width: 99%;
+  height: 1px;
+  margin: 10px 0;
+  background-color: #00000060;
+  border-radius: 1000px;
+}

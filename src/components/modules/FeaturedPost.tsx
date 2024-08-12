@@ -32,7 +32,6 @@ export default function FeaturedPost({ post, index }: Props) {
   return (
     <div className={styles.item}>
       <p className={styles.number}>{toFullWidth(index + 1)}</p>
-      {/* <p className={styles.line}>{post.description}</p> */}
       <div className={styles.description}>
         <SentenceText
           text={post.description}

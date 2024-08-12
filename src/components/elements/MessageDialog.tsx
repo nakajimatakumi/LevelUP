@@ -1,4 +1,5 @@
 import * as AlertDialog from "@radix-ui/react-alert-dialog";
+import * as ScrollArea from "@radix-ui/react-scroll-area";
 import styles from "@/styles/components/elements/MessageDialog.module.css";
 import Button from "./Button";
 import { LABEL, SIZE, VARIANT } from "@/constants/ButtonConst";
@@ -9,7 +10,7 @@ type Props = {
   dispButton?: boolean;
   children: React.ReactElement;
   title: string;
-  description: string;
+  description: string | React.ReactElement;
   onConfirm?: () => void;
 };
 
@@ -41,7 +42,17 @@ export default function MessageDialog({
             {title}
           </AlertDialog.Title>
           <AlertDialog.Description className={styles.description}>
-            {description}
+            <ScrollArea.Root className={styles.scrollAreaRoot}>
+              <ScrollArea.Viewport className={styles.scrollAreaViewport}>
+                {description}
+              </ScrollArea.Viewport>
+              <ScrollArea.Scrollbar
+                className={styles.scrollAreaScrollbar}
+                orientation="vertical"
+              >
+                <ScrollArea.Thumb className={styles.scrollAreaThumb} />
+              </ScrollArea.Scrollbar>
+            </ScrollArea.Root>
           </AlertDialog.Description>
           {dispButton && (
             <div className={styles.actions}>
