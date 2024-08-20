@@ -66,10 +66,6 @@ export const NAV_ITEMS = {
   },
 };
 
-export const COMPONENT_LABEL = {
-  FEATURED_POSTS: "注目の経験",
-};
-
 export const ICON_SIZE = {
   SMALL: "small",
   MEDIUM: "medium",

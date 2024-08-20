@@ -1,6 +1,6 @@
 import styles from "@/styles/components/modules/PostHeader.module.css";
 import IconWithText from "@/components/elements/IconWithText";
-import PrivateToggle from "@/components/modules/PrivateToggle";
+import PrivateToggle from "@/components/elements/PrivateToggle";
 import { UserInfoType } from "@/types/UserInfoType";
 import {
   COMPONENT_LENGTH,

@@ -12,21 +12,23 @@
 .small {
   width: 124px;
   height: 44px;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .medium {
   width: 100px;
   height: 36px;
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 18px;
+  min-height: 36px;
 }
 
 .large {
   width: 124px;
   height: 44px;
-  border-radius: 10px;
+  border-radius: 8px;
   font-size: 24px;
+  min-height: 44px;
 }
 
 /* variant */
@@ -36,11 +38,11 @@
   background-color: #737272;
   border: none;
   color: #eeeeee;
-  box-shadow: 0px 2px 5px 0px #00000050;
+  box-shadow: 0px 5px 6px -4px #00000070;
 }
 
 .primary:hover {
-  background-color: #00000070;
+  background-color: #00000060;
 }
 
 /* secondary */
@@ -48,11 +50,31 @@
   background-color: #eeeeee;
   border: 2px solid #737272;
   color: #737272;
-  box-shadow: 0px 2px 5px 0px #00000050;
+  box-shadow: 0px 5px 6px -4px #00000060;
 }
 
 .secondary:hover {
   background-color: #00000020;
+}
+
+/* submit */
+.submit {
+  background-color: #cecdcb;
+  border: none;
+  color: #555555;
+  box-shadow: 0px 5px 6px -4px #00000060;
+}
+
+.submit:hover {
+  background-color: #00000030;
+}
+
+.submit:disabled {
+  cursor: default;
+  border: 1px solid #55555550;
+  background-color: #55555510;
+  color: #55555580;
+  box-shadow: none;
 }
 
 /* search */

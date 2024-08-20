@@ -1,6 +1,7 @@
 .trigger {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   position: relative;
   padding-right: 20px;
 
@@ -23,7 +24,6 @@
 
 .trigger[data-group="group"] {
   border: none;
-  justify-content: center;
 }
 
 .trigger[data-state="open"] > .chevron {
@@ -74,7 +74,7 @@
     opacity: 0;
   }
   to {
-    max-height: 200px;
+    max-height: 300px;
     opacity: 1;
   }
 }

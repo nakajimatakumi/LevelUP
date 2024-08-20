@@ -5,6 +5,17 @@
 }
 
 .label {
-  font-size: 14px;
   color: #888888;
+}
+
+.small {
+  font-size: 12px;
+}
+
+.medium {
+  font-size: 14px;
+}
+
+.large {
+  font-size: 16px;
 }

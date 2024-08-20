@@ -1,3 +1,5 @@
+"use client";
+
 import * as Form from "@radix-ui/react-form";
 import Button from "@/components/elements/Button";
 import styles from "@/styles/components/layouts/SearchForm.module.css";
@@ -6,40 +8,47 @@ import useSearch from "@/logics/hooks/useSearch";
 import Image from "next/image";
 import { ICON_PATH } from "@/constants/IconPathConst";
 import { LABEL, SIZE, VARIANT } from "@/constants/ButtonConst";
+import { FieldValues, useForm } from "react-hook-form";
+import Icon from "../elements/Icon";
 
 /**
  * 検索フォームコンポーネント
  */
 export default function SearchForm() {
-  const { handleSearch } = useSearch();
+  const { handleSubmit, register, control } = useForm({
+    mode: "onChange",
+  });
+  const handleSearch = (data: FieldValues) => {
+    alert(JSON.stringify(data));
+  };
   return (
-    <Form.Root className={styles.root} action={handleSearch}>
-      <Form.Field name="search" className={styles.field}>
-        <div className={styles.searchArea}>
-          <Image
-            src={ICON_PATH.SEARCH}
-            alt="search"
-            width={25}
-            height={25}
+    <Form.Root className={styles.root} onSubmit={handleSubmit(handleSearch)}>
+      <div className={styles.searchArea}>
+        <Form.Field name="search" className={styles.field}>
+          <Icon
+            iconPath={ICON_PATH.SEARCH}
+            size={SIZE.MEDIUM}
             className={styles.searchIcon}
           />
           <Form.Control asChild className={styles.inputArea}>
-            <div>
-              <input type="text" className={styles.input} />
-            </div>
+            <input
+              type="text"
+              className={styles.input}
+              {...register("search")}
+            />
           </Form.Control>
-          <div className={styles.button}>
-            <Form.Submit asChild>
-              <Button variant={VARIANT.SEARCH} size={SIZE.LARGE}>
-                {LABEL.SEARCH}
-              </Button>
-            </Form.Submit>
-          </div>
+        </Form.Field>
+        <div className={styles.button}>
+          <Form.Submit asChild>
+            <Button variant={VARIANT.SEARCH} size={SIZE.LARGE}>
+              {LABEL.SEARCH}
+            </Button>
+          </Form.Submit>
         </div>
-        <div className={styles.searchConditionList}>
-          <SearchConditionList />
-        </div>
-      </Form.Field>
+      </div>
+      <div className={styles.searchConditionList}>
+        <SearchConditionList control={control} />
+      </div>
     </Form.Root>
   );
 }

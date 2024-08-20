@@ -2,11 +2,9 @@ import styles from "@/styles/components/layouts/FeaturedPosts.module.css";
 import FeaturedPost from "@/components/modules/FeaturedPost";
 import * as Separator from "@radix-ui/react-separator";
 import useInit from "@/logics/hooks/useInit";
-import {
-  COMPONENT_LABEL,
-  COMPONENT_LENGTH,
-  COMPONENT_SIZE,
-} from "@/constants/PageLinksConst";
+
+import { COMPONENT_LENGTH, COMPONENT_SIZE } from "@/constants/ParamConst";
+import { HEADER_LABEL } from "@/constants/LabelConst";
 import WordText from "../elements/WordText";
 import Card from "../elements/Card";
 
@@ -25,7 +23,7 @@ export default function FeaturedPosts() {
       <div className={styles.root}>
         <div className={styles.title}>
           <WordText
-            text={COMPONENT_LABEL.FEATURED_POSTS}
+            text={HEADER_LABEL.FEATURED_POSTS}
             size={COMPONENT_SIZE.LARGE}
             length={COMPONENT_LENGTH.FIT}
           />

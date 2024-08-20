@@ -8,11 +8,11 @@ export default function generateMessage(
   replacements: string[]
 ): string {
   /* messageを生成 */
-  let message = template;
-  replacements.map((replacement, index) => {
+  const message = replacements.reduce((acc, replacement, index) => {
     /* 置換文字列を生成 */
     const placeholder = `{${index + 1}}`;
-    message = message.replace(placeholder, replacement);
-  });
+    return acc.replace(placeholder, replacement);
+  }, template);
+
   return message;
 }

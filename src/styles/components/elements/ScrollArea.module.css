@@ -1,0 +1,25 @@
+.scrollAreaRoot {
+  width: 100%;
+  height: 100%;
+}
+
+.scrollAreaViewport {
+  width: 99%;
+  height: 100%;
+  max-height: var(--height);
+  margin: calc(var(--padding) * -1) 0;
+  padding: var(--padding) 0;
+}
+
+.scrollAreaScrollbar {
+  width: 5px;
+  padding: 0;
+  margin-right: calc(var(--positionMove) * -1);
+  margin-top: var(--shrinkHeight);
+  margin-bottom: var(--shrinkHeight);
+}
+
+.scrollAreaThumb {
+  background-color: #00000030;
+  border-radius: 1000px;
+}

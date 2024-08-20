@@ -34,25 +34,27 @@ export default function IconWithText({
 }: Props) {
   /* タイプごとにサイズを設定 */
   const sizeUpper = size.toUpperCase() as keyof typeof COMPONENT_SIZE;
-  let iconSize, textSize;
-  switch (type) {
-    case COMPONENT_TYPE.USER:
-      iconSize = USER_SIZE.iconSize[sizeUpper];
-      textSize = USER_SIZE.textSize[sizeUpper];
-      break;
-    case COMPONENT_TYPE.NAV:
-      iconSize = NAV_SIZE.iconSize[sizeUpper];
-      textSize = NAV_SIZE.textSize[sizeUpper];
-      break;
-    case COMPONENT_TYPE.POSTED_TIME:
-      iconSize = ICON_SIZE.SMALL;
-      textSize = TEXT_SIZE.SMALL;
-      break;
-    case COMPONENT_TYPE.NONE:
-      iconSize = ICON_SIZE.SMALL;
-      textSize = TEXT_SIZE.SMALL;
-      break;
-  }
+  const { iconSize, textSize } = (() => {
+    switch (type) {
+      case COMPONENT_TYPE.USER:
+        return {
+          iconSize: USER_SIZE.iconSize[sizeUpper],
+          textSize: USER_SIZE.textSize[sizeUpper],
+        };
+      case COMPONENT_TYPE.NAV:
+        return {
+          iconSize: NAV_SIZE.iconSize[sizeUpper],
+          textSize: NAV_SIZE.textSize[sizeUpper],
+        };
+      case COMPONENT_TYPE.POSTED_TIME:
+      case COMPONENT_TYPE.NONE:
+      default:
+        return {
+          iconSize: ICON_SIZE.SMALL,
+          textSize: TEXT_SIZE.SMALL,
+        };
+    }
+  })();
 
   /* ルートクラス */
   const rootClassName = clsx(styles.root, styles[size], styles[type]);

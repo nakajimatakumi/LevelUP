@@ -12,3 +12,20 @@ export const MESSAGE_PARAMS = {
   POST: "投稿",
   BOOKMARK: "ブックマーク",
 };
+
+export const TOOLTIP_PARAMS = {
+  EXPERIENCE: "経験したこと",
+  REFLECTION: "振り返り",
+  INTROSPECTION: "よかったところ、よくなかったところ",
+  IMPROVEMENT: "次回はどうしたいか",
+  LESSON: "得られた教訓",
+};
+
+export const PLACEHOLDER = {
+  EXPERIENCE: "どのようなことを\nどのようにして\nどのような結果になったのか",
+  GOOD_POINTS: "・よかったところ",
+  BAD_POINTS: "・よくなかったところ",
+  IMPROVEMENT:
+    "・どうしたらより良い結果になるか\n・継続したいところ\n・改善したいところ",
+  LESSON: "・今回の経験から学べたこと\n・他の状況でも活かせそうなこと",
+};

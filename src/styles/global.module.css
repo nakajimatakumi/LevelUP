@@ -6,3 +6,7 @@
   background-color: #eaeaea;
   color: #555555;
 }
+
+.body *:focus {
+  outline: none;
+}

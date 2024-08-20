@@ -4,6 +4,7 @@
 
   all: inherit;
   cursor: pointer;
+  width: fit-content;
 }
 
 .experienceContent {

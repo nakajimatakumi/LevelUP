@@ -41,7 +41,7 @@
   background-color: #ffffff;
   font-size: 15px;
   margin: 20px 15px 20px 15px;
-  padding: 20px;
+  padding: 20px 10px 20px 20px;
   border: solid 2px #00000060;
   border-radius: 15px;
   height: fit-content;
@@ -71,32 +71,4 @@
   to {
     opacity: 1;
   }
-}
-
-.scrollAreaRoot {
-  width: 100%;
-  height: 100%;
-}
-
-.scrollAreaViewport {
-  width: 99%;
-  height: 100%;
-  max-height: 400px;
-  margin: -20px 0;
-  padding: 20px 0;
-}
-
-.scrollAreaScrollbar {
-  width: 5px;
-  padding: 0;
-  margin: 15px -8px 10px 0;
-}
-
-.scrollAreaThumb {
-  background-color: #00000030;
-  border-radius: 1000px;
-}
-
-.description {
-  padding-right: 10px;
 }

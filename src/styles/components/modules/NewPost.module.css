@@ -1,0 +1,31 @@
+.root {
+  background-color: #eaeaea;
+  width: 100%;
+  min-width: 500px;
+  max-width: 900px;
+  max-height: 750px;
+  padding: 0 30px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.root::-webkit-scrollbar {
+  display: none;
+}
+
+.bottomContent {
+  margin-top: -30px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-right: 10px;
+}
+
+.submit {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 20px;
+}

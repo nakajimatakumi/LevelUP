@@ -1,10 +1,10 @@
 import * as AlertDialog from "@radix-ui/react-alert-dialog";
-import * as ScrollArea from "@radix-ui/react-scroll-area";
 import styles from "@/styles/components/elements/MessageDialog.module.css";
 import Button from "./Button";
 import { LABEL, SIZE, VARIANT } from "@/constants/ButtonConst";
 import Image from "next/image";
 import { ICON_PATH } from "@/constants/IconPathConst";
+import ScrollArea from "./ScrollArea";
 
 type Props = {
   dispButton?: boolean;
@@ -19,6 +19,8 @@ type Props = {
  * @param children ボタン
  * @param title タイトル
  * @param description 説明
+ * @param onConfirm 確認ボタン押下時の処理
+ * @param dispButton 確認ボタンを表示するか
  */
 export default function MessageDialog({
   dispButton = true,
@@ -34,25 +36,24 @@ export default function MessageDialog({
         <AlertDialog.Overlay className={styles.overlay} />
         <AlertDialog.Content className={styles.content}>
           <AlertDialog.Cancel className={styles.close} asChild>
-            <Button variant={VARIANT.ICON}>
+            <Button variant={VARIANT.ICON} className={styles.close}>
               <Image src={ICON_PATH.CLOSE} alt="close" width={25} height={25} />
             </Button>
           </AlertDialog.Cancel>
           <AlertDialog.Title className={styles.title}>
             {title}
           </AlertDialog.Title>
-          <AlertDialog.Description className={styles.description}>
-            <ScrollArea.Root className={styles.scrollAreaRoot}>
-              <ScrollArea.Viewport className={styles.scrollAreaViewport}>
-                {description}
-              </ScrollArea.Viewport>
-              <ScrollArea.Scrollbar
-                className={styles.scrollAreaScrollbar}
-                orientation="vertical"
+          <AlertDialog.Description className={styles.description} asChild>
+            <div>
+              <ScrollArea
+                verticalPadding={20}
+                height={400}
+                positionMove={8}
+                shrinkHeight={8}
               >
-                <ScrollArea.Thumb className={styles.scrollAreaThumb} />
-              </ScrollArea.Scrollbar>
-            </ScrollArea.Root>
+                {description}
+              </ScrollArea>
+            </div>
           </AlertDialog.Description>
           {dispButton && (
             <div className={styles.actions}>

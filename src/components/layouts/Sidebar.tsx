@@ -8,12 +8,15 @@ import {
   COMPONENT_TYPE,
   NAV_ITEMS,
 } from "@/constants/PageLinksConst";
-import IconWithText from "../elements/IconWithText";
 import { ICON_PATH } from "@/constants/IconPathConst";
 import Button from "../elements/Button";
-import { VARIANT } from "@/constants/ButtonConst";
+import { SIZE, VARIANT } from "@/constants/ButtonConst";
 import MessageDialog from "../elements/MessageDialog";
 import Notification from "../modules/Notification";
+import Dialog from "../elements/Dialog";
+import NewPost from "../modules/NewPost";
+import { HEADER_LABEL } from "@/constants/LabelConst";
+import IconWithText from "../elements/IconWithText";
 /**
  * サイドバーコンポーネント
  */
@@ -67,7 +70,7 @@ export default function Sidebar() {
             />
           </Button>
           <MessageDialog
-            title="通知"
+            title={HEADER_LABEL.NOTIFICATION}
             description={<Notification />}
             dispButton={false}
           >
@@ -92,15 +95,17 @@ export default function Sidebar() {
           </AccordionList>
         </nav>
         <div className={styles.bottomPageLinkWrapper}>
-          <Button variant={VARIANT.NONE}>
-            <IconWithText
-              size={COMPONENT_SIZE.LARGE}
-              length={COMPONENT_LENGTH.FIT}
-              type={COMPONENT_TYPE.NAV}
-              text={NAV_ITEMS.POST.ItemName}
-              iconPath={ICON_PATH.EDIT}
-            />
-          </Button>
+          <Dialog size={SIZE.LARGE} description={<NewPost />}>
+            <Button variant={VARIANT.NONE}>
+              <IconWithText
+                size={COMPONENT_SIZE.LARGE}
+                length={COMPONENT_LENGTH.FIT}
+                type={COMPONENT_TYPE.NAV}
+                text={NAV_ITEMS.POST.ItemName}
+                iconPath={ICON_PATH.EDIT}
+              />
+            </Button>
+          </Dialog>
         </div>
       </div>
     </div>

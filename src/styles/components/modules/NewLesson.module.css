@@ -1,0 +1,11 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.headLabel {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}

@@ -5,7 +5,7 @@ import clsx from "clsx";
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
   size?: "small" | "medium" | "large" | "fit";
-  variant?: "primary" | "secondary" | "search" | "icon" | "none";
+  variant?: "primary" | "secondary" | "submit" | "search" | "icon" | "none";
 }
 
 /**
@@ -28,7 +28,12 @@ const Button = forwardRef<HTMLButtonElement, Props>((props, ref) => {
     rest.className
   );
   return (
-    <button ref={ref} className={classNames} onClick={rest.onClick}>
+    <button
+      ref={ref}
+      className={classNames}
+      onClick={rest.onClick}
+      disabled={rest.disabled}
+    >
       {children}
     </button>
   );

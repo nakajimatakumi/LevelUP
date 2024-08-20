@@ -4,11 +4,15 @@ import styles from "@/styles/components/elements/DropdownList.module.css";
 import Image from "next/image";
 import { ListItemsType } from "@/types/SearchConditionType";
 import { ICON_PATH } from "@/constants/IconPathConst";
+import { SIDE } from "@/constants/ParamConst";
 
 type Props = {
   listItems: ListItemsType[];
   name: string;
   isGroup: boolean;
+  openSide?: "top" | "bottom";
+  value: string;
+  onChange: (value: string) => void;
 };
 
 /**
@@ -16,16 +20,30 @@ type Props = {
  * @param listItems リストアイテム
  * @param name タイトル
  * @param isGroup グループ化するかどうか
+ * @param openSide ドロップダウンの開く方向
+ * @param value 選択されている値
+ * @param onChange 値が変更されたときの処理
  */
-export default function DropdownList({ listItems, name, isGroup }: Props) {
+export default function DropdownList({
+  listItems,
+  name,
+  isGroup,
+  openSide = SIDE.BOTTOM,
+  value,
+  onChange,
+}: Props) {
   return (
     <div className={styles.root}>
-      <Select.Root>
+      <Select.Root value={value} onValueChange={onChange}>
         <Select.Trigger
           className={styles.trigger}
           data-group={isGroup ? "group" : "normal"}
         >
-          <Select.Value className={styles.value} placeholder={name} />
+          <Select.Value className={styles.value} placeholder={name}>
+            {value
+              ? listItems.find((item) => item.value === value)?.name
+              : name}
+          </Select.Value>
           <Select.Icon className={styles.icon} asChild={true}>
             <Image
               src={ICON_PATH.CHEVRON}
@@ -40,9 +58,9 @@ export default function DropdownList({ listItems, name, isGroup }: Props) {
           <Select.Content
             className={styles.content}
             position="popper"
-            side="bottom"
-            align="end"
+            side={openSide}
             sideOffset={-2}
+            align="end"
           >
             <Select.Viewport className={styles.viewport}>
               {listItems.map((item) => (
