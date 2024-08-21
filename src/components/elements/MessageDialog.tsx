@@ -13,6 +13,8 @@ type Props = {
   title: string;
   description: string | React.ReactElement;
   onConfirm?: () => void;
+  onOpenChange?: (open: boolean) => void;
+  isOpen?: boolean;
 };
 
 /**
@@ -29,9 +31,11 @@ export default function MessageDialog({
   title,
   description,
   onConfirm,
+  onOpenChange,
+  isOpen,
 }: Props) {
   return (
-    <AlertDialog.Root>
+    <AlertDialog.Root onOpenChange={onOpenChange} open={isOpen}>
       <AlertDialog.Trigger asChild>{children}</AlertDialog.Trigger>
       <AlertDialog.Portal>
         <AlertDialog.Overlay className={styles.overlay} />
@@ -56,7 +60,7 @@ export default function MessageDialog({
               </ScrollArea>
             </div>
           </AlertDialog.Description>
-          {dispButton && (
+          {dispButton ? (
             <div className={styles.actions}>
               <AlertDialog.Action asChild>
                 <Button
@@ -73,6 +77,17 @@ export default function MessageDialog({
                   size={COMPONENT_SIZE.MEDIUM}
                 >
                   {BUTTON_LABEL.CANCEL}
+                </Button>
+              </AlertDialog.Cancel>
+            </div>
+          ) : (
+            <div className={styles.cancel}>
+              <AlertDialog.Cancel asChild>
+                <Button
+                  variant={BUTTON_VARIANT.PRIMARY}
+                  size={COMPONENT_SIZE.MEDIUM}
+                >
+                  {BUTTON_LABEL.OK}
                 </Button>
               </AlertDialog.Cancel>
             </div>

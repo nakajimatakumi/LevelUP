@@ -5,12 +5,15 @@ export const MESSAGE_TEMPLATE = {
   ADD_MESSAGE: "{1}に追加しました。",
   REMOVE_MESSAGE: "{1}から削除しました。",
   DELETE_MESSAGE: "{1}を削除しました。",
+  NOT_SELECTED_MESSAGE: "{1}が未選択です。",
+  SELECT_MESSAGE: "{1}を選択してください。",
 };
 
 export const MESSAGE_PARAMS = {
   DELETE: "削除",
   POST: "投稿",
   BOOKMARK: "ブックマーク",
+  CATEGORY: "カテゴリ",
 };
 
 export const TOOLTIP_PARAMS = {

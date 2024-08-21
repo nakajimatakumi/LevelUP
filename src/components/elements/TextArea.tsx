@@ -55,7 +55,6 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
         className={classNames}
         value={value}
         onChange={handleChange}
-        maxLength={1500}
         ref={ref}
         onCompositionStart={() => (isComposingRef.current = true)}
         onCompositionEnd={() => {

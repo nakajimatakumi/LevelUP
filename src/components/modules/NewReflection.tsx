@@ -5,6 +5,8 @@ import {
   COMPONENT_LENGTH,
   COMPONENT_SIZE,
   FORM_FIELD,
+  TEXT_SIZE,
+  TEXT_TYPE,
 } from "@/constants/ParamConst";
 import { HEADER_LABEL } from "@/constants/LabelConst";
 import Icon from "@/components/elements/Icon";
@@ -72,6 +74,16 @@ export const NewReflection = ({ control }: Props) => {
             onChange={onChangeGoodPoints}
           />
         </Form.Control>
+        {errorGoodPoints?.message && (
+          <Form.Message className={styles.errorMessage}>
+            <WordText
+              text={errorGoodPoints.message}
+              size={TEXT_SIZE.EXTRA_SMALL}
+              length={COMPONENT_LENGTH.FIT}
+              type={TEXT_TYPE.ERROR}
+            />
+          </Form.Message>
+        )}
       </Form.Field>
       <Form.Field name={FORM_FIELD.BAD_POINTS} className={styles.field}>
         <Form.Label>
@@ -90,6 +102,16 @@ export const NewReflection = ({ control }: Props) => {
             onChange={onChangeBadPoints}
           />
         </Form.Control>
+        {errorBadPoints?.message && (
+          <Form.Message className={styles.errorMessage}>
+            <WordText
+              text={errorBadPoints.message}
+              size={TEXT_SIZE.EXTRA_SMALL}
+              length={COMPONENT_LENGTH.FIT}
+              type={TEXT_TYPE.ERROR}
+            />
+          </Form.Message>
+        )}
       </Form.Field>
       <Form.Field name={FORM_FIELD.IMPROVEMENT} className={styles.field}>
         <Form.Label>
@@ -108,6 +130,16 @@ export const NewReflection = ({ control }: Props) => {
             onChange={onChangeImprovement}
           />
         </Form.Control>
+        {errorImprovement?.message && (
+          <Form.Message className={styles.errorMessage}>
+            <WordText
+              text={errorImprovement.message}
+              size={TEXT_SIZE.EXTRA_SMALL}
+              length={COMPONENT_LENGTH.FIT}
+              type={TEXT_TYPE.ERROR}
+            />
+          </Form.Message>
+        )}
       </Form.Field>
     </div>
   );

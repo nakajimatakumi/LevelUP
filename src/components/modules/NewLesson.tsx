@@ -5,6 +5,8 @@ import {
   COMPONENT_LENGTH,
   COMPONENT_SIZE,
   FORM_FIELD,
+  TEXT_SIZE,
+  TEXT_TYPE,
 } from "@/constants/ParamConst";
 import { HEADER_LABEL } from "@/constants/LabelConst";
 import Icon from "@/components/elements/Icon";
@@ -48,6 +50,16 @@ export const NewLesson = ({ control }: Props) => {
           onChange={onChange}
         />
       </Form.Control>
+      {error?.message && (
+        <Form.Message className={styles.errorMessage}>
+          <WordText
+            text={error.message}
+            size={TEXT_SIZE.EXTRA_SMALL}
+            length={COMPONENT_LENGTH.FIT}
+            type={TEXT_TYPE.ERROR}
+          />
+        </Form.Message>
+      )}
     </Form.Field>
   );
 };

@@ -55,6 +55,11 @@
   gap: 15px;
 }
 
+.cancel {
+  display: flex;
+  justify-content: center;
+}
+
 @keyframes overlayShow {
   from {
     opacity: 0;

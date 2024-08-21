@@ -15,4 +15,5 @@ export const BUTTON_LABEL = {
   CONFIRM: "はい",
   CANCEL: "いいえ",
   POST: "投稿",
+  OK: "OK",
 };

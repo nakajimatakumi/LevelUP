@@ -45,3 +45,7 @@
   width: fit-content;
   max-width: 240px;
 }
+
+.error {
+  color: #9b6161;
+}

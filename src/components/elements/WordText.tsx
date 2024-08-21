@@ -1,3 +1,4 @@
+import { TEXT_TYPE } from "@/constants/ParamConst";
 import styles from "@/styles/components/elements/WordText.module.css";
 import clsx from "clsx";
 
@@ -12,6 +13,7 @@ type Props = {
     | "extraLong"
     | "fit"
     | "none";
+  type?: "default" | "error";
   className?: string;
 };
 
@@ -22,9 +24,23 @@ type Props = {
  * @param length 長さ
  * @param className クラス名
  */
-export default function WordText({ text, size, length, className }: Props) {
+export default function WordText({
+  text,
+  size,
+  length,
+  type = TEXT_TYPE.DEFAULT,
+  className,
+}: Props) {
   return (
-    <p className={clsx(styles.text, styles[size], styles[length], className)}>
+    <p
+      className={clsx(
+        styles.text,
+        styles[size],
+        styles[length],
+        styles[type],
+        className
+      )}
+    >
       {text}
     </p>
   );

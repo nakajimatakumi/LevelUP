@@ -53,7 +53,7 @@ export const SIDE = {
 } as const;
 
 /* 除外する文字 */
-export const EXCLUDE_CHAR = /[<>&;:"\\$|]/;
+export const EXCLUDE_CHAR = /[<>{}`&;:"\\$|]/;
 
 /* アイコンとテキストのタイプ */
 export const ICON_WITH_TEXT_TYPE = {
@@ -82,7 +82,7 @@ export const TEXT_SIZE = {
   EXTRA_LARGE: "extraLarge",
   FIT: "fit",
   NONE: "none",
-};
+} as const;
 
 /* ユーザーアイコンとテキストのサイズ */
 export const USER_SIZE = {
@@ -163,4 +163,9 @@ export const TEXT_STYLE = {
   POSITIVE: "positive",
   NEGATIVE: "negative",
   NORMAL: "normal",
+} as const;
+
+export const TEXT_TYPE = {
+  DEFAULT: "default",
+  ERROR: "error",
 } as const;

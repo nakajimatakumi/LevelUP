@@ -89,6 +89,13 @@
   background-color: #bebebe;
 }
 
+.search:disabled {
+  cursor: default;
+  border: 2px solid #55555550;
+  background-color: #55555510;
+  color: #55555580;
+}
+
 /* icon */
 .icon {
   background-color: transparent;

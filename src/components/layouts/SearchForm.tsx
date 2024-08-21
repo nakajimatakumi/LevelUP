@@ -6,20 +6,36 @@ import styles from "@/styles/components/layouts/SearchForm.module.css";
 import SearchConditionList from "@/components/modules/SearchConditionList";
 import { ICON_PATH } from "@/constants/IconPathConst";
 import { BUTTON_LABEL } from "@/constants/LabelConst";
-import { BUTTON_VARIANT, COMPONENT_SIZE } from "@/constants/ParamConst";
+import {
+  BUTTON_VARIANT,
+  COMPONENT_SIZE,
+  TEXT_TYPE,
+} from "@/constants/ParamConst";
 import { FieldValues, useForm } from "react-hook-form";
 import Icon from "@/components/elements/Icon";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { searchSchema } from "@/schemes/SearchScheme";
+import Tooltip from "@/components/elements/Tooltip";
 
 /**
  * 検索フォームコンポーネント
  */
 export default function SearchForm() {
-  const { handleSubmit, register, control } = useForm({
+  /* フォーム管理 */
+  const {
+    handleSubmit,
+    register,
+    control,
+    formState: { errors },
+  } = useForm({
+    resolver: zodResolver(searchSchema),
     mode: "onChange",
   });
+  /* 検索ハンドラー */
   const handleSearch = (data: FieldValues) => {
     alert(JSON.stringify(data));
   };
+
   return (
     <Form.Root className={styles.root} onSubmit={handleSubmit(handleSearch)}>
       <div className={styles.searchArea}>
@@ -36,10 +52,23 @@ export default function SearchForm() {
               {...register("search")}
             />
           </Form.Control>
+          {errors.search && (
+            <Tooltip
+              message={errors.search.message as string}
+              defaultOpen={true}
+              type={TEXT_TYPE.ERROR}
+            >
+              <span />
+            </Tooltip>
+          )}
         </Form.Field>
         <div className={styles.button}>
           <Form.Submit asChild>
-            <Button variant={BUTTON_VARIANT.SEARCH} size={COMPONENT_SIZE.LARGE}>
+            <Button
+              variant={BUTTON_VARIANT.SEARCH}
+              size={COMPONENT_SIZE.LARGE}
+              disabled={!!errors.search}
+            >
               {BUTTON_LABEL.SEARCH}
             </Button>
           </Form.Submit>

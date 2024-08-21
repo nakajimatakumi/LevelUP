@@ -3,9 +3,12 @@
 import styles from "@/styles/components/modules/NewPost.module.css";
 import {
   BUTTON_VARIANT,
+  COMPONENT_LENGTH,
   COMPONENT_SIZE,
   FORM_FIELD,
   SIDE,
+  TEXT_SIZE,
+  TEXT_TYPE,
 } from "@/constants/ParamConst";
 import * as Form from "@radix-ui/react-form";
 import { BUTTON_LABEL } from "@/constants/LabelConst";
@@ -17,17 +20,30 @@ import { FieldValues, useForm, useController } from "react-hook-form";
 import { NewExperience } from "./NewExperience";
 import { NewReflection } from "./NewReflection";
 import { NewLesson } from "./NewLesson";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { postSchema } from "@/schemes/PostScheme";
+import WordText from "../elements/WordText";
+import MessageDialog from "../elements/MessageDialog";
+import { useState } from "react";
+import {
+  MESSAGE_PARAMS,
+  MESSAGE_TEMPLATE,
+} from "@/constants/MessageTemplateConst";
+import generateMessage from "@/logics/functions/GenerateMessage";
 
 /*
  * 投稿フォーム
  */
 export default function NewPost() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   /* フォーム */
   const { control, handleSubmit, formState } = useForm({
     mode: "onChange",
+    resolver: zodResolver(postSchema),
   });
 
-  /* カテゴリー */
+  /* カテゴリのコントロール */
   const {
     field: { onChange: onChangeCategory, value: valueCategory },
     fieldState: { error: errorCategory },
@@ -36,10 +52,9 @@ export default function NewPost() {
     control,
   });
 
-  /* 公開設定 */
+  /* 公開設定のコントロール */
   const {
     field: { onChange: onChangePublic, value: valuePublic },
-    fieldState: { error: errorPublic },
   } = useController({
     name: FORM_FIELD.PRIVATE,
     control,
@@ -48,13 +63,14 @@ export default function NewPost() {
 
   /* 初期データ取得処理 */
   const { initData } = useInit();
-  /* カテゴリー */
+
+  /* カテゴリの初期データ */
   const { name: categoryName, listItems: categoryList } =
     initData.searchConditions.category;
 
-  //Todo 後で消す
+  /* 投稿ボタン押下時処理 */
   const onSubmit = (data: FieldValues) => {
-    alert(JSON.stringify(data));
+    valueCategory ? alert(JSON.stringify(data)) : setIsDialogOpen(true);
   };
 
   return (
@@ -72,6 +88,16 @@ export default function NewPost() {
             onChange={onChangeCategory}
             value={valueCategory}
           />
+          {errorCategory?.message && (
+            <Form.Message className={styles.errorMessage}>
+              <WordText
+                text={errorCategory.message}
+                size={TEXT_SIZE.EXTRA_SMALL}
+                length={COMPONENT_LENGTH.FIT}
+                type={TEXT_TYPE.ERROR}
+              />
+            </Form.Message>
+          )}
         </Form.Field>
         <Form.Field name={FORM_FIELD.PRIVATE} className={styles.field}>
           <PrivateToggle
@@ -91,6 +117,19 @@ export default function NewPost() {
             {BUTTON_LABEL.POST}
           </Button>
         </Form.Submit>
+        <MessageDialog
+          title={generateMessage(MESSAGE_TEMPLATE.NOT_SELECTED_MESSAGE, [
+            MESSAGE_PARAMS.CATEGORY,
+          ])}
+          description={generateMessage(MESSAGE_TEMPLATE.SELECT_MESSAGE, [
+            MESSAGE_PARAMS.CATEGORY,
+          ])}
+          dispButton={false}
+          isOpen={isDialogOpen}
+          onOpenChange={setIsDialogOpen}
+        >
+          <span />
+        </MessageDialog>
       </div>
     </Form.Root>
   );
