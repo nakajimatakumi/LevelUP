@@ -1,7 +1,8 @@
 import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import styles from "@/styles/components/elements/MessageDialog.module.css";
 import Button from "./Button";
-import { LABEL, SIZE, VARIANT } from "@/constants/ButtonConst";
+import { BUTTON_LABEL } from "@/constants/LabelConst";
+import { BUTTON_VARIANT, COMPONENT_SIZE } from "@/constants/ParamConst";
 import Image from "next/image";
 import { ICON_PATH } from "@/constants/IconPathConst";
 import ScrollArea from "./ScrollArea";
@@ -36,7 +37,7 @@ export default function MessageDialog({
         <AlertDialog.Overlay className={styles.overlay} />
         <AlertDialog.Content className={styles.content}>
           <AlertDialog.Cancel className={styles.close} asChild>
-            <Button variant={VARIANT.ICON} className={styles.close}>
+            <Button variant={BUTTON_VARIANT.ICON} className={styles.close}>
               <Image src={ICON_PATH.CLOSE} alt="close" width={25} height={25} />
             </Button>
           </AlertDialog.Cancel>
@@ -59,16 +60,19 @@ export default function MessageDialog({
             <div className={styles.actions}>
               <AlertDialog.Action asChild>
                 <Button
-                  variant={VARIANT.PRIMARY}
-                  size={SIZE.MEDIUM}
+                  variant={BUTTON_VARIANT.PRIMARY}
+                  size={COMPONENT_SIZE.MEDIUM}
                   onClick={onConfirm}
                 >
-                  {LABEL.CONFIRM}
+                  {BUTTON_LABEL.CONFIRM}
                 </Button>
               </AlertDialog.Action>
               <AlertDialog.Cancel asChild>
-                <Button variant={VARIANT.SECONDARY} size={SIZE.MEDIUM}>
-                  {LABEL.CANCEL}
+                <Button
+                  variant={BUTTON_VARIANT.SECONDARY}
+                  size={COMPONENT_SIZE.MEDIUM}
+                >
+                  {BUTTON_LABEL.CANCEL}
                 </Button>
               </AlertDialog.Cancel>
             </div>

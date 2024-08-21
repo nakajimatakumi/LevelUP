@@ -6,12 +6,12 @@ import Icon from "./Icon";
 import WordText from "./WordText";
 import {
   COMPONENT_SIZE,
-  COMPONENT_TYPE,
+  ICON_WITH_TEXT_TYPE,
   ICON_SIZE,
   NAV_SIZE,
   TEXT_SIZE,
   USER_SIZE,
-} from "@/constants/PageLinksConst";
+} from "@/constants/ParamConst";
 
 type Props = UserIconType | OtherIconType;
 
@@ -36,18 +36,18 @@ export default function IconWithText({
   const sizeUpper = size.toUpperCase() as keyof typeof COMPONENT_SIZE;
   const { iconSize, textSize } = (() => {
     switch (type) {
-      case COMPONENT_TYPE.USER:
+      case ICON_WITH_TEXT_TYPE.USER:
         return {
           iconSize: USER_SIZE.iconSize[sizeUpper],
           textSize: USER_SIZE.textSize[sizeUpper],
         };
-      case COMPONENT_TYPE.NAV:
+      case ICON_WITH_TEXT_TYPE.NAV:
         return {
           iconSize: NAV_SIZE.iconSize[sizeUpper],
           textSize: NAV_SIZE.textSize[sizeUpper],
         };
-      case COMPONENT_TYPE.POSTED_TIME:
-      case COMPONENT_TYPE.NONE:
+      case ICON_WITH_TEXT_TYPE.POSTED_TIME:
+      case ICON_WITH_TEXT_TYPE.NONE:
       default:
         return {
           iconSize: ICON_SIZE.SMALL,
@@ -61,7 +61,7 @@ export default function IconWithText({
 
   return (
     <div className={rootClassName}>
-      {type === COMPONENT_TYPE.USER ? (
+      {type === ICON_WITH_TEXT_TYPE.USER ? (
         <UserIcon userIconInfo={userIconInfo!} size={iconSize as SizeType} />
       ) : (
         <Icon iconPath={iconPath!} size={iconSize as SizeType} />

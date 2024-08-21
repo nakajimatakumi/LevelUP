@@ -9,8 +9,8 @@ import CategoryBadge from "@/components/elements/CategoryBadge";
 import {
   COMPONENT_LENGTH,
   COMPONENT_SIZE,
-  COMPONENT_TYPE,
-} from "@/constants/PageLinksConst";
+  ICON_WITH_TEXT_TYPE,
+} from "@/constants/ParamConst";
 import { ICON_PATH } from "@/constants/IconPathConst";
 import SentenceText from "../elements/SentenceText";
 import Card from "../elements/Card";
@@ -31,7 +31,7 @@ export default function UserInfoCard() {
             size={COMPONENT_SIZE.SMALL}
             length={COMPONENT_LENGTH.MEDIUM}
             text={dispPostCard.userInfo.userName}
-            type={COMPONENT_TYPE.USER}
+            type={ICON_WITH_TEXT_TYPE.USER}
           />
           <JobBadge {...dispPostCard.jobInfo} />
         </div>
@@ -52,7 +52,7 @@ export default function UserInfoCard() {
                 size={COMPONENT_SIZE.NONE}
                 length={COMPONENT_LENGTH.NONE}
                 text={dispPostCard.postedTime}
-                type={COMPONENT_TYPE.POSTED_TIME}
+                type={ICON_WITH_TEXT_TYPE.POSTED_TIME}
               />
             </>
           )}

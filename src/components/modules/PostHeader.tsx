@@ -5,12 +5,12 @@ import { UserInfoType } from "@/types/UserInfoType";
 import {
   COMPONENT_LENGTH,
   COMPONENT_SIZE,
-  COMPONENT_TYPE,
-} from "@/constants/PageLinksConst";
+  ICON_WITH_TEXT_TYPE,
+} from "@/constants/ParamConst";
 import { PostInfoType } from "@/types/PostInfoType";
 import FavoriteButton from "@/components/modules/FavoriteButton";
 import BookmarkButton from "./BookmarkButton";
-import { VARIANT } from "@/constants/ButtonConst";
+import { BUTTON_VARIANT } from "@/constants/ParamConst";
 import Button from "../elements/Button";
 import Image from "next/image";
 import { ICON_PATH } from "@/constants/IconPathConst";
@@ -65,7 +65,7 @@ export default function PostHeader({ userInfo, postInfo, loginUserId }: Props) {
       <IconWithText
         size={COMPONENT_SIZE.MEDIUM}
         length={COMPONENT_LENGTH.FIT}
-        type={COMPONENT_TYPE.USER}
+        type={ICON_WITH_TEXT_TYPE.USER}
         text={userInfo.userName}
         userIconInfo={userInfo.userIconInfo}
       />
@@ -101,7 +101,7 @@ export default function PostHeader({ userInfo, postInfo, loginUserId }: Props) {
               description={deleteMessage.description}
               onConfirm={deletePost}
             >
-              <Button variant={VARIANT.ICON}>
+              <Button variant={BUTTON_VARIANT.ICON}>
                 <Image
                   src={ICON_PATH.DELETE}
                   alt="delete"

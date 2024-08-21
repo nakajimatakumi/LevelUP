@@ -3,14 +3,14 @@ import styles from "@/styles/components/layouts/Sidebar.module.css";
 import AccordionList from "@/components/elements/AccordionList";
 import useInit from "@/logics/hooks/useInit";
 import {
-  COMPONENT_LENGTH,
+  BUTTON_VARIANT,
   COMPONENT_SIZE,
-  COMPONENT_TYPE,
+  COMPONENT_LENGTH,
+  ICON_WITH_TEXT_TYPE,
   NAV_ITEMS,
-} from "@/constants/PageLinksConst";
+} from "@/constants/ParamConst";
 import { ICON_PATH } from "@/constants/IconPathConst";
 import Button from "../elements/Button";
-import { SIZE, VARIANT } from "@/constants/ButtonConst";
 import MessageDialog from "../elements/MessageDialog";
 import Notification from "../modules/Notification";
 import Dialog from "../elements/Dialog";
@@ -35,36 +35,36 @@ export default function Sidebar() {
             <IconWithText
               size={COMPONENT_SIZE.MEDIUM}
               length={COMPONENT_LENGTH.FIT}
-              type={COMPONENT_TYPE.USER}
+              type={ICON_WITH_TEXT_TYPE.USER}
               text={initData.userInfo.userName}
               userIconInfo={initData.userInfo.userIconInfo}
             />
           </AccordionList>
         </div>
         <nav className={styles.centerPageLinkWrapper}>
-          <Button variant={VARIANT.NONE}>
+          <Button variant={BUTTON_VARIANT.NONE}>
             <IconWithText
               size={COMPONENT_SIZE.LARGE}
               length={COMPONENT_LENGTH.MEDIUM}
-              type={COMPONENT_TYPE.NAV}
+              type={ICON_WITH_TEXT_TYPE.NAV}
               text={NAV_ITEMS.MY_EXP.ItemName}
               iconPath={NAV_ITEMS.MY_EXP.iconPath}
             />
           </Button>
-          <Button variant={VARIANT.NONE}>
+          <Button variant={BUTTON_VARIANT.NONE}>
             <IconWithText
               size={COMPONENT_SIZE.LARGE}
               length={COMPONENT_LENGTH.MEDIUM}
-              type={COMPONENT_TYPE.NAV}
+              type={ICON_WITH_TEXT_TYPE.NAV}
               text={NAV_ITEMS.ALL_EXP.ItemName}
               iconPath={NAV_ITEMS.ALL_EXP.iconPath}
             />
           </Button>
-          <Button variant={VARIANT.NONE}>
+          <Button variant={BUTTON_VARIANT.NONE}>
             <IconWithText
               size={COMPONENT_SIZE.LARGE}
               length={COMPONENT_LENGTH.MEDIUM}
-              type={COMPONENT_TYPE.NAV}
+              type={ICON_WITH_TEXT_TYPE.NAV}
               text={NAV_ITEMS.BOOKMARK.ItemName}
               iconPath={NAV_ITEMS.BOOKMARK.iconPath}
             />
@@ -74,11 +74,11 @@ export default function Sidebar() {
             description={<Notification />}
             dispButton={false}
           >
-            <Button variant={VARIANT.NONE}>
+            <Button variant={BUTTON_VARIANT.NONE}>
               <IconWithText
                 size={COMPONENT_SIZE.LARGE}
                 length={COMPONENT_LENGTH.MEDIUM}
-                type={COMPONENT_TYPE.NAV}
+                type={ICON_WITH_TEXT_TYPE.NAV}
                 text={NAV_ITEMS.NOTIFICATION.ItemName}
                 iconPath={NAV_ITEMS.NOTIFICATION.iconPath}
               />
@@ -88,19 +88,19 @@ export default function Sidebar() {
             <IconWithText
               size={COMPONENT_SIZE.LARGE}
               length={COMPONENT_LENGTH.FIT}
-              type={COMPONENT_TYPE.NAV}
+              type={ICON_WITH_TEXT_TYPE.NAV}
               text={NAV_ITEMS.SETTING.ItemName}
               iconPath={ICON_PATH.SETTING}
             />
           </AccordionList>
         </nav>
         <div className={styles.bottomPageLinkWrapper}>
-          <Dialog size={SIZE.LARGE} description={<NewPost />}>
-            <Button variant={VARIANT.NONE}>
+          <Dialog size={COMPONENT_SIZE.LARGE} description={<NewPost />}>
+            <Button variant={BUTTON_VARIANT.NONE}>
               <IconWithText
                 size={COMPONENT_SIZE.LARGE}
                 length={COMPONENT_LENGTH.FIT}
-                type={COMPONENT_TYPE.NAV}
+                type={ICON_WITH_TEXT_TYPE.NAV}
                 text={NAV_ITEMS.POST.ItemName}
                 iconPath={ICON_PATH.EDIT}
               />

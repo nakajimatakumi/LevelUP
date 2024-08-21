@@ -2,10 +2,10 @@ import * as Accordion from "@radix-ui/react-accordion";
 import styles from "@/styles/components/elements/AccordionList.module.css";
 import Image from "next/image";
 import { ICON_PATH } from "@/constants/IconPathConst";
-import { VARIANT } from "@/constants/ButtonConst";
+import { BUTTON_VARIANT } from "@/constants/ParamConst";
 import Button from "./Button";
 import WordText from "./WordText";
-import { COMPONENT_LENGTH, COMPONENT_SIZE } from "@/constants/PageLinksConst";
+import { COMPONENT_LENGTH, COMPONENT_SIZE } from "@/constants/ParamConst";
 import { Separator } from "@radix-ui/react-select";
 
 type Props = {
@@ -35,7 +35,7 @@ export default function AccordionList({ children, listItems }: Props) {
           <ul className={styles.listItems}>
             <Separator className={styles.separator} />
             {listItems.map((item, index) => (
-              <Button variant={VARIANT.NONE} key={index}>
+              <Button variant={BUTTON_VARIANT.NONE} key={index}>
                 <li className={styles.listItem}>
                   <WordText
                     text={item}

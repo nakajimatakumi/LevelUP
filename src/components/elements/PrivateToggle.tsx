@@ -1,6 +1,6 @@
 import styles from "@/styles/components/elements/PrivateToggle.module.css";
 import Toggle from "@/components/elements/Toggle";
-import { LABEL } from "@/constants/ButtonConst";
+import { BUTTON_LABEL } from "@/constants/LabelConst";
 import clsx from "clsx";
 
 type Props = {
@@ -19,7 +19,7 @@ export default function PrivateToggle({
   return (
     <div className={clsx(styles.root, styles[size ?? "medium"])}>
       <Toggle onChange={onChange} checked={value} />
-      <p className={styles.label}>{LABEL.PRIVATE}</p>
+      <p className={styles.label}>{BUTTON_LABEL.PRIVATE}</p>
     </div>
   );
 }

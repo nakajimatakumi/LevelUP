@@ -7,7 +7,7 @@ import { UserInfoType } from "@/types/UserInfoType";
 import { PostInfoType } from "@/types/PostInfoType";
 import FlowLine from "./FlowLine";
 import { ICON_PATH } from "@/constants/IconPathConst";
-import { TOOLTIP_TEXT } from "@/constants/TooltipConst";
+import { TOOLTIP_PARAMS } from "@/constants/MessageTemplateConst";
 
 type Props = {
   userInfo: UserInfoType;
@@ -25,7 +25,7 @@ export default function PostTextBox({ userInfo, postInfo }: Props) {
       <div className={styles.contentWrapper}>
         <FlowLine
           iconPath={ICON_PATH.EXPERIENCE}
-          tooltipText={TOOLTIP_TEXT.EXPERIENCE}
+          tooltipText={TOOLTIP_PARAMS.EXPERIENCE}
         />
         <Experience
           experience={postInfo.experience}
@@ -37,7 +37,7 @@ export default function PostTextBox({ userInfo, postInfo }: Props) {
         <div className={styles.contentWrapper}>
           <FlowLine
             iconPath={ICON_PATH.REFLECTION}
-            tooltipText={TOOLTIP_TEXT.REFLECTION}
+            tooltipText={TOOLTIP_PARAMS.REFLECTION}
           />
           <Reflection
             userInfo={userInfo}
@@ -49,7 +49,7 @@ export default function PostTextBox({ userInfo, postInfo }: Props) {
         <div className={styles.contentWrapper}>
           <FlowLine
             iconPath={ICON_PATH.LESSON}
-            tooltipText={TOOLTIP_TEXT.LESSON}
+            tooltipText={TOOLTIP_PARAMS.LESSON}
           />
           <Lesson
             lessonsList={postInfo.lessonsList}

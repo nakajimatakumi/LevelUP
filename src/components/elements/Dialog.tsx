@@ -2,7 +2,7 @@ import * as radixDialog from "@radix-ui/react-dialog";
 import styles from "@/styles/components/elements/Dialog.module.css";
 import clsx from "clsx";
 import Button from "./Button";
-import { VARIANT } from "@/constants/ButtonConst";
+import { BUTTON_VARIANT } from "@/constants/ParamConst";
 import Image from "next/image";
 import { ICON_PATH } from "@/constants/IconPathConst";
 import ScrollArea from "./ScrollArea";
@@ -29,7 +29,7 @@ export default function Dialog({ children, description, size }: Props) {
         <radixDialog.Content className={classNames}>
           <radixDialog.Title className={styles.title} />
           <radixDialog.Close className={styles.close} asChild>
-            <Button variant={VARIANT.ICON}>
+            <Button variant={BUTTON_VARIANT.ICON}>
               <Image src={ICON_PATH.CLOSE} alt="close" width={25} height={25} />
             </Button>
           </radixDialog.Close>

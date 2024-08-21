@@ -4,7 +4,7 @@ import styles from "@/styles/components/modules/Reflection.module.css";
 import Image from "next/image";
 import { ICON_PATH } from "@/constants/IconPathConst";
 import { Separator } from "@radix-ui/react-separator";
-import { TOOLTIP_TEXT } from "@/constants/TooltipConst";
+import { TOOLTIP_PARAMS } from "@/constants/MessageTemplateConst";
 import Introspection from "@/components/modules/Introspection";
 import Improvement from "@/components/modules/Improvement";
 import Tooltip from "@/components/elements/Tooltip";
@@ -16,7 +16,7 @@ import { PostInfoType } from "@/types/PostInfoType";
 import * as Accordion from "@radix-ui/react-accordion";
 import generateMessage from "@/logics/functions/GenerateMessage";
 import { MESSAGE_TEMPLATE } from "@/constants/MessageTemplateConst";
-import { COMPONENT_SIZE } from "@/constants/PageLinksConst";
+import { COMPONENT_SIZE } from "@/constants/ParamConst";
 import Icon from "../elements/Icon";
 import Card from "../elements/Card";
 type Props = {
@@ -57,7 +57,7 @@ export default function Reflection({
           <div className={styles.container}>
             <Tooltip
               message={generateMessage(MESSAGE_TEMPLATE.TOOLTIP_MESSAGE, [
-                TOOLTIP_TEXT.INTROSPECTION,
+                TOOLTIP_PARAMS.INTROSPECTION,
               ])}
             >
               <span>
@@ -73,7 +73,7 @@ export default function Reflection({
           <div className={styles.container}>
             <Tooltip
               message={generateMessage(MESSAGE_TEMPLATE.TOOLTIP_MESSAGE, [
-                TOOLTIP_TEXT.IMPROVEMENT,
+                TOOLTIP_PARAMS.IMPROVEMENT,
               ])}
             >
               <span>

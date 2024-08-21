@@ -2,7 +2,7 @@ import styles from "@/styles/components/elements/ActiveButton.module.css";
 import Image from "next/image";
 import { useState, ButtonHTMLAttributes, useMemo } from "react";
 import Button from "./Button";
-import { VARIANT } from "@/constants/ButtonConst";
+import { BUTTON_VARIANT } from "@/constants/ParamConst";
 import clsx from "clsx";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -37,7 +37,7 @@ export default function ActiveButton({ children, isActive, onClick }: Props) {
   return (
     <div className={styles.root}>
       <Button
-        variant={VARIANT.ICON}
+        variant={BUTTON_VARIANT.ICON}
         onClick={handleClick}
         className={clsx(styles.icon, {
           [styles.hideIcon]: isActiveState,
@@ -47,7 +47,7 @@ export default function ActiveButton({ children, isActive, onClick }: Props) {
         {children}
       </Button>
       <Button
-        variant={VARIANT.ICON}
+        variant={BUTTON_VARIANT.ICON}
         onClick={handleClick}
         className={clsx(styles.icon, {
           [styles.showIcon]: isActiveState,

@@ -1,6 +1,6 @@
 import styles from "@/styles/components/modules/Introspection.module.css";
 import ListText from "../elements/ListText";
-import { TEXT_STYLE } from "@/constants/PageLinksConst";
+import { TEXT_STYLE } from "@/constants/ParamConst";
 
 type Props = {
   reflections: {

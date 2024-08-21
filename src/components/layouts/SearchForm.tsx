@@ -4,12 +4,11 @@ import * as Form from "@radix-ui/react-form";
 import Button from "@/components/elements/Button";
 import styles from "@/styles/components/layouts/SearchForm.module.css";
 import SearchConditionList from "@/components/modules/SearchConditionList";
-import useSearch from "@/logics/hooks/useSearch";
-import Image from "next/image";
 import { ICON_PATH } from "@/constants/IconPathConst";
-import { LABEL, SIZE, VARIANT } from "@/constants/ButtonConst";
+import { BUTTON_LABEL } from "@/constants/LabelConst";
+import { BUTTON_VARIANT, COMPONENT_SIZE } from "@/constants/ParamConst";
 import { FieldValues, useForm } from "react-hook-form";
-import Icon from "../elements/Icon";
+import Icon from "@/components/elements/Icon";
 
 /**
  * 検索フォームコンポーネント
@@ -27,7 +26,7 @@ export default function SearchForm() {
         <Form.Field name="search" className={styles.field}>
           <Icon
             iconPath={ICON_PATH.SEARCH}
-            size={SIZE.MEDIUM}
+            size={COMPONENT_SIZE.MEDIUM}
             className={styles.searchIcon}
           />
           <Form.Control asChild className={styles.inputArea}>
@@ -40,8 +39,8 @@ export default function SearchForm() {
         </Form.Field>
         <div className={styles.button}>
           <Form.Submit asChild>
-            <Button variant={VARIANT.SEARCH} size={SIZE.LARGE}>
-              {LABEL.SEARCH}
+            <Button variant={BUTTON_VARIANT.SEARCH} size={COMPONENT_SIZE.LARGE}>
+              {BUTTON_LABEL.SEARCH}
             </Button>
           </Form.Submit>
         </div>

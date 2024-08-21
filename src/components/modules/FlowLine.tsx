@@ -5,7 +5,7 @@ import Tooltip from "@/components/elements/Tooltip";
 import generateMessage from "@/logics/functions/GenerateMessage";
 import { MESSAGE_TEMPLATE } from "@/constants/MessageTemplateConst";
 import Icon from "../elements/Icon";
-import { COMPONENT_SIZE } from "@/constants/PageLinksConst";
+import { COMPONENT_SIZE } from "@/constants/ParamConst";
 
 type Props = {
   iconPath: string;
