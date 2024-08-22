@@ -70,7 +70,9 @@ export default function NewPost() {
 
   /* 投稿ボタン押下時処理 */
   const onSubmit = (data: FieldValues) => {
-    valueCategory ? alert(JSON.stringify(data)) : setIsDialogOpen(true);
+    valueCategory
+      ? (alert(JSON.stringify(data)), console.log(data))
+      : setIsDialogOpen(true);
   };
 
   return (

@@ -1,3 +1,5 @@
+"use client";
+
 import styles from "@/styles/components/modules/PostHeader.module.css";
 import IconWithText from "@/components/elements/IconWithText";
 import PrivateToggle from "@/components/elements/PrivateToggle";
@@ -20,11 +22,12 @@ import {
   MESSAGE_PARAMS,
   MESSAGE_TEMPLATE,
 } from "@/constants/MessageTemplateConst";
-import { useContext, useMemo } from "react";
+import { useContext, useMemo, useState } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 import { dispPostCardContext } from "@/contexts/DispPostCardContext";
 import formatPostInfo from "@/logics/functions/FormatPostInfo";
 import useDeletePost from "@/logics/hooks/useDeletePost";
+import { useSwitchPublic } from "@/logics/hooks/useSwitchPublic";
 
 type Props = {
   userInfo: UserInfoType;
@@ -45,20 +48,13 @@ export default function PostHeader({ userInfo, postInfo, loginUserId }: Props) {
   /* データ成形処理 */
   const formattedPostInfo = formatPostInfo({ userInfo, postInfo });
 
-  /* ダイアログのメッセージを生成 */
-  const deleteMessage = useMemo(
-    () => ({
-      title: generateMessage(MESSAGE_TEMPLATE.CONFIRM_MESSAGE, [
-        MESSAGE_PARAMS.POST,
-        MESSAGE_PARAMS.DELETE,
-      ]),
-      description: MESSAGE_TEMPLATE.CANT_UNDO_MESSAGE,
-    }),
-    []
-  );
-
   /* 投稿削除関数取得 */
   const { deletePost } = useDeletePost(postInfo.postId);
+
+  /* 公開状態,切り替え関数取得 */
+  const { isPrivate, switchPublic, ChangePublicDialog } = useSwitchPublic(
+    postInfo.isPrivate === "true"
+  );
 
   return (
     <div className={styles.userInfo}>
@@ -97,8 +93,11 @@ export default function PostHeader({ userInfo, postInfo, loginUserId }: Props) {
         {loginUserId === userInfo.userId && (
           <>
             <MessageDialog
-              title={deleteMessage.title}
-              description={deleteMessage.description}
+              title={generateMessage(MESSAGE_TEMPLATE.CONFIRM_2PARAMS_MESSAGE, [
+                MESSAGE_PARAMS.POST,
+                MESSAGE_PARAMS.DELETE,
+              ])}
+              description={MESSAGE_TEMPLATE.CANT_UNDO_MESSAGE}
               onConfirm={deletePost}
             >
               <Button variant={BUTTON_VARIANT.ICON}>
@@ -110,7 +109,8 @@ export default function PostHeader({ userInfo, postInfo, loginUserId }: Props) {
                 />
               </Button>
             </MessageDialog>
-            <PrivateToggle />
+            <PrivateToggle value={isPrivate} onChange={switchPublic} />
+            <ChangePublicDialog />
           </>
         )}
       </div>

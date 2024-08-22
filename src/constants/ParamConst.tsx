@@ -123,7 +123,16 @@ export const NAV_SIZE = {
 /* ナビゲーションアイテム */
 export const NAV_ITEMS = {
   PROFILE: {
-    ListItems: ["プロフィール設定", "ログアウト"],
+    ListItems: [
+      {
+        ItemName: "プロフィール編集",
+        ItemId: "editProfile",
+      },
+      {
+        ItemName: "ログアウト",
+        ItemId: "logout",
+      },
+    ],
   },
   MY_EXP: {
     ItemName: "じぶんの経験",
@@ -145,11 +154,26 @@ export const NAV_ITEMS = {
     ItemName: "設定",
     iconPath: ICON_PATH.SETTING,
     ListItems: [
-      "アカウント設定",
-      "公開設定",
-      "通知設定",
-      "LevelUPについて",
-      "お問い合わせ",
+      {
+        ItemName: "アカウント設定",
+        ItemId: "account",
+      },
+      {
+        ItemName: "公開設定",
+        ItemId: "public",
+      },
+      {
+        ItemName: "通知設定",
+        ItemId: "notification",
+      },
+      {
+        ItemName: "LevelUPについて",
+        ItemId: "about",
+      },
+      {
+        ItemName: "お問い合わせ",
+        ItemId: "contact",
+      },
     ],
   },
   POST: {

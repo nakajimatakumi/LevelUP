@@ -15,14 +15,20 @@ import { ToastContext } from "@/contexts/ToastContext";
 export default function useDeletePost(postId: string) {
   /* 投稿表示データの状態更新関数取得 */
   const { setDispPostList } = useContext(dispPostListContext);
+
+  /* トースト表示関数取得 */
   const { showToast } = useContext(ToastContext);
+
   /* 投稿削除関数 */
   const deletePost = () => {
     setDispPostList((prev) =>
       prev.filter((post) => post.postInfo.postId !== postId)
     );
     showToast(
-      generateMessage(MESSAGE_TEMPLATE.DELETE_MESSAGE, [MESSAGE_PARAMS.POST])
+      generateMessage(MESSAGE_TEMPLATE.COMPLETE_MESSAGE, [
+        MESSAGE_PARAMS.POST,
+        MESSAGE_PARAMS.DELETE,
+      ])
     );
   };
 

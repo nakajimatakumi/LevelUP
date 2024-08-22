@@ -22,6 +22,7 @@ export type PostInfoType = {
   isFavorite: string;
   isBookmark: string;
   experience: string;
+  isPrivate: string;
   reflections: ReflectionsType;
   improvementsList: string[];
   lessonsList: string[];

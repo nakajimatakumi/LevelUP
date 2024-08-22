@@ -181,6 +181,7 @@
         "isFavorite": "false",
         "isBookmark": "true",
         "favoriteNum": "0",
+        "isPrivate": "true",
         "experience": "手作りキャンドルのワークショップに参加して、自分でキャンドルを作ってみた。\nまずは講師の方にキャンドルの基本的な作り方を学んだ。\nそのあと、好きな色や香りで材料を選んで、混ぜ合わせた。\n型に流し込む時に、気泡が入らないように作るのが難しかった。\n他の人より時間はかかったけど、理想通りにつくれた。",
         "reflections": {
           "positiveList": [
@@ -226,6 +227,7 @@
         "isFavorite": "true",
         "isBookmark": "false",
         "favoriteNum": "1000",
+        "isPrivate": "false",
         "experience": "大規模なシステム開発プロジェクトのキックオフミーティングを主催した。\n多様なステークホルダーが参加し、プロジェクトの目標や課題について議論した。\n予想以上に意見が分かれ、調整に時間がかかったが、最終的に全員の合意を得ることができた。",
         "reflections": {
           "positiveList": [
@@ -273,6 +275,7 @@
         "isFavorite": "true",
         "isBookmark": "true",
         "favoriteNum": "10001",
+        "isPrivate": "false",
         "experience": "子供たちと一緒に初めての家庭菜園に挑戦した。\nトマトとキュウリの苗を植え、毎日水やりと観察を行った。\n虫害に悩まされたが、オーガニックな対策方法を調べて実践。\n2ヶ月後、初めての収穫を家族で喜んだ。",
         "reflections": {
           "positiveList": [
@@ -321,6 +324,7 @@
         "isFavorite": "false",
         "isBookmark": "true",
         "favoriteNum": "0",
+        "isPrivate": "false",
         "experience": "手作りキャンドルのワークショップに参加して、自分でキャンドルを作ってみた。\nまずは講師の方にキャンドルの基本的な作り方を学んだ。\nそのあと、好きな色や香りで材料を選んで、混ぜ合わせた。\n型に流し込む時に、気泡が入らないように作るのが難しかった。\n他の人より時間はかかったけど、理想通りにつくれた。",
         "reflections": {
           "positiveList": [
@@ -366,6 +370,7 @@
         "isFavorite": "true",
         "isBookmark": "false",
         "favoriteNum": "1200",
+        "isPrivate": "false",
         "experience": "大規模なシステム開発プロジェクトのキックオフミーティングを主催した。\n多様なステークホルダーが参加し、プロジェクトの目標や課題について議論した。\n予想以上に意見が分かれ、調整に時間がかかったが、最終的に全員の合意を得ることができた。",
         "reflections": {
           "positiveList": [
@@ -413,6 +418,7 @@
         "isFavorite": "true",
         "isBookmark": "true",
         "favoriteNum": "123",
+        "isPrivate": "false",
         "experience": "子供たちと一緒に初めての家庭菜園に挑戦した。\nトマトとキュウリの苗を植え、毎日水やりと観察を行った。\n虫害に悩まされたが、オーガニックな対策方法を調べて実践。\n2ヶ月後、初めての収穫を家族で喜んだ。",
         "reflections": {
           "positiveList": [
@@ -461,6 +467,7 @@
         "isFavorite": "false",
         "isBookmark": "true",
         "favoriteNum": "0",
+        "isPrivate": "false",
         "experience": "手作りキャンドルのワークショップに参加して、自分でキャンドルを作ってみた。\nまずは講師の方にキャンドルの基本的な作り方を学んだ。\nそのあと、好きな色や香りで材料を選んで、混ぜ合わせた。\n型に流し込む時に、気泡が入らないように作るのが難しかった。\n他の人より時間はかかったけど、理想通りにつくれた。",
         "reflections": {
           "positiveList": [
@@ -506,6 +513,7 @@
         "isFavorite": "true",
         "isBookmark": "false",
         "favoriteNum": "1200",
+        "isPrivate": "false",
         "experience": "大規模なシステム開発プロジェクトのキックオフミーティングを主催した。\n多様なステークホルダーが参加し、プロジェクトの目標や課題について議論した。\n予想以上に意見が分かれ、調整に時間がかかったが、最終的に全員の合意を得ることができた。",
         "reflections": {
           "positiveList": [
@@ -553,6 +561,7 @@
         "isFavorite": "true",
         "isBookmark": "true",
         "favoriteNum": "123",
+        "isPrivate": "false",
         "experience": "子供たちと一緒に初めての家庭菜園に挑戦した。\nトマトとキュウリの苗を植え、毎日水やりと観察を行った。\n虫害に悩まされたが、オーガニックな対策方法を調べて実践。\n2ヶ月後、初めての収穫を家族で喜んだ。",
         "reflections": {
           "positiveList": [

@@ -11,18 +11,30 @@ type Props = {
   children: React.ReactNode;
   description: string | React.ReactElement;
   size: "small" | "medium" | "large";
+  isOpen?: boolean;
+  onOpenChange?: (open: boolean) => void;
 };
 
 /**
  * ダイアログコンポーネント
  * @param children トリガー
+ * @param isOpen ダイアログの開閉状態
+ * @param onOpenChange ダイアログの開閉状態を変更する関数
+ * @param description ダイアログの説明
+ * @param size ダイアログのサイズ
  */
-export default function Dialog({ children, description, size }: Props) {
+export default function Dialog({
+  children,
+  description,
+  size,
+  isOpen,
+  onOpenChange,
+}: Props) {
   const classNames = clsx(styles.content, {
     [styles[size]]: size,
   });
   return (
-    <radixDialog.Root>
+    <radixDialog.Root open={isOpen} onOpenChange={onOpenChange}>
       <radixDialog.Trigger asChild>{children}</radixDialog.Trigger>
       <radixDialog.Portal>
         <radixDialog.Overlay className={styles.overlay} />

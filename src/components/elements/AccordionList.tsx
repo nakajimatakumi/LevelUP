@@ -10,14 +10,15 @@ import { Separator } from "@radix-ui/react-select";
 
 type Props = {
   children: React.ReactNode;
-  listItems: string[];
+  listItems: { ItemName: string; ItemId: string }[];
+  onClick?: (content?: string) => void;
 };
 
 /**
  * アコーディオンリストコンポーネント
  * @param children トリガー
  */
-export default function AccordionList({ children, listItems }: Props) {
+export default function AccordionList({ children, listItems, onClick }: Props) {
   return (
     <Accordion.Root type="single" collapsible className={styles.root}>
       <Accordion.Item value="item-1">
@@ -35,10 +36,14 @@ export default function AccordionList({ children, listItems }: Props) {
           <ul className={styles.listItems}>
             <Separator className={styles.separator} />
             {listItems.map((item, index) => (
-              <Button variant={BUTTON_VARIANT.NONE} key={index}>
+              <Button
+                variant={BUTTON_VARIANT.NONE}
+                key={index}
+                onClick={() => onClick?.(item.ItemId)}
+              >
                 <li className={styles.listItem}>
                   <WordText
-                    text={item}
+                    text={item.ItemName}
                     size={COMPONENT_SIZE.MEDIUM}
                     length={COMPONENT_LENGTH.SHORT}
                   />
