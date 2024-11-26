@@ -1,7 +1,7 @@
 "use client";
 
 import styles from "@/styles/components/modules/FavoriteButton.module.css";
-import ActiveButton from "@/components/elements/ActiveButton";
+import ActiveButton from "@/components/elements/ActiveButton/ActiveButton";
 import { ICON_PATH } from "@/constants/IconPathConst";
 import useFavorite from "@/logics/hooks/useFavorite";
 import { useContext } from "react";

@@ -3,7 +3,7 @@ import { Kosugi_Maru } from "next/font/google";
 import styles from "../styles/global.module.css";
 import Sidebar from "@/components/layouts/Sidebar";
 
-const kosugiMaru = Kosugi_Maru({
+export const kosugiMaru = Kosugi_Maru({
   weight: "400",
   subsets: ["latin"],
 });

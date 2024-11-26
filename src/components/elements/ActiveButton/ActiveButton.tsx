@@ -1,11 +1,11 @@
-import styles from "@/styles/components/elements/ActiveButton.module.css";
+import styles from "@/components/elements/ActiveButton/ActiveButton.module.css";
 import Image from "next/image";
 import { useState, ButtonHTMLAttributes, useMemo } from "react";
-import Button from "./Button";
+import Button from "@/components/elements/Button";
 import { BUTTON_VARIANT } from "@/constants/ParamConst";
 import clsx from "clsx";
 
-interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
+interface ActiveButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactElement;
   isActive: boolean;
   onClick: (
@@ -20,7 +20,7 @@ interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
  * @param isActive アクティブ状態
  * @param onClick クリック時のイベント
  */
-export default function ActiveButton({ children, isActive, onClick }: Props) {
+export default function ActiveButton({ children, isActive, onClick }: ActiveButtonProps) {
   /* アクティブ状態管理 */
   const [isActiveState, setIsActiveState] = useState(isActive);
 

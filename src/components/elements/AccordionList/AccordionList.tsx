@@ -1,28 +1,35 @@
 import * as Accordion from "@radix-ui/react-accordion";
-import styles from "@/styles/components/elements/AccordionList.module.css";
+import styles from "@/components/elements/AccordionList/AccordionList.module.css";
 import Image from "next/image";
 import { ICON_PATH } from "@/constants/IconPathConst";
 import { BUTTON_VARIANT } from "@/constants/ParamConst";
-import Button from "./Button";
-import WordText from "./WordText";
+import Button from "@/components/elements/Button";
+import WordText from "@/components/elements/WordText";
 import { COMPONENT_LENGTH, COMPONENT_SIZE } from "@/constants/ParamConst";
 import { Separator } from "@radix-ui/react-select";
+import { clsx } from "clsx";
 
-type Props = {
+export type AccordionListProps = {
   children: React.ReactNode;
   listItems: { ItemName: string; ItemId: string }[];
   onClick?: (content?: string) => void;
+  width?: typeof COMPONENT_LENGTH[keyof typeof COMPONENT_LENGTH];
 };
 
 /**
  * アコーディオンリストコンポーネント
  * @param children トリガー
+ * @param listItems リストアイテム
+ * @param onClick リストアイテムをクリックした時のイベント
+ * @param width トリガーの幅
  */
-export default function AccordionList({ children, listItems, onClick }: Props) {
+export default function AccordionList({ children, listItems, onClick, width }: AccordionListProps) {
+  /** トリガーのクラス名 */
+  const classNames = clsx(styles.trigger, width && styles[width]);
   return (
     <Accordion.Root type="single" collapsible className={styles.root}>
       <Accordion.Item value="item-1">
-        <Accordion.Trigger className={styles.trigger}>
+        <Accordion.Trigger className={classNames}>
           {children}
           <Image
             src={ICON_PATH.CHEVRON}

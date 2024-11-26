@@ -34,27 +34,22 @@ export default function IconWithText({
 }: Props) {
   /* タイプごとにサイズを設定 */
   const sizeUpper = size.toUpperCase() as keyof typeof COMPONENT_SIZE;
-  const { iconSize, textSize } = (() => {
-    switch (type) {
-      case ICON_WITH_TEXT_TYPE.USER:
-        return {
-          iconSize: USER_SIZE.iconSize[sizeUpper],
-          textSize: USER_SIZE.textSize[sizeUpper],
-        };
-      case ICON_WITH_TEXT_TYPE.NAV:
-        return {
-          iconSize: NAV_SIZE.iconSize[sizeUpper],
-          textSize: NAV_SIZE.textSize[sizeUpper],
-        };
-      case ICON_WITH_TEXT_TYPE.POSTED_TIME:
-      case ICON_WITH_TEXT_TYPE.NONE:
-      default:
-        return {
-          iconSize: ICON_SIZE.SMALL,
-          textSize: TEXT_SIZE.SMALL,
-        };
-    }
-  })();
+  const SIZE_MAP = {
+    [ICON_WITH_TEXT_TYPE.USER]: {
+      iconSize: USER_SIZE.iconSize[sizeUpper],
+      textSize: USER_SIZE.textSize[sizeUpper],
+    },
+    [ICON_WITH_TEXT_TYPE.NAV]: {
+      iconSize: NAV_SIZE.iconSize[sizeUpper],
+      textSize: NAV_SIZE.textSize[sizeUpper],
+    },
+    default: {
+      iconSize: ICON_SIZE.SMALL,
+      textSize: TEXT_SIZE.SMALL,
+    },
+  } as const;
+  const { iconSize, textSize } =
+    SIZE_MAP[type as keyof typeof SIZE_MAP] ?? SIZE_MAP.default;
 
   /* ルートクラス */
   const rootClassName = clsx(styles.root, styles[size], styles[type]);

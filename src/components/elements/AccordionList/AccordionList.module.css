@@ -9,6 +9,7 @@
   color: inherit;
   padding: 0;
   width: 100%;
+  max-width: 340px;
 }
 
 .trigger:hover {
@@ -22,6 +23,14 @@
 
 .trigger[data-state="open"] > .chevron {
   transform: rotate(180deg);
+}
+
+.trigger.short {
+  width: 200px;
+}
+
+.trigger.medium {
+  width: 250px;
 }
 
 .listItems {

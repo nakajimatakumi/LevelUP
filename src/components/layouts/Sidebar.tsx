@@ -2,7 +2,7 @@
 
 import Title from "@/components/elements/Title";
 import styles from "@/styles/components/layouts/Sidebar.module.css";
-import AccordionList from "@/components/elements/AccordionList";
+import AccordionList from "@/components/elements/AccordionList/AccordionList";
 import useInit from "@/logics/hooks/useInit";
 import {
   BUTTON_VARIANT,
