@@ -2,7 +2,7 @@
 
 import styles from "@/styles/components/modules/PostHeader.module.css";
 import IconWithText from "@/components/elements/IconWithText";
-import PrivateToggle from "@/components/elements/PrivateToggle";
+import PrivateToggle from "@/components/modules/PrivateToggle";
 import { UserInfoType } from "@/types/UserInfoType";
 import {
   COMPONENT_LENGTH,
@@ -13,16 +13,16 @@ import { PostInfoType } from "@/types/PostInfoType";
 import FavoriteButton from "@/components/modules/FavoriteButton";
 import BookmarkButton from "./BookmarkButton";
 import { BUTTON_VARIANT } from "@/constants/ParamConst";
-import Button from "../elements/Button";
+import Button from "@/components/elements/Button/Button";
 import Image from "next/image";
 import { ICON_PATH } from "@/constants/IconPathConst";
-import MessageDialog from "../elements/MessageDialog";
+import MessageDialog from "@/components/elements/MessageDialog";
 import generateMessage from "@/logics/functions/GenerateMessage";
 import {
   MESSAGE_PARAMS,
   MESSAGE_TEMPLATE,
 } from "@/constants/MessageTemplateConst";
-import { useContext, useMemo, useState } from "react";
+import { useContext } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 import { dispPostCardContext } from "@/contexts/DispPostCardContext";
 import formatPostInfo from "@/logics/functions/FormatPostInfo";

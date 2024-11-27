@@ -22,7 +22,7 @@ type Props = {
 /**
  * 新規投稿教訓コンポーネント
  */
-export const NewLesson = ({ control }: Props) => {
+export default function NewLesson({ control }: Props) {
   const {
     field: { onChange, value },
     fieldState: { error },

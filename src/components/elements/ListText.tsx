@@ -9,6 +9,14 @@ type Props = {
   lineHeight: number;
 };
 
+/**
+ * リストテキスト
+ * @param textList テキストリスト
+ * @param textStyle テキストスタイル
+ * @param lineClamp 行数
+ * @param fontSize フォントサイズ
+ * @param lineHeight 行高さ
+ */
 export default function ListText({
   textList,
   textStyle,

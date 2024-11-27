@@ -12,13 +12,13 @@ import {
   NAV_ITEMS,
 } from "@/constants/ParamConst";
 import { ICON_PATH } from "@/constants/IconPathConst";
-import Button from "../elements/Button";
-import MessageDialog from "../elements/MessageDialog";
-import Notification from "../modules/Notification";
-import Dialog from "../elements/Dialog";
-import NewPost from "../modules/NewPost";
+import Button from "@/components/elements/Button/Button";
+import MessageDialog from "@/components/elements/MessageDialog";
+import Notification from "@/components/modules/Notification";
+import Dialog from "@/components/elements/Dialog";
+import NewPost from "@/components/modules/NewPost";
 import { HEADER_LABEL } from "@/constants/LabelConst";
-import IconWithText from "../elements/IconWithText";
+import IconWithText from "@/components/elements/IconWithText";
 import { useRef, useState } from "react";
 import {
   MESSAGE_PARAMS,

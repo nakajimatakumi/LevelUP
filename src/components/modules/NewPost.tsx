@@ -12,18 +12,18 @@ import {
 } from "@/constants/ParamConst";
 import * as Form from "@radix-ui/react-form";
 import { BUTTON_LABEL } from "@/constants/LabelConst";
-import Button from "@/components/elements/Button";
+import Button from "@/components/elements/Button/Button";
 import DropdownList from "@/components/elements/DropdownList";
-import PrivateToggle from "@/components/elements/PrivateToggle";
+import PrivateToggle from "@/components/modules/PrivateToggle";
 import useInit from "@/logics/hooks/useInit";
 import { FieldValues, useForm, useController } from "react-hook-form";
-import { NewExperience } from "./NewExperience";
-import { NewReflection } from "./NewReflection";
-import { NewLesson } from "./NewLesson";
+import NewExperience from "./NewExperience";
+import NewReflection from "./NewReflection";
+import NewLesson from "./NewLesson";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { postSchema } from "@/schemes/PostScheme";
-import WordText from "../elements/WordText";
-import MessageDialog from "../elements/MessageDialog";
+import WordText from "@/components/elements/WordText";
+import MessageDialog from "@/components/elements/MessageDialog";
 import { useState } from "react";
 import {
   MESSAGE_PARAMS,

@@ -23,7 +23,7 @@ type Props = {
 /**
  * 新規投稿経験コンポーネント
  */
-export const NewExperience = ({ control }: Props) => {
+export default function NewExperience({ control }: Props) {
   const {
     field: { onChange, value },
     fieldState: { error },

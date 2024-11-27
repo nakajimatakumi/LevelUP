@@ -1,6 +1,6 @@
 import * as AlertDialog from "@radix-ui/react-alert-dialog";
 import styles from "@/styles/components/elements/MessageDialog.module.css";
-import Button from "./Button";
+import Button from "@/components/elements/Button/Button";
 import { BUTTON_LABEL } from "@/constants/LabelConst";
 import { BUTTON_VARIANT, COMPONENT_SIZE } from "@/constants/ParamConst";
 import Image from "next/image";
@@ -23,6 +23,8 @@ type Props = {
  * @param title タイトル
  * @param description 説明
  * @param onConfirm 確認ボタン押下時の処理
+ * @param onOpenChange 表示状態変更時の処理
+ * @param isOpen 表示状態
  * @param dispButton 確認ボタンを表示するか
  */
 export default function MessageDialog({

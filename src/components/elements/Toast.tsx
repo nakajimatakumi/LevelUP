@@ -8,7 +8,13 @@ type ToastProps = {
   message: string;
 };
 
-export const Toast: React.FC<ToastProps> = ({ message, isOpen, setIsOpen }) => {
+/**
+ * トースト
+ * @param message メッセージ
+ * @param isOpen 表示状態
+ * @param setIsOpen 表示状態を変更する関数
+ */
+export default function Toast({ message, isOpen, setIsOpen }: ToastProps) {
   return (
     <radixToast.Viewport className={styles.ToastViewport}>
       <radixToast.Root
@@ -20,4 +26,4 @@ export const Toast: React.FC<ToastProps> = ({ message, isOpen, setIsOpen }) => {
       </radixToast.Root>
     </radixToast.Viewport>
   );
-};
+}

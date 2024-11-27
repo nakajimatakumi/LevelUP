@@ -12,6 +12,10 @@ type Props = {
 /**
  * スクロールエリアコンポーネント
  * @param children 子要素
+ * @param verticalPadding 垂直方向のパディング
+ * @param height 高さ
+ * @param positionMove 位置移動
+ * @param shrinkHeight 縮小高さ
  */
 export default function ScrollArea({
   children,

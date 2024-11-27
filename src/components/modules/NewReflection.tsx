@@ -22,7 +22,7 @@ type Props = {
 /**
  * 新規投稿振り返りコンポーネント
  */
-export const NewReflection = ({ control }: Props) => {
+export default function NewReflection({ control }: Props) {
   const {
     field: { onChange: onChangeGoodPoints, value: valueGoodPoints },
     fieldState: { error: errorGoodPoints },

@@ -14,8 +14,11 @@ interface Props extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 
 /**
  * テキストエリア
- * @param {Props} props - プロパティ
- * @param {React.Ref<HTMLTextAreaElement>} ref - リファレンス
+ * @param ref - リファレンス
+ * @param height - 高さ
+ * @param isListType - リスト形式
+ * @param value - 値
+ * @param onChange - 値変更時の処理
  */
 export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
   ({ height, isListType = false, value, onChange, ...props }: Props, ref) => {
@@ -69,3 +72,4 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
 );
 
 TextArea.displayName = "TextArea";
+export default TextArea;

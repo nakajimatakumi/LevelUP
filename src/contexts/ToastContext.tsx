@@ -2,7 +2,7 @@
 
 import React, { useState, createContext, useCallback } from "react";
 import * as radixToast from "@radix-ui/react-toast";
-import { Toast } from "@/components/elements/Toast";
+import Toast from "@/components/elements/Toast";
 
 type ToastContextType = {
   isOpen: boolean;

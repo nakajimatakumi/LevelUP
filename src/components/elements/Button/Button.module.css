@@ -10,9 +10,10 @@
 
 /* size */
 .small {
-  width: 124px;
-  height: 44px;
+  width: 50px;
+  height: 20px;
   border-radius: 8px;
+  font-size: 12px;
 }
 
 .medium {

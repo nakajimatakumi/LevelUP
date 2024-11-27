@@ -1,7 +1,7 @@
 import * as radixDialog from "@radix-ui/react-dialog";
 import styles from "@/styles/components/elements/Dialog.module.css";
 import clsx from "clsx";
-import Button from "./Button";
+import Button from "@/components/elements/Button/Button";
 import { BUTTON_VARIANT } from "@/constants/ParamConst";
 import Image from "next/image";
 import { ICON_PATH } from "@/constants/IconPathConst";

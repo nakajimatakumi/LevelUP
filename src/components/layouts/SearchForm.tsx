@@ -1,7 +1,7 @@
 "use client";
 
 import * as Form from "@radix-ui/react-form";
-import Button from "@/components/elements/Button";
+import Button from "@/components/elements/Button/Button";
 import styles from "@/styles/components/layouts/SearchForm.module.css";
 import SearchConditionList from "@/components/modules/SearchConditionList";
 import { ICON_PATH } from "@/constants/IconPathConst";

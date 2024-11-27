@@ -1,6 +1,6 @@
-import styles from "@/styles/components/elements/Button.module.css";
 import { forwardRef, ButtonHTMLAttributes } from "react";
 import clsx from "clsx";
+import styles from "@/components/elements/Button/Button.module.css";
 
 interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: React.ReactNode;
