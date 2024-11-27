@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { useState, ButtonHTMLAttributes, useMemo } from "react";
 import { clsx } from "clsx";
@@ -20,7 +22,11 @@ interface ActiveButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
  * @param isActive アクティブ状態
  * @param onClick クリック時のイベント
  */
-export default function ActiveButton({ children, isActive, onClick }: ActiveButtonProps) {
+export default function ActiveButton({
+  children,
+  isActive,
+  onClick,
+}: ActiveButtonProps) {
   /* アクティブ状態管理 */
   const [isActiveState, setIsActiveState] = useState(isActive);
 

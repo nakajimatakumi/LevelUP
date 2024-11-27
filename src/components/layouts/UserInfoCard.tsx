@@ -3,21 +3,22 @@
 import { useContext } from "react";
 import { dispPostCardContext } from "@/contexts/DispPostCardContext";
 import styles from "@/styles/components/layouts/UserInfoCard.module.css";
-import JobBadge from "@/components/elements/JobBadge";
-import IconWithText from "@/components/elements/IconWithText";
-import CategoryBadge from "@/components/elements/CategoryBadge";
 import {
   COMPONENT_LENGTH,
   COMPONENT_SIZE,
   ICON_WITH_TEXT_TYPE,
 } from "@/constants/ParamConst";
 import { ICON_PATH } from "@/constants/IconPathConst";
-import SentenceText from "../elements/SentenceText";
-import Card from "../elements/Card";
+import {
+  Card,
+  IconWithText,
+  SentenceText,
+  CategoryBadge,
+  JobBadge,
+} from "@/components";
 
 /**
  * ユーザー情報カード
- * @param postInfo 投稿情報
  */
 export default function UserInfoCard() {
   /* 表示情報を取得 */

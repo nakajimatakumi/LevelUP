@@ -1,13 +1,9 @@
 "use client";
 
 import styles from "@/styles/components/modules/Reflection.module.css";
-import Image from "next/image";
 import { ICON_PATH } from "@/constants/IconPathConst";
 import { Separator } from "@radix-ui/react-separator";
 import { TOOLTIP_PARAMS } from "@/constants/MessageTemplateConst";
-import Introspection from "@/components/modules/Introspection";
-import Improvement from "@/components/modules/Improvement";
-import Tooltip from "@/components/elements/Tooltip";
 import { useContext } from "react";
 import { dispPostCardContext } from "@/contexts/DispPostCardContext";
 import formatPostInfo from "@/logics/functions/FormatPostInfo";
@@ -17,8 +13,8 @@ import * as Accordion from "@radix-ui/react-accordion";
 import generateMessage from "@/logics/functions/GenerateMessage";
 import { MESSAGE_TEMPLATE } from "@/constants/MessageTemplateConst";
 import { COMPONENT_SIZE } from "@/constants/ParamConst";
-import Icon from "../elements/Icon";
-import Card from "../elements/Card";
+import { Card, Icon, Improvement, Introspection, Tooltip } from "@/components";
+
 type Props = {
   reflections: {
     positiveList: string[];

@@ -7,8 +7,7 @@ import { PostInfoType } from "@/types/PostInfoType";
 import { UserInfoType } from "@/types/UserInfoType";
 import { useContext } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
-import SentenceText from "../elements/SentenceText";
-import Card from "../elements/Card";
+import { Card, SentenceText } from "@/components";
 
 type Props = {
   userInfo: UserInfoType;

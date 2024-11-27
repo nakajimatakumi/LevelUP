@@ -1,12 +1,9 @@
 import styles from "@/styles/components/layouts/FeaturedPosts.module.css";
-import FeaturedPost from "@/components/modules/FeaturedPost";
 import * as Separator from "@radix-ui/react-separator";
 import useInit from "@/logics/hooks/useInit";
-
 import { COMPONENT_LENGTH, COMPONENT_SIZE } from "@/constants/ParamConst";
 import { HEADER_LABEL } from "@/constants/LabelConst";
-import WordText from "../elements/WordText";
-import Card from "../elements/Card";
+import { Card, WordText, FeaturedPost } from "@/components";
 
 /**
  * 注目の経験を表示するコンポーネント

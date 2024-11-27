@@ -2,8 +2,8 @@
 export { default as AccordionList } from "@/components/elements/AccordionList/AccordionList";
 export { default as ActiveButton } from "@/components/elements/ActiveButton/ActiveButton";
 export { default as Button } from "@/components/elements/Button/Button";
-export { default as Card } from "@/components/elements/Card";
-export { default as CategoryBadge } from "@/components/elements/CategoryBadge";
+export { default as Card } from "@/components/elements/Card/Card";
+export { default as CategoryBadge } from "@/components/elements/CategoryBadge/CategoryBadge";
 export { default as Dialog } from "@/components/elements/Dialog";
 export { default as DropdownList } from "@/components/elements/DropdownList";
 export { default as Icon } from "@/components/elements/Icon";

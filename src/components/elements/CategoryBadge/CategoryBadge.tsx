@@ -1,4 +1,4 @@
-import styles from "@/styles/components/elements/CategoryBadge.module.css";
+import styles from "@/components/elements/CategoryBadge/CategoryBadge.module.css";
 
 type Props = {
   postCategory: string;

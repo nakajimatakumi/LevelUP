@@ -8,8 +8,7 @@ import { UserInfoType } from "@/types/UserInfoType";
 import { useContext } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 import { TEXT_STYLE } from "@/constants/ParamConst";
-import ListText from "../elements/ListText";
-import Card from "../elements/Card";
+import { Card, ListText } from "@/components";
 
 type Props = {
   lessonsList: string[];
