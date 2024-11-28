@@ -1,16 +1,15 @@
-import * as radixDialog from "@radix-ui/react-dialog";
-import styles from "@/styles/components/elements/Dialog.module.css";
-import clsx from "clsx";
-import Button from "@/components/elements/Button/Button";
-import { BUTTON_VARIANT } from "@/constants/ParamConst";
 import Image from "next/image";
+import * as radixDialog from "@radix-ui/react-dialog";
+import clsx from "clsx";
+import { BUTTON_VARIANT } from "@/constants/ParamConst";
 import { ICON_PATH } from "@/constants/IconPathConst";
-import ScrollArea from "./ScrollArea";
+import { ScrollArea, Button } from "@/components";
+import styles from "@/components/elements/Dialog/Dialog.module.css";
 
 type Props = {
   children: React.ReactNode;
   description: string | React.ReactElement;
-  size: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large";
   isOpen?: boolean;
   onOpenChange?: (open: boolean) => void;
 };
@@ -31,7 +30,7 @@ export default function Dialog({
   onOpenChange,
 }: Props) {
   const classNames = clsx(styles.content, {
-    [styles[size]]: size,
+    [styles[size ?? "medium"]]: size,
   });
   return (
     <radixDialog.Root open={isOpen} onOpenChange={onOpenChange}>

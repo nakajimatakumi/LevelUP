@@ -1,5 +1,7 @@
-import styles from "@/styles/components/modules/NewLesson.module.css";
-import WordText from "@/components/elements/WordText";
+"use client";
+
+import * as Form from "@radix-ui/react-form";
+import { Control, FieldValues, useController } from "react-hook-form";
 import {
   COMPONENT_HEIGHT,
   COMPONENT_LENGTH,
@@ -9,18 +11,18 @@ import {
   TEXT_TYPE,
 } from "@/constants/ParamConst";
 import { HEADER_LABEL } from "@/constants/LabelConst";
-import Icon from "@/components/elements/Icon";
 import { ICON_PATH } from "@/constants/IconPathConst";
-import * as Form from "@radix-ui/react-form";
-import { TextArea } from "@/components/elements/TextArea";
 import { PLACEHOLDER } from "@/constants/MessageTemplateConst";
-import { Control, FieldValues, useController } from "react-hook-form";
+import { Icon, TextArea, WordText } from "@/components";
+import styles from "@/styles/components/modules/NewLesson.module.css";
+
 type Props = {
   control: Control<FieldValues>;
 };
 
 /**
  * 新規投稿教訓コンポーネント
+ * @param control フォーム管理
  */
 export default function NewLesson({ control }: Props) {
   const {
@@ -62,4 +64,4 @@ export default function NewLesson({ control }: Props) {
       )}
     </Form.Field>
   );
-};
+}

@@ -1,6 +1,6 @@
 import { forwardRef } from "react";
 import Image from "next/image";
-import styles from "@/styles/components/elements/Icon.module.css";
+import styles from "@/components/elements/Icon/Icon.module.css";
 import clsx from "clsx";
 
 type Props = {

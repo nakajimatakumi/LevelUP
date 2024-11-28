@@ -1,30 +1,33 @@
 "use client";
 
-import Title from "@/components/elements/Title";
-import styles from "@/styles/components/layouts/Sidebar.module.css";
-import AccordionList from "@/components/elements/AccordionList/AccordionList";
-import useInit from "@/logics/hooks/useInit";
+import { useRef, useState } from "react";
+import {
+  AccordionList,
+  Button,
+  Dialog,
+  IconWithText,
+  MessageDialog,
+  NewPost,
+  Notification,
+  Title,
+} from "@/components";
 import {
   BUTTON_VARIANT,
-  COMPONENT_SIZE,
   COMPONENT_LENGTH,
+  COMPONENT_SIZE,
   ICON_WITH_TEXT_TYPE,
   NAV_ITEMS,
 } from "@/constants/ParamConst";
 import { ICON_PATH } from "@/constants/IconPathConst";
-import Button from "@/components/elements/Button/Button";
-import MessageDialog from "@/components/elements/MessageDialog";
-import Notification from "@/components/modules/Notification";
-import Dialog from "@/components/elements/Dialog";
-import NewPost from "@/components/modules/NewPost";
 import { HEADER_LABEL } from "@/constants/LabelConst";
-import IconWithText from "@/components/elements/IconWithText";
-import { useRef, useState } from "react";
 import {
   MESSAGE_PARAMS,
   MESSAGE_TEMPLATE,
 } from "@/constants/MessageTemplateConst";
+import { dispPostCardContext } from "@/contexts/DispPostCardContext";
+import useInit from "@/logics/hooks/useInit";
 import generateMessage from "@/logics/functions/GenerateMessage";
+import styles from "@/styles/components/layouts/Sidebar.module.css";
 /**
  * サイドバーコンポーネント
  */
@@ -79,7 +82,6 @@ export default function Sidebar() {
             />
           </AccordionList>
           <Dialog
-            size={COMPONENT_SIZE.SMALL}
             description={`controlID：${content.current}`}
             isOpen={isProfileEditOpen}
             onOpenChange={setIsProfileEditOpen}
@@ -157,7 +159,6 @@ export default function Sidebar() {
             />
           </AccordionList>
           <Dialog
-            size={COMPONENT_SIZE.MEDIUM}
             description={`controlID：${content.current}`}
             isOpen={isSettingOpen}
             onOpenChange={setIsSettingOpen}
@@ -166,7 +167,7 @@ export default function Sidebar() {
           </Dialog>
         </nav>
         <div className={styles.bottomPageLinkWrapper}>
-          <Dialog size={COMPONENT_SIZE.LARGE} description={<NewPost />}>
+          <Dialog description={<NewPost />}>
             <Button variant={BUTTON_VARIANT.NONE}>
               <IconWithText
                 size={COMPONENT_SIZE.LARGE}

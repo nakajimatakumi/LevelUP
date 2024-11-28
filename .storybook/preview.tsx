@@ -16,7 +16,9 @@ const preview: Preview = {
   },
   decorators: [
     (Story) => (
-      <div style={{ fontFamily: kosugiMaru.style.fontFamily, color: "#555555" }}>
+      <div
+        style={{ fontFamily: kosugiMaru.style.fontFamily, color: "#555555" }}
+      >
         <Story />
       </div>
     ),

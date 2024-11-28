@@ -4,10 +4,10 @@ export { default as ActiveButton } from "@/components/elements/ActiveButton/Acti
 export { default as Button } from "@/components/elements/Button/Button";
 export { default as Card } from "@/components/elements/Card/Card";
 export { default as CategoryBadge } from "@/components/elements/CategoryBadge/CategoryBadge";
-export { default as Dialog } from "@/components/elements/Dialog";
-export { default as DropdownList } from "@/components/elements/DropdownList";
-export { default as Icon } from "@/components/elements/Icon";
-export { default as IconWithText } from "@/components/elements/IconWithText";
+export { default as Dialog } from "@/components/elements/Dialog/Dialog";
+export { default as DropdownList } from "@/components/elements/DropdownList/DropdownList";
+export { default as Icon } from "@/components/elements/Icon/Icon";
+export { default as IconWithText } from "@/components/elements/IconWithText/IconWithText";
 export { default as JobBadge } from "@/components/elements/JobBadge";
 export { default as ListText } from "@/components/elements/ListText";
 export { default as MessageDialog } from "@/components/elements/MessageDialog";

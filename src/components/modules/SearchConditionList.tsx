@@ -1,4 +1,6 @@
-import DropdownList from "@/components/elements/DropdownList";
+"use client";
+
+import { DropdownList } from "@/components";
 import styles from "@/styles/components/modules/SearchConditionList.module.css";
 import useInit from "@/logics/hooks/useInit";
 import * as Form from "@radix-ui/react-form";

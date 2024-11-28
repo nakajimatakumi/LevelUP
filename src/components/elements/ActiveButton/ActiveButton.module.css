@@ -13,8 +13,10 @@
 
 .hideIcon {
   opacity: 0;
+  z-index: -1;
 }
 
 .showIcon {
   opacity: 1;
+  z-index: 1;
 }

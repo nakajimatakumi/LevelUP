@@ -71,7 +71,7 @@ export const ICON_SIZE = {
   EXTRA_LARGE: "extraLarge",
   FIT: "fit",
   NONE: "none",
-};
+} as const;
 
 /* テキストのサイズ */
 export const TEXT_SIZE = {

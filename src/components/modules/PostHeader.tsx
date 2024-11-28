@@ -1,33 +1,35 @@
 "use client";
 
-import styles from "@/styles/components/modules/PostHeader.module.css";
-import IconWithText from "@/components/elements/IconWithText";
-import PrivateToggle from "@/components/modules/PrivateToggle";
-import { UserInfoType } from "@/types/UserInfoType";
+import { useContext } from "react";
+import Image from "next/image";
+import * as Accordion from "@radix-ui/react-accordion";
 import {
+  Button,
+  IconWithText,
+  MessageDialog,
+  PrivateToggle,
+  BookmarkButton,
+  FavoriteButton,
+} from "@/components";
+import {
+  BUTTON_VARIANT,
   COMPONENT_LENGTH,
   COMPONENT_SIZE,
   ICON_WITH_TEXT_TYPE,
 } from "@/constants/ParamConst";
-import { PostInfoType } from "@/types/PostInfoType";
-import FavoriteButton from "@/components/modules/FavoriteButton";
-import BookmarkButton from "./BookmarkButton";
-import { BUTTON_VARIANT } from "@/constants/ParamConst";
-import Button from "@/components/elements/Button/Button";
-import Image from "next/image";
 import { ICON_PATH } from "@/constants/IconPathConst";
-import MessageDialog from "@/components/elements/MessageDialog";
-import generateMessage from "@/logics/functions/GenerateMessage";
 import {
   MESSAGE_PARAMS,
   MESSAGE_TEMPLATE,
 } from "@/constants/MessageTemplateConst";
-import { useContext } from "react";
-import * as Accordion from "@radix-ui/react-accordion";
 import { dispPostCardContext } from "@/contexts/DispPostCardContext";
-import formatPostInfo from "@/logics/functions/FormatPostInfo";
-import useDeletePost from "@/logics/hooks/useDeletePost";
+import { useDeletePost } from "@/logics/hooks/useDeletePost";
 import { useSwitchPublic } from "@/logics/hooks/useSwitchPublic";
+import formatPostInfo from "@/logics/functions/FormatPostInfo";
+import generateMessage from "@/logics/functions/GenerateMessage";
+import { UserInfoType } from "@/types/UserInfoType";
+import { PostInfoType } from "@/types/PostInfoType";
+import styles from "@/styles/components/modules/PostHeader.module.css";
 
 type Props = {
   userInfo: UserInfoType;

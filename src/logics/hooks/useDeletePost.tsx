@@ -12,7 +12,7 @@ import { ToastContext } from "@/contexts/ToastContext";
  * @param postId 投稿ID
  * @returns {deletePost} 投稿削除関数
  */
-export default function useDeletePost(postId: string) {
+export function useDeletePost(postId: string) {
   /* 投稿表示データの状態更新関数取得 */
   const { setDispPostList } = useContext(dispPostListContext);
 

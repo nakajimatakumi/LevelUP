@@ -1,5 +1,7 @@
-import styles from "@/styles/components/modules/NewReflection.module.css";
-import WordText from "@/components/elements/WordText";
+"use client";
+
+import * as Form from "@radix-ui/react-form";
+import { Control, FieldValues, useController } from "react-hook-form";
 import {
   COMPONENT_HEIGHT,
   COMPONENT_LENGTH,
@@ -9,12 +11,11 @@ import {
   TEXT_TYPE,
 } from "@/constants/ParamConst";
 import { HEADER_LABEL } from "@/constants/LabelConst";
-import Icon from "@/components/elements/Icon";
 import { ICON_PATH } from "@/constants/IconPathConst";
-import * as Form from "@radix-ui/react-form";
-import { TextArea } from "@/components/elements/TextArea";
 import { PLACEHOLDER } from "@/constants/MessageTemplateConst";
-import { Control, FieldValues, useController } from "react-hook-form";
+import { Icon, TextArea, WordText } from "@/components";
+import styles from "@/styles/components/modules/NewReflection.module.css";
+
 type Props = {
   control: Control<FieldValues>;
 };
@@ -143,4 +144,4 @@ export default function NewReflection({ control }: Props) {
       </Form.Field>
     </div>
   );
-};
+}

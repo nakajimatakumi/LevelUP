@@ -1,9 +1,5 @@
-import styles from "@/styles/components/elements/IconWithText.module.css";
-import UserIcon from "./UserIcon";
 import clsx from "clsx";
 import { UserIconType, OtherIconType, SizeType } from "@/types/ContentType";
-import Icon from "./Icon";
-import WordText from "./WordText";
 import {
   COMPONENT_SIZE,
   ICON_WITH_TEXT_TYPE,
@@ -12,6 +8,8 @@ import {
   TEXT_SIZE,
   USER_SIZE,
 } from "@/constants/ParamConst";
+import { Icon, UserIcon, WordText } from "@/components";
+import styles from "@/components/elements/IconWithText/IconWithText.module.css";
 
 type Props = UserIconType | OtherIconType;
 

@@ -1,5 +1,7 @@
-import styles from "@/styles/components/modules/NewExperience.module.css";
-import WordText from "@/components/elements/WordText";
+"use client";
+
+import * as Form from "@radix-ui/react-form";
+import { Control, FieldValues, useController } from "react-hook-form";
 import {
   COMPONENT_HEIGHT,
   COMPONENT_LENGTH,
@@ -9,12 +11,10 @@ import {
   TEXT_TYPE,
 } from "@/constants/ParamConst";
 import { HEADER_LABEL } from "@/constants/LabelConst";
-import Icon from "@/components/elements/Icon";
 import { ICON_PATH } from "@/constants/IconPathConst";
-import * as Form from "@radix-ui/react-form";
-import { TextArea } from "@/components/elements/TextArea";
 import { PLACEHOLDER } from "@/constants/MessageTemplateConst";
-import { Control, FieldValues, useController } from "react-hook-form";
+import { Icon, TextArea, WordText } from "@/components";
+import styles from "@/styles/components/modules/NewExperience.module.css";
 
 type Props = {
   control: Control<FieldValues>;
@@ -22,6 +22,7 @@ type Props = {
 
 /**
  * 新規投稿経験コンポーネント
+ * @param control フォーム管理
  */
 export default function NewExperience({ control }: Props) {
   const {
@@ -62,4 +63,4 @@ export default function NewExperience({ control }: Props) {
       )}
     </Form.Field>
   );
-};
+}

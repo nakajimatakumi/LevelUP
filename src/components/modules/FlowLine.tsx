@@ -1,11 +1,10 @@
-import { ICON_PATH } from "@/constants/IconPathConst";
-import styles from "@/styles/components/modules/FlowLine.module.css";
 import * as Separator from "@radix-ui/react-separator";
-import Tooltip from "@/components/elements/Tooltip";
-import generateMessage from "@/logics/functions/GenerateMessage";
-import { MESSAGE_TEMPLATE } from "@/constants/MessageTemplateConst";
-import Icon from "../elements/Icon";
+import { ICON_PATH } from "@/constants/IconPathConst";
 import { COMPONENT_SIZE } from "@/constants/ParamConst";
+import { MESSAGE_TEMPLATE } from "@/constants/MessageTemplateConst";
+import { Icon, Tooltip } from "@/components";
+import generateMessage from "@/logics/functions/GenerateMessage";
+import styles from "@/styles/components/modules/FlowLine.module.css";
 
 type Props = {
   iconPath: string;

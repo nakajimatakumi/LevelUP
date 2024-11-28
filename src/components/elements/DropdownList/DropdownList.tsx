@@ -1,6 +1,6 @@
 import React from "react";
 import * as Select from "@radix-ui/react-select";
-import styles from "@/styles/components/elements/DropdownList.module.css";
+import styles from "@/components/elements/DropdownList/DropdownList.module.css";
 import Image from "next/image";
 import { ListItemsType } from "@/types/SearchConditionType";
 import { ICON_PATH } from "@/constants/IconPathConst";
