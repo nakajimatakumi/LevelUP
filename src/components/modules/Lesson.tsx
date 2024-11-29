@@ -38,7 +38,6 @@ export default function Lesson({ userInfo, postInfo, lessonsList }: Props) {
           <ListText
             textList={lessonsList}
             textStyle={TEXT_STYLE.NORMAL}
-            lineClamp={1}
             fontSize={16}
             lineHeight={1.5}
           />

@@ -1,11 +1,11 @@
+import { useContext, useState } from "react";
+import { ToastContext } from "@/contexts/ToastContext";
 import {
   MESSAGE_PARAMS,
   MESSAGE_TEMPLATE,
 } from "@/constants/MessageTemplateConst";
-import { ToastContext } from "@/contexts/ToastContext";
-import { useContext, useState } from "react";
-import generateMessage from "../functions/GenerateMessage";
-import MessageDialog from "@/components/elements/MessageDialog";
+import generateMessage from "@/logics/functions/GenerateMessage";
+import MessageDialog from "@/components/elements/MessageDialog/MessageDialog";
 
 export const useSwitchPublic = (postIsPrivate: boolean) => {
   /* 公開設定の状態 */
@@ -49,9 +49,7 @@ export const useSwitchPublic = (postIsPrivate: boolean) => {
       }}
       isOpen={isOpenPublic}
       onOpenChange={setIsOpenPublic}
-    >
-      <span />
-    </MessageDialog>
+    />
   );
 
   return {

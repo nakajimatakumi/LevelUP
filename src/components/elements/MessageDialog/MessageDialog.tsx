@@ -1,15 +1,14 @@
+import Image from "next/image";
 import * as AlertDialog from "@radix-ui/react-alert-dialog";
-import styles from "@/styles/components/elements/MessageDialog.module.css";
-import Button from "@/components/elements/Button/Button";
 import { BUTTON_LABEL } from "@/constants/LabelConst";
 import { BUTTON_VARIANT, COMPONENT_SIZE } from "@/constants/ParamConst";
-import Image from "next/image";
 import { ICON_PATH } from "@/constants/IconPathConst";
-import ScrollArea from "./ScrollArea";
+import { Button, ScrollArea } from "@/components";
+import styles from "@/components/elements/MessageDialog/MessageDialog.module.css";
 
 type Props = {
   dispButton?: boolean;
-  children: React.ReactElement;
+  children?: React.ReactElement;
   title: string;
   description: string | React.ReactElement;
   onConfirm?: () => void;

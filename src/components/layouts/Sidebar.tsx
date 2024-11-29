@@ -99,9 +99,7 @@ export default function Sidebar() {
             onConfirm={() => {
               alert("ログアウトしました。(未実装)");
             }}
-          >
-            <span />
-          </MessageDialog>
+          />
         </div>
         <nav className={styles.centerPageLinkWrapper}>
           <Button variant={BUTTON_VARIANT.NONE}>

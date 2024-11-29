@@ -1,7 +1,6 @@
-import styles from "@/styles/components/modules/Improvement.module.css";
-import ListText from "../elements/ListText";
 import { TEXT_STYLE } from "@/constants/ParamConst";
-
+import { ListText } from "@/components";
+import styles from "@/styles/components/modules/Improvement.module.css";
 type Props = {
   improvementsList: string[];
 };
@@ -16,7 +15,6 @@ export default function Improvement({ improvementsList }: Props) {
       <ListText
         textList={improvementsList}
         textStyle={TEXT_STYLE.NORMAL}
-        lineClamp={1}
         fontSize={16}
         lineHeight={1.5}
       />

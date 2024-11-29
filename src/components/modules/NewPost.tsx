@@ -131,9 +131,7 @@ export default function NewPost() {
           dispButton={false}
           isOpen={isDialogOpen}
           onOpenChange={setIsDialogOpen}
-        >
-          <span />
-        </MessageDialog>
+        />
       </div>
     </Form.Root>
   );

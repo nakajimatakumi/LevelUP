@@ -1,5 +1,5 @@
-import styles from "@/styles/components/elements/JobBadge.module.css";
 import convertColor from "@/logics/functions/ConvertColor";
+import styles from "@/components/elements/JobBadge/JobBadge.module.css";
 
 type Props = {
   jobName: string;

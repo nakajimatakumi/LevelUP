@@ -1,6 +1,6 @@
-import styles from "@/styles/components/modules/Introspection.module.css";
-import ListText from "../elements/ListText";
 import { TEXT_STYLE } from "@/constants/ParamConst";
+import { ListText } from "@/components";
+import styles from "@/styles/components/modules/Introspection.module.css";
 
 type Props = {
   reflections: {
@@ -20,14 +20,12 @@ export default function Introspection({ reflections }: Props) {
         <ListText
           textList={reflections.positiveList}
           textStyle={TEXT_STYLE.POSITIVE}
-          lineClamp={1}
           fontSize={16}
           lineHeight={1.5}
         />
         <ListText
           textList={reflections.negativeList}
           textStyle={TEXT_STYLE.NEGATIVE}
-          lineClamp={1}
           fontSize={16}
           lineHeight={1.5}
         />

@@ -49,6 +49,7 @@ export default function Dialog({
               verticalPadding={30}
               positionMove={27}
               shrinkHeight={-23}
+              height={750}
             >
               {description}
             </ScrollArea>
