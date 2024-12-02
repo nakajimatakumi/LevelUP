@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { kosugiMaru } from "@/app/layout";
 import Dialog from "./Dialog";
 import { BUTTON_VARIANT, COMPONENT_SIZE } from "@/constants/ParamConst";
 import { Button } from "@/components";
-import { kosugiMaru } from "@/app/layout";
 
 const meta = {
   title: "Elements/Dialog",

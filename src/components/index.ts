@@ -11,8 +11,8 @@ export { default as IconWithText } from "@/components/elements/IconWithText/Icon
 export { default as JobBadge } from "@/components/elements/JobBadge/JobBadge";
 export { default as ListText } from "@/components/elements/ListText/ListText";
 export { default as MessageDialog } from "@/components/elements/MessageDialog/MessageDialog";
-export { default as ScrollArea } from "@/components/elements/ScrollArea";
-export { default as SentenceText } from "@/components/elements/SentenceText";
+export { default as ScrollArea } from "@/components/elements/scrollArea/ScrollArea";
+export { default as SentenceText } from "@/components/elements/SentenceText/SentenceText";
 export { default as TextArea } from "@/components/elements/TextArea";
 export { default as Title } from "@/components/elements/Title";
 export { default as Toast } from "@/components/elements/Toast";

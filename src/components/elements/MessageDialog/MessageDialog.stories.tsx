@@ -1,4 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { kosugiMaru } from "@/app/layout";
 import MessageDialog from "./MessageDialog";
 import { BUTTON_VARIANT, COMPONENT_SIZE } from "@/constants/ParamConst";
 import { Button, Notification as NotificationComponent } from "@/components";
@@ -20,6 +21,10 @@ export const Confirm: Story = {
         開く
       </Button>
     ),
+    additionalStyle: {
+      fontFamily: kosugiMaru.style.fontFamily,
+      color: "#555555",
+    },
   },
 };
 
@@ -33,6 +38,10 @@ export const Notification: Story = {
         開く
       </Button>
     ),
+    additionalStyle: {
+      fontFamily: kosugiMaru.style.fontFamily,
+      color: "#555555",
+    },
   },
 };
 
@@ -46,5 +55,9 @@ export const MaxHeight: Story = {
         開く
       </Button>
     ),
+    additionalStyle: {
+      fontFamily: kosugiMaru.style.fontFamily,
+      color: "#555555",
+    },
   },
 };

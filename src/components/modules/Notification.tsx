@@ -1,6 +1,6 @@
 import styles from "@/styles/components/modules/Notification.module.css";
 import useInit from "@/logics/hooks/useInit";
-import SentenceText from "../elements/SentenceText";
+import { SentenceText } from "@/components";
 import * as Separator from "@radix-ui/react-separator";
 
 export default function Notification() {

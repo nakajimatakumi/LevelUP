@@ -14,6 +14,7 @@ type Props = {
   onConfirm?: () => void;
   onOpenChange?: (open: boolean) => void;
   isOpen?: boolean;
+  additionalStyle?: React.CSSProperties;
 };
 
 /**
@@ -25,6 +26,7 @@ type Props = {
  * @param onOpenChange 表示状態変更時の処理
  * @param isOpen 表示状態
  * @param dispButton 確認ボタンを表示するか
+ * @param additionalStyle 追加スタイル
  */
 export default function MessageDialog({
   dispButton = true,
@@ -34,13 +36,14 @@ export default function MessageDialog({
   onConfirm,
   onOpenChange,
   isOpen,
+  additionalStyle,
 }: Props) {
   return (
     <AlertDialog.Root onOpenChange={onOpenChange} open={isOpen}>
       <AlertDialog.Trigger asChild>{children}</AlertDialog.Trigger>
       <AlertDialog.Portal>
         <AlertDialog.Overlay className={styles.overlay} />
-        <AlertDialog.Content className={styles.content}>
+        <AlertDialog.Content className={styles.content} style={additionalStyle}>
           <AlertDialog.Cancel className={styles.close} asChild>
             <Button variant={BUTTON_VARIANT.ICON} className={styles.close}>
               <Image src={ICON_PATH.CLOSE} alt="close" width={25} height={25} />

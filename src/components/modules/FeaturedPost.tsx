@@ -1,5 +1,5 @@
+import { SentenceText } from "@/components";
 import styles from "@/styles/components/modules/FeaturedPost.module.css";
-import SentenceText from "../elements/SentenceText";
 
 type Post = {
   postId: string;
@@ -26,7 +26,6 @@ export default function FeaturedPost({ post, index }: Props) {
       4: "４",
       5: "５",
     };
-
     return fullWidthNumbers[index];
   };
   return (

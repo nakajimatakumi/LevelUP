@@ -24,7 +24,6 @@ import {
   MESSAGE_PARAMS,
   MESSAGE_TEMPLATE,
 } from "@/constants/MessageTemplateConst";
-import { dispPostCardContext } from "@/contexts/DispPostCardContext";
 import useInit from "@/logics/hooks/useInit";
 import generateMessage from "@/logics/functions/GenerateMessage";
 import styles from "@/styles/components/layouts/Sidebar.module.css";

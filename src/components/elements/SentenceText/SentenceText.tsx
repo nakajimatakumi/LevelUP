@@ -1,4 +1,4 @@
-import styles from "@/styles/components/elements/SentenceText.module.css";
+import styles from "@/components/elements/SentenceText/SentenceText.module.css";
 
 type Props = {
   text: string;
