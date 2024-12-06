@@ -11,15 +11,15 @@ export { default as IconWithText } from "@/components/elements/IconWithText/Icon
 export { default as JobBadge } from "@/components/elements/JobBadge/JobBadge";
 export { default as ListText } from "@/components/elements/ListText/ListText";
 export { default as MessageDialog } from "@/components/elements/MessageDialog/MessageDialog";
-export { default as ScrollArea } from "@/components/elements/scrollArea/ScrollArea";
+export { default as ScrollArea } from "@/components/elements/ScrollArea/ScrollArea";
 export { default as SentenceText } from "@/components/elements/SentenceText/SentenceText";
-export { default as TextArea } from "@/components/elements/TextArea";
-export { default as Title } from "@/components/elements/Title";
-export { default as Toast } from "@/components/elements/Toast";
-export { default as Toggle } from "@/components/elements/Toggle";
-export { default as Tooltip } from "@/components/elements/Tooltip";
-export { default as UserIcon } from "@/components/elements/UserIcon";
-export { default as WordText } from "@/components/elements/WordText";
+export { default as TextArea } from "@/components/elements/TextArea/TextArea";
+export { default as Title } from "@/components/elements/Title/Title";
+export { default as Toast } from "@/components/elements/Toast/Toast";
+export { default as Toggle } from "@/components/elements/Toggle/Toggle";
+export { default as Tooltip } from "@/components/elements/Tooltip/Tooltip";
+export { default as UserIcon } from "@/components/elements/UserIcon/UserIcon";
+export { default as WordText } from "@/components/elements/WordText/WordText";
 
 // Modules
 export { default as BookmarkButton } from "@/components/modules/BookmarkButton";

@@ -1,5 +1,5 @@
 import * as radixScrollArea from "@radix-ui/react-scroll-area";
-import styles from "@/components/elements/scrollArea/ScrollArea.module.css";
+import styles from "@/components/elements/ScrollArea/ScrollArea.module.css";
 
 type Props = {
   children: React.ReactNode;

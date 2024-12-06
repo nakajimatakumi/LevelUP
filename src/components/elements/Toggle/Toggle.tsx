@@ -1,5 +1,5 @@
-import styles from "@/styles/components/elements/Toggle.module.css";
 import * as Switch from "@radix-ui/react-switch";
+import styles from "@/components/elements/Toggle/Toggle.module.css";
 
 type Props = {
   checked: boolean;

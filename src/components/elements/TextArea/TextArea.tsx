@@ -1,6 +1,6 @@
 "use client";
 
-import styles from "@/styles/components/elements/TextArea.module.css";
+import styles from "@/components/elements/TextArea/TextArea.module.css";
 import clsx from "clsx";
 import { ChangeEvent, useRef } from "react";
 import { forwardRef, TextareaHTMLAttributes } from "react";
@@ -30,33 +30,28 @@ export const TextArea = forwardRef<HTMLTextAreaElement, Props>(
     /* コンポジション状態 */
     const isComposingRef = useRef(false);
 
+    // 初期値を箇条書き形式に変換する関数
+    const formatListValue = (text: string) => {
+      if (isComposingRef.current || !isListType || !text) return text;
+      return text
+        .split("\n")
+        .map((line) => (line && !line.startsWith("・") ? `・${line}` : line))
+        .join("\n");
+    };
+
     /* テキスト変更時の処理 */
     const handleChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
-      /* 新しい値 */
-      const newValue = e.target.value;
-      if (isListType && !isComposingRef.current) {
-        /* 行を分割 */
-        const lines = newValue.split("\n");
-        /* リスト形式にフォーマット */
-        const formattedLines = lines.map((line) => {
-          if (line !== "") {
-            return line.startsWith("・") ? line : `・${line}`;
-          }
-          return line;
-        });
-        /* フォーマットされた値 */
-        const formattedValue = formattedLines.join("\n");
-        onChange({ ...e, target: { ...e.target, value: formattedValue } });
-      } else {
-        onChange(e);
-      }
+      onChange({
+        ...e,
+        target: { ...e.target, value: formatListValue(e.target.value) },
+      });
     };
 
     return (
       <textarea
         {...props}
         className={classNames}
-        value={value}
+        value={formatListValue(value)}
         onChange={handleChange}
         ref={ref}
         onCompositionStart={() => (isComposingRef.current = true)}

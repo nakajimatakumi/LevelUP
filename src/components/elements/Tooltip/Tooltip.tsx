@@ -1,12 +1,14 @@
 import * as RadixTooltip from "@radix-ui/react-tooltip";
-import styles from "@/styles/components/elements/Tooltip.module.css";
-import clsx from "clsx";
 import { TEXT_TYPE } from "@/constants/ParamConst";
+import clsx from "clsx";
+import styles from "@/components/elements/Tooltip/Tooltip.module.css";
+
 type Props = {
   children: React.ReactNode;
   message: string;
   defaultOpen?: boolean;
   type?: "default" | "error";
+  additionalStyles?: React.CSSProperties;
 };
 
 /**
@@ -20,6 +22,7 @@ export default function Tooltip({
   message,
   defaultOpen = false,
   type = TEXT_TYPE.DEFAULT,
+  additionalStyles,
 }: Props) {
   const classNames = clsx(styles.tooltipContent, {
     [styles[type]]: type,
@@ -30,7 +33,9 @@ export default function Tooltip({
         <RadixTooltip.Trigger asChild>{children}</RadixTooltip.Trigger>
         <RadixTooltip.Portal>
           <RadixTooltip.Content data-side="left">
-            <p className={classNames}>{message}</p>
+            <p style={additionalStyles} className={classNames}>
+              {message}
+            </p>
           </RadixTooltip.Content>
         </RadixTooltip.Portal>
       </RadixTooltip.Root>

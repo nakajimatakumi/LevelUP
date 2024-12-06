@@ -1,6 +1,6 @@
-import { TEXT_TYPE } from "@/constants/ParamConst";
-import styles from "@/styles/components/elements/WordText.module.css";
 import clsx from "clsx";
+import { TEXT_TYPE } from "@/constants/ParamConst";
+import styles from "@/components/elements/WordText/WordText.module.css";
 
 type Props = {
   text: string;

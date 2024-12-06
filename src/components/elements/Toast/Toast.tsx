@@ -1,6 +1,6 @@
 import React from "react";
 import * as radixToast from "@radix-ui/react-toast";
-import styles from "@/styles/components/elements/Toast.module.css";
+import styles from "@/components/elements/Toast/Toast.module.css";
 
 type ToastProps = {
   isOpen: boolean;

@@ -1,7 +1,7 @@
 import Image from "next/image";
-import styles from "@/styles/components/elements/UserIcon.module.css";
-import { UserIconInfoType } from "@/types/UserInfoType";
 import clsx from "clsx";
+import { UserIconInfoType } from "@/types/UserInfoType";
+import styles from "@/components/elements/UserIcon/UserIcon.module.css";
 
 type Props = {
   size: "small" | "medium" | "large" | "none";

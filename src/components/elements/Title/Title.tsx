@@ -1,8 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import logo from "@/../public/title/logo.svg";
 import title from "@/../public/title/title.svg";
-import styles from "@/styles/components/elements/Title.module.css";
-import Link from "next/link";
+import styles from "@/components/elements/Title/Title.module.css";
 
 /**
  * タイトルコンポーネント

@@ -1,7 +1,7 @@
-import styles from "@/styles/components/elements/PrivateToggle.module.css";
-import Toggle from "@/components/elements/Toggle";
-import { BUTTON_LABEL } from "@/constants/LabelConst";
 import clsx from "clsx";
+import { BUTTON_LABEL } from "@/constants/LabelConst";
+import { Toggle } from "@/components/";
+import styles from "@/styles/components/elements/PrivateToggle.module.css";
 
 type Props = {
   size?: "small" | "medium" | "large";
