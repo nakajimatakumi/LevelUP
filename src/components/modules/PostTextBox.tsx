@@ -1,13 +1,10 @@
-import styles from "@/styles/components/modules/PostTextBox.module.css";
 import * as Accordion from "@radix-ui/react-accordion";
-import Experience from "@/components/modules/Experience";
-import Reflection from "@/components/modules/Reflection";
-import Lesson from "@/components/modules/Lesson";
 import { UserInfoType } from "@/types/UserInfoType";
 import { PostInfoType } from "@/types/PostInfoType";
-import FlowLine from "./FlowLine";
 import { ICON_PATH } from "@/constants/IconPathConst";
 import { TOOLTIP_PARAMS } from "@/constants/MessageTemplateConst";
+import { Experience, Reflection, Lesson, FlowLine } from "@/components";
+import styles from "@/styles/components/modules/PostTextBox.module.css";
 
 type Props = {
   userInfo: UserInfoType;

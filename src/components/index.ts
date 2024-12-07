@@ -22,14 +22,14 @@ export { default as UserIcon } from "@/components/elements/UserIcon/UserIcon";
 export { default as WordText } from "@/components/elements/WordText/WordText";
 
 // Modules
-export { default as BookmarkButton } from "@/components/modules/BookmarkButton";
-export { default as Experience } from "@/components/modules/Experience";
-export { default as FavoriteButton } from "@/components/modules/FavoriteButton";
-export { default as FeaturedPost } from "@/components/modules/FeaturedPost";
-export { default as FlowLine } from "@/components/modules/FlowLine";
-export { default as Improvement } from "@/components/modules/Improvement";
-export { default as Introspection } from "@/components/modules/Introspection";
-export { default as Lesson } from "@/components/modules/Lesson";
+export { default as BookmarkButton } from "@/components/modules/BookmarkButton/BookmarkButton";
+export { default as Experience } from "@/components/modules/Experience/Experience";
+export { default as FavoriteButton } from "@/components/modules/FavoriteButton/FavoriteButton";
+export { default as FeaturedPost } from "@/components/modules/FeaturedPost/FeaturedPost";
+export { default as FlowLine } from "@/components/modules/FlowLine/FlowLine";
+export { default as Improvement } from "@/components/modules/Improvement/Improvement";
+export { default as Introspection } from "@/components/modules/Introspection/Introspection";
+export { default as Lesson } from "@/components/modules/Lesson/Lesson";
 export { default as NewExperience } from "@/components/modules/NewExperience";
 export { default as NewLesson } from "@/components/modules/NewLesson";
 export { default as NewPost } from "@/components/modules/NewPost";

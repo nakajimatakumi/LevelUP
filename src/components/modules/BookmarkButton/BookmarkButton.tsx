@@ -1,7 +1,7 @@
 "use client";
 
 import { ICON_PATH } from "@/constants/IconPathConst";
-import ActiveButton from "@/components/elements/ActiveButton/ActiveButton";
+import { ActiveButton } from "@/components/";
 import { useContext, useCallback } from "react";
 import { dispPostCardContext } from "@/contexts/DispPostCardContext";
 import formatPostInfo from "@/logics/functions/FormatPostInfo";

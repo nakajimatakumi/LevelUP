@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { BUTTON_LABEL } from "@/constants/LabelConst";
 import { Toggle } from "@/components/";
-import styles from "@/styles/components/elements/PrivateToggle.module.css";
+import styles from "@/styles/components/modules/PrivateToggle.module.css";
 
 type Props = {
   size?: "small" | "medium" | "large";

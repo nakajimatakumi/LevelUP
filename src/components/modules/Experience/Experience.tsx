@@ -1,13 +1,13 @@
 "use client";
 
+import { useContext } from "react";
 import { dispPostCardContext } from "@/contexts/DispPostCardContext";
 import formatPostInfo from "@/logics/functions/FormatPostInfo";
-import styles from "@/styles/components/modules/Experience.module.css";
 import { PostInfoType } from "@/types/PostInfoType";
 import { UserInfoType } from "@/types/UserInfoType";
-import { useContext } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
 import { Card, SentenceText } from "@/components";
+import styles from "@/components/modules/Experience/Experience.module.css";
 
 type Props = {
   userInfo: UserInfoType;

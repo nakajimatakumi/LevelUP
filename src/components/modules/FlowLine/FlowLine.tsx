@@ -4,11 +4,13 @@ import { COMPONENT_SIZE } from "@/constants/ParamConst";
 import { MESSAGE_TEMPLATE } from "@/constants/MessageTemplateConst";
 import { Icon, Tooltip } from "@/components";
 import generateMessage from "@/logics/functions/GenerateMessage";
-import styles from "@/styles/components/modules/FlowLine.module.css";
+import styles from "@/components/modules/FlowLine/FlowLine.module.css";
 
 type Props = {
   iconPath: string;
   tooltipText: string;
+  additionalStyle?: React.CSSProperties;
+  tooltipAdditionalStyle?: React.CSSProperties;
 };
 
 /**
@@ -16,9 +18,14 @@ type Props = {
  * @param iconPath アイコンパス
  * @param tooltipText ツールチップテキスト
  */
-export default function FlowLine({ iconPath, tooltipText }: Props) {
+export default function FlowLine({
+  iconPath,
+  tooltipText,
+  additionalStyle,
+  tooltipAdditionalStyle,
+}: Props) {
   return (
-    <div className={styles.root}>
+    <div className={styles.root} style={additionalStyle}>
       <Separator.Root
         className={
           iconPath === ICON_PATH.EXPERIENCE
@@ -30,6 +37,7 @@ export default function FlowLine({ iconPath, tooltipText }: Props) {
         message={generateMessage(MESSAGE_TEMPLATE.TOOLTIP_MESSAGE, [
           tooltipText,
         ])}
+        additionalStyles={tooltipAdditionalStyle}
       >
         <span>
           <Icon iconPath={iconPath} size={COMPONENT_SIZE.LARGE} />

@@ -1,6 +1,6 @@
 import { TEXT_STYLE } from "@/constants/ParamConst";
 import { ListText } from "@/components";
-import styles from "@/styles/components/modules/Introspection.module.css";
+import styles from "@/components/modules/Introspection/Introspection.module.css";
 
 type Props = {
   reflections: {

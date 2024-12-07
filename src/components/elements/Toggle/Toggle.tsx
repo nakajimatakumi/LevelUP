@@ -7,6 +7,8 @@ type Props = {
 };
 /**
  * トグル
+ * @param checked トグルの状態
+ * @param onChange トグルの状態変更時の処理
  */
 export default function Toggle({ checked, onChange }: Props) {
   return (

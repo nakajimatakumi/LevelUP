@@ -1,15 +1,15 @@
 "use client";
 
-import styles from "@/styles/components/modules/FavoriteButton.module.css";
-import ActiveButton from "@/components/elements/ActiveButton/ActiveButton";
-import { ICON_PATH } from "@/constants/IconPathConst";
-import useFavorite from "@/logics/hooks/useFavorite";
 import { useContext } from "react";
+import Image from "next/image";
 import { dispPostCardContext } from "@/contexts/DispPostCardContext";
-import formatPostInfo from "@/logics/functions/FormatPostInfo";
 import { UserInfoType } from "@/types/UserInfoType";
 import { PostInfoType } from "@/types/PostInfoType";
-import Image from "next/image";
+import useFavorite from "@/logics/hooks/useFavorite";
+import formatPostInfo from "@/logics/functions/FormatPostInfo";
+import { ICON_PATH } from "@/constants/IconPathConst";
+import { ActiveButton } from "@/components/";
+import styles from "@/components/modules/FavoriteButton/FavoriteButton.module.css";
 
 type Props = {
   favoriteNum: number;
@@ -22,7 +22,8 @@ type Props = {
  * いいねボタン
  * @param favoriteNum いいね数
  * @param isFavorite いいね済フラグ
- * @param onClick クリックイベント
+ * @param userInfo ユーザー情報
+ * @param postInfo 投稿情報
  */
 export default function FavoriteButton({
   favoriteNum,

@@ -1,5 +1,5 @@
 import { SentenceText } from "@/components";
-import styles from "@/styles/components/modules/FeaturedPost.module.css";
+import styles from "@/components/modules/FeaturedPost/FeaturedPost.module.css";
 
 type Post = {
   postId: string;

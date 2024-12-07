@@ -1,6 +1,6 @@
 import { TEXT_STYLE } from "@/constants/ParamConst";
 import { ListText } from "@/components";
-import styles from "@/styles/components/modules/Improvement.module.css";
+import styles from "@/components/modules/Improvement/Improvement.module.css";
 type Props = {
   improvementsList: string[];
 };

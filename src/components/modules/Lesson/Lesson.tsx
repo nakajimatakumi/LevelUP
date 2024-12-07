@@ -1,14 +1,14 @@
 "use client";
 
-import { dispPostCardContext } from "@/contexts/DispPostCardContext";
-import formatPostInfo from "@/logics/functions/FormatPostInfo";
-import styles from "@/styles/components/modules/Lesson.module.css";
-import { PostInfoType } from "@/types/PostInfoType";
-import { UserInfoType } from "@/types/UserInfoType";
 import { useContext } from "react";
 import * as Accordion from "@radix-ui/react-accordion";
+import { dispPostCardContext } from "@/contexts/DispPostCardContext";
+import formatPostInfo from "@/logics/functions/FormatPostInfo";
+import { PostInfoType } from "@/types/PostInfoType";
+import { UserInfoType } from "@/types/UserInfoType";
 import { TEXT_STYLE } from "@/constants/ParamConst";
 import { Card, ListText } from "@/components";
+import styles from "@/components/modules/Lesson/Lesson.module.css";
 
 type Props = {
   lessonsList: string[];
